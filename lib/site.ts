@@ -1,10 +1,12 @@
+export const siteUrl = "https://hanjinjangspine1.com";
+
 export const siteConfig = {
   name: "Hanjin Jang, MD",
   shortName: "Hanjin Jang, MD",
   title: "Hanjin Jang, MD | Endoscopic Spine Surgery",
   description:
     "English academic physician profile and clinical knowledge base for Hanjin Jang, MD, a neurosurgeon and spine specialist in South Korea whose clinical and academic focus includes endoscopic spine surgery, biportal endoscopic spine surgery, endoscopic spinal fusion, endoscopic lumbar fusion, UBE-TLIF, and complex revision spine surgery.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://hanjinjangspine.com",
+  url: siteUrl,
   ogImage: "/og-image.svg",
   institution: "New Standard Hospital",
   institutionLocation: "Yongin, South Korea",

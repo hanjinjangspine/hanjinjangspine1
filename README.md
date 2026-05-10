@@ -57,19 +57,14 @@ The robots route allows indexing and explicitly allows `OAI-SearchBot`, `GPTBot`
 
 ## Canonical URL
 
-Set the production URL before deployment:
-
-```bash
-NEXT_PUBLIC_SITE_URL=https://your-domain.example
-```
-
-If the environment variable is not set, the project uses `https://hanjinjangspine.com` as the canonical base.
+The production canonical URL is fixed in `lib/site.ts` as `https://hanjinjangspine1.com`.
+Sitemap, robots, canonical metadata, Open Graph URLs, and JSON-LD URLs are generated from that value.
 
 ## Deploying to Vercel
 
 1. Push the project to a Git repository.
 2. Import the repository into Vercel.
-3. Set `NEXT_PUBLIC_SITE_URL` to the final production domain.
+3. Confirm the deployment domain is `https://hanjinjangspine1.com`.
 4. Deploy.
 5. After deployment, confirm:
    - `/sitemap.xml`
