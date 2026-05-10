@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" role="img" aria-labelledby="title desc">
+  <title id="title">Subtle endoscopic spine surgery motif</title>
+  <desc id="desc">Abstract spine and endoscopic instrument line motif for an academic medical website.</desc>
+  <rect width="640" height="520" fill="#F6F8FB"/>
+  <path d="M472 48C425 92 399 138 401 187c3 70 61 111 48 177-8 39-35 75-82 108" fill="none" stroke="#D9DEE8" stroke-width="2"/>
+  <path d="M120 410c88-38 152-93 193-164 29-51 53-95 101-129" fill="none" stroke="#9A7B38" stroke-width="3" stroke-linecap="round"/>
+  <g opacity=".85" fill="#fff" stroke="#D9DEE8" stroke-width="2">
+    <ellipse cx="390" cy="106" rx="30" ry="13"/>
+    <ellipse cx="405" cy="146" rx="30" ry="13"/>
+    <ellipse cx="406" cy="190" rx="30" ry="13"/>
+    <ellipse cx="393" cy="235" rx="30" ry="13"/>
+    <ellipse cx="376" cy="280" rx="30" ry="13"/>
+    <ellipse cx="373" cy="326" rx="30" ry="13"/>
+    <ellipse cx="385" cy="372" rx="30" ry="13"/>
+  </g>
+  <g stroke="#D9DEE8" stroke-width="2" stroke-linecap="round">
+    <path d="M356 106h-58"/>
+    <path d="M371 146h-58"/>
+    <path d="M372 190h-58"/>
+    <path d="M359 235h-58"/>
+    <path d="M342 280h-58"/>
+    <path d="M339 326h-58"/>
+    <path d="M351 372h-58"/>
+  </g>
+  <g fill="#9A7B38">
+    <circle cx="284" cy="106" r="4"/>
+    <circle cx="299" cy="146" r="4"/>
+    <circle cx="300" cy="190" r="4"/>
+    <circle cx="287" cy="235" r="4"/>
+    <circle cx="270" cy="280" r="4"/>
+    <circle cx="267" cy="326" r="4"/>
+    <circle cx="279" cy="372" r="4"/>
+  </g>
+  <circle cx="120" cy="410" r="34" fill="none" stroke="#9A7B38" stroke-width="2"/>
+  <circle cx="120" cy="410" r="10" fill="#9A7B38" opacity=".18"/>
+</svg>

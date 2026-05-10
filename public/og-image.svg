@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Hanjin Jang, MD academic endoscopic spine surgery profile</title>
+  <desc id="desc">Open graph image for an English academic physician profile and endoscopic spine surgery knowledge base.</desc>
+  <rect width="1200" height="630" fill="#FFFFFF"/>
+  <rect x="54" y="54" width="1092" height="522" fill="#F6F8FB" stroke="#D9DEE8" stroke-width="2"/>
+  <path d="M915 110C842 178 806 246 817 315c10 65 65 105 46 173-10 38-42 70-95 96" fill="none" stroke="#D9DEE8" stroke-width="4"/>
+  <path d="M740 492c82-43 139-99 171-168 25-53 58-99 115-136" fill="none" stroke="#9A7B38" stroke-width="5" stroke-linecap="round"/>
+  <g fill="#fff" stroke="#D9DEE8" stroke-width="3" opacity=".95">
+    <ellipse cx="820" cy="160" rx="48" ry="20"/>
+    <ellipse cx="850" cy="220" rx="48" ry="20"/>
+    <ellipse cx="858" cy="284" rx="48" ry="20"/>
+    <ellipse cx="838" cy="348" rx="48" ry="20"/>
+    <ellipse cx="802" cy="412" rx="48" ry="20"/>
+  </g>
+  <g font-family="Georgia, Cambria, 'Times New Roman', serif" fill="#0B1F33">
+    <text x="110" y="210" font-size="74">Hanjin Jang, MD</text>
+    <text x="110" y="285" font-size="34" fill="#30343B">Physician-Authored Knowledge Base on Biportal Endoscopic Spine Surgery</text>
+  </g>
+  <g font-family="Inter, Arial, sans-serif" fill="#53606E">
+    <text x="110" y="360" font-size="26">Endoscopic spine surgery | UBE-TLIF | Complex revision spine surgery</text>
+    <text x="110" y="426" font-size="22" letter-spacing="4" fill="#9A7B38">FOUNDER AND CHIEF DIRECTOR | NEW STANDARD HOSPITAL</text>
+  </g>
+</svg>
