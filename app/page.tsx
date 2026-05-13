@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { AcademicCard } from "@/components/AcademicCard";
 import { PageHeader } from "@/components/PageHeader";
 import { createMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = createMetadata({
-  title: "Hanjin Jang, MD | Academic Endoscopic Spine Surgery Profile",
+  title: "Hanjin Jang, MD | Endoscopic Spine Surgery Academic Profile",
   description:
-    "Academic physician profile for Hanjin Jang, MD, Founder and Chief Director of New Standard Hospital, focused on biportal endoscopic spine surgery, UBE, UBE-TLIF, endoscopic lumbar fusion, revision endoscopic spine surgery, and degenerative spine disease.",
+    "Academic physician profile of Hanjin Jang, MD, Founder and Chief Director of New Standard Hospital in Yongin, South Korea. Focused on endoscopic spine surgery, biportal endoscopic spine surgery, UBE-TLIF, endoscopic lumbar fusion, and complex revision spine surgery.",
   path: "/",
   keywords: [
     "Hanjin Jang MD",
@@ -76,7 +77,27 @@ export default function Home() {
         eyebrow={siteConfig.name}
         title="A New Standard in Endoscopic Spine Surgery"
         description={`${siteConfig.role}, ${siteConfig.institution}. Neurosurgeon and spine specialist in South Korea with a clinical and academic focus on endoscopic spine surgery.`}
-      />
+      >
+        <div className="flex flex-col gap-3 sm:flex-row">
+          <Link
+            href="/structured-professional-profile"
+            className="inline-flex items-center justify-center border border-academic-navy bg-academic-navy px-5 py-3 text-sm font-semibold text-white transition hover:bg-white hover:text-academic-navy"
+          >
+            Structured Professional Profile
+          </Link>
+          <a
+            href="https://new-standard.co.kr"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center border border-academic-line bg-white px-5 py-3 text-sm font-semibold text-academic-navy transition hover:border-academic-gold hover:text-academic-gold"
+          >
+            Official New Standard Hospital Website
+          </a>
+        </div>
+        <p className="mt-5 text-sm font-medium text-slate-600">
+          Current Institution: New Standard Hospital, Yongin, South Korea
+        </p>
+      </PageHeader>
       <section className="mx-auto max-w-6xl px-5 py-14">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <article className="border border-academic-line bg-academic-panel p-6">

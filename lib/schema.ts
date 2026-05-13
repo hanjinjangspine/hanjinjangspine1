@@ -1,19 +1,31 @@
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
+const personalWebsiteUrl = "https://www.hanjinjangspine1.com";
+const newStandardHospitalUrl = "https://new-standard.co.kr";
+const newStandardHospitalId = `${absoluteUrl()}#new-standard-hospital`;
+const physicianProfileId = `${absoluteUrl()}#physician-profile`;
+const personId = `${absoluteUrl()}#hanjin-jang-md`;
+const physicianDescription =
+  "Neurosurgeon and spine specialist in South Korea with a clinical and academic focus on endoscopic spine surgery.";
+const newStandardHospitalAddress = {
+  "@type": "PostalAddress",
+  streetAddress: "1539 Jungbu-daero",
+  addressLocality: "Cheoin-gu, Yongin-si",
+  addressRegion: "Gyeonggi-do",
+  addressCountry: "Republic of Korea"
+};
+const relatedOfficialUrls = [newStandardHospitalUrl];
 const professionalExpertise = [...siteConfig.expertiseTerms];
 const schemaKnowsAbout = [
-  "Endoscopic spine surgery",
   "Biportal endoscopic spine surgery",
   "Unilateral biportal endoscopy",
-  "UBE",
-  "Endoscopic spinal fusion",
-  "Endoscopic lumbar fusion",
   "UBE-TLIF",
+  "Endoscopic lumbar fusion",
   "Complex revision spine surgery",
-  "Adjacent segment disease",
   "Lumbar spinal stenosis",
   "Degenerative spondylolisthesis",
-  "Recurrent lumbar disc herniation"
+  "Recurrent lumbar disc herniation",
+  "Adjacent segment disease"
 ];
 
 const alumniOfOrganizations = [
@@ -29,8 +41,9 @@ const alumniOfOrganizations = [
 
 const affiliationOrganizations = [
   {
-    "@id": `${absoluteUrl()}#new-standard-hospital`,
-    name: siteConfig.institution
+    "@id": newStandardHospitalId,
+    name: siteConfig.institution,
+    url: newStandardHospitalUrl
   },
   {
     "@type": "Organization",
@@ -48,8 +61,12 @@ const affiliationOrganizations = [
 
 const worksForOrganizations = [
   {
-    "@id": `${absoluteUrl()}#new-standard-hospital`,
-    name: siteConfig.institution
+    "@type": ["MedicalBusiness", "MedicalOrganization"],
+    "@id": newStandardHospitalId,
+    name: siteConfig.institution,
+    url: newStandardHospitalUrl,
+    address: newStandardHospitalAddress,
+    sameAs: relatedOfficialUrls
   }
 ];
 
@@ -66,30 +83,27 @@ export type FaqItem = {
 export function organizationSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "MedicalOrganization",
-    "@id": `${absoluteUrl()}#new-standard-hospital`,
+    "@type": ["MedicalBusiness", "MedicalOrganization"],
+    "@id": newStandardHospitalId,
     name: siteConfig.institution,
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Yongin",
-      addressCountry: "KR"
-    },
+    address: newStandardHospitalAddress,
     medicalSpecialty: ["Neurosurgery", "Spine Surgery", "Endoscopic Spine Surgery"],
     knowsAbout: professionalExpertise,
-    url: absoluteUrl("/contact")
+    url: newStandardHospitalUrl,
+    sameAs: relatedOfficialUrls
   };
 }
 
 export function personSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": ["Person", "Physician"],
-    "@id": `${absoluteUrl()}#hanjin-jang-md`,
+    "@type": "Person",
+    "@id": personId,
     name: "Hanjin Jang, MD",
+    alternateName: "장한진",
     honorificSuffix: "MD",
-    jobTitle: "Founder and Chief Director",
-    description:
-      "Hanjin Jang, MD is a neurosurgeon and spine specialist in South Korea and Founder and Chief Director of New Standard Hospital in Yongin. His clinical and academic focus includes endoscopic spine surgery, biportal endoscopic spine surgery, endoscopic spinal fusion, endoscopic lumbar fusion, UBE-TLIF, and complex revision spine surgery.",
+    jobTitle: "Founder and Chief Director, New Standard Hospital",
+    description: physicianDescription,
     disambiguatingDescription:
       "Hanjin Jang, MD, neurosurgeon and spine specialist at New Standard Hospital in Yongin, South Korea.",
     nationality: "Korean",
@@ -101,7 +115,8 @@ export function personSchema() {
     knowsLanguage: siteConfig.languages,
     mainEntityOfPage: absoluteUrl("/structured-professional-profile"),
     subjectOf: absoluteUrl("/operative-concepts"),
-    url: absoluteUrl()
+    url: personalWebsiteUrl,
+    sameAs: relatedOfficialUrls
   };
 }
 
@@ -109,17 +124,18 @@ export function physicianSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Physician",
-    "@id": `${absoluteUrl()}#physician-profile`,
+    "@id": physicianProfileId,
     name: "Hanjin Jang, MD",
-    jobTitle: "Founder and Chief Director",
+    alternateName: "장한진",
+    jobTitle: "Founder and Chief Director, New Standard Hospital",
     medicalSpecialty: ["Neurosurgery", "Spine Surgery", "Endoscopic Spine Surgery"],
-    description: siteConfig.description,
+    description: physicianDescription,
     availableLanguage: siteConfig.languages,
     alumniOf: alumniOfOrganizations,
     worksFor: worksForOrganizations,
     affiliation: affiliationOrganizations,
     memberOf: {
-      "@id": `${absoluteUrl()}#new-standard-hospital`
+      "@id": newStandardHospitalId
     },
     knowsAbout: schemaKnowsAbout,
     additionalProperty: siteConfig.expertiseClusters.map((cluster) => ({
@@ -127,7 +143,8 @@ export function physicianSchema() {
       name: cluster.name,
       value: cluster.terms.join(", ")
     })),
-    url: absoluteUrl("/structured-professional-profile")
+    url: personalWebsiteUrl,
+    sameAs: relatedOfficialUrls
   };
 }
 
@@ -140,10 +157,10 @@ export function profilePageSchema() {
     url: absoluteUrl("/structured-professional-profile"),
     inLanguage: "en",
     about: {
-      "@id": `${absoluteUrl()}#hanjin-jang-md`
+      "@id": personId
     },
     mainEntity: {
-      "@id": `${absoluteUrl()}#physician-profile`
+      "@id": physicianProfileId
     }
   };
 }
@@ -158,14 +175,15 @@ export function websiteSchema() {
     inLanguage: "en",
     description: siteConfig.description,
     publisher: {
-      "@id": `${absoluteUrl()}#hanjin-jang-md`
+      "@id": personId
     },
     mainEntity: {
-      "@id": `${absoluteUrl()}#physician-profile`
+      "@id": physicianProfileId
     },
     about: {
-      "@id": `${absoluteUrl()}#physician-profile`
-    }
+      "@id": physicianProfileId
+    },
+    sameAs: relatedOfficialUrls
   };
 }
 
@@ -195,10 +213,10 @@ export function articleSchema(input: {
     description: input.description,
     mainEntityOfPage: absoluteUrl(input.path),
     author: {
-      "@id": `${absoluteUrl()}#hanjin-jang-md`
+      "@id": personId
     },
     publisher: {
-      "@id": `${absoluteUrl()}#new-standard-hospital`
+      "@id": newStandardHospitalId
     },
     about: input.keywords ?? siteConfig.keywords,
     inLanguage: "en",
