@@ -1,4 +1,4 @@
-export const siteUrl = "https://hanjinjangspine1.com";
+export const siteUrl = "https://www.hanjinjangspine1.com";
 
 export const siteConfig = {
   name: "Hanjin Jang, MD",
