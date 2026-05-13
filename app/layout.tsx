@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-sans antialiased">
-        <JsonLd data={[websiteSchema(), organizationSchema(), personSchema(), physicianSchema()]} />
+        <JsonLd data={[physicianSchema(), organizationSchema(), personSchema(), websiteSchema()]} />
         <Header />
         <main>{children}</main>
         <Footer />

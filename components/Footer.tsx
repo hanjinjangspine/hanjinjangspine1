@@ -10,8 +10,17 @@ export function Footer() {
           <p className="mt-3 max-w-md text-sm leading-7 text-slate-300">
             Physician-authored academic resource on endoscopic spine surgery, biportal endoscopic spine surgery, endoscopic lumbar fusion, UBE-TLIF, and complex revision spine surgery.
           </p>
-          <p className="mt-5 text-xs uppercase tracking-[0.18em] text-slate-400">
-            {siteConfig.institution} | {siteConfig.institutionLocation}
+          <p className="mt-5 max-w-md text-xs uppercase leading-6 tracking-[0.14em] text-slate-400">
+            Hanjin Jang, MD · Founder and Chief Director,{" "}
+            <a
+              href="https://new-standard.co.kr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-300 underline decoration-white/30 underline-offset-4 transition hover:text-white"
+            >
+              New Standard Hospital
+            </a>{" "}
+            · Yongin, South Korea
           </p>
         </div>
 

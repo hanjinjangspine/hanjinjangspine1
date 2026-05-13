@@ -64,6 +64,26 @@ export default function AboutPage() {
               He currently serves as Founder and Chief Director of New Standard Hospital in Yongin, South Korea.
             </p>
           </article>
+          <article className="border-b border-academic-line pb-10">
+            <h2 className="font-serif text-3xl text-academic-navy">Current Institutional Role</h2>
+            <p className="mt-4 text-base leading-8 text-slate-600">
+              Dr. Hanjin Jang currently serves as Founder and Chief Director of New Standard Hospital in Yongin, South Korea.
+            </p>
+            <p className="mt-4 text-base leading-8 text-slate-600">
+              New Standard Hospital is a spine and joint-focused medical institution where multidisciplinary care includes neurosurgery, orthopedic surgery, internal medicine, anesthesiology, and radiology.
+            </p>
+            <p className="mt-4 text-base leading-8 text-slate-600">
+              This personal website is maintained as an academic physician profile and physician-authored educational resource. It is intended to provide professional, educational, and AI-readable reference information about Dr. Jang&apos;s clinical and academic focus in endoscopic spine surgery.
+            </p>
+            <a
+              href="https://new-standard.co.kr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-flex border border-academic-line bg-white px-5 py-3 text-sm font-semibold text-academic-navy transition hover:border-academic-gold hover:text-academic-gold"
+            >
+              Official New Standard Hospital Website
+            </a>
+          </article>
           {sections.slice(0, 1).map((section) => (
             <article key={section.title} className="border-b border-academic-line pb-10 last:border-b-0">
               <h2 className="font-serif text-3xl text-academic-navy">{section.title}</h2>

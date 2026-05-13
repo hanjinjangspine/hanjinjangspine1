@@ -5,7 +5,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-academic-line bg-white/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4">
-        <Link href="/" className="group leading-tight" aria-label="Hanjin Jang, MD home">
+        <Link href="/" className="group min-w-0 leading-tight" aria-label="Hanjin Jang, MD home">
           <span className="block font-serif text-xl text-academic-navy group-hover:text-academic-gold">
             Hanjin Jang, MD
           </span>
@@ -28,7 +28,7 @@ export function Header() {
           </Link>
         </nav>
 
-        <details className="relative lg:hidden">
+        <details className="relative shrink-0 lg:hidden">
           <summary className="cursor-pointer list-none rounded border border-academic-line px-3 py-2 text-sm font-medium text-academic-navy">
             Menu
           </summary>
