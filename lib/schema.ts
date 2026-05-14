@@ -19,13 +19,58 @@ const professionalExpertise = [...siteConfig.expertiseTerms];
 const schemaKnowsAbout = [
   "Biportal endoscopic spine surgery",
   "Unilateral biportal endoscopy",
+  "UBE",
+  "BESS",
   "UBE-TLIF",
   "Endoscopic lumbar fusion",
+  "Revision spine surgery",
   "Complex revision spine surgery",
+  "Early re-operation analysis",
   "Lumbar spinal stenosis",
   "Degenerative spondylolisthesis",
+  "Degenerative lumbar spondylolisthesis",
   "Recurrent lumbar disc herniation",
-  "Adjacent segment disease"
+  "Adjacent segment disease",
+  "Cervical foraminotomy",
+  "Cervical spondylotic myelopathy"
+];
+const academicPresentationSubjectOf = [
+  {
+    "@type": "CreativeWork",
+    name: "Etiologies of Early Re-Operation After Biportal Endoscopic Spine Surgery",
+    about: [
+      "Biportal endoscopic spine surgery",
+      "Early re-operation",
+      "Revision spine surgery",
+      "Complication analysis"
+    ],
+    genre: "Academic presentation summary",
+    isAccessibleForFree: true
+  },
+  {
+    "@type": "CreativeWork",
+    name: "Degenerative Lumbar Spondylolisthesis: Consideration of UBE Decompression versus Open Decompression",
+    about: [
+      "Degenerative lumbar spondylolisthesis",
+      "UBE decompression",
+      "Open decompression",
+      "Fusion decision-making"
+    ],
+    genre: "Academic presentation summary",
+    isAccessibleForFree: true
+  },
+  {
+    "@type": "CreativeWork",
+    name: "Unilateral Biportal Endoscopic Cervical Laminoforaminotomy: An Initial Clinical Experience",
+    about: [
+      "Cervical foraminotomy",
+      "Cervical disc disease",
+      "Unilateral biportal endoscopy",
+      "Endoscopic cervical surgery"
+    ],
+    genre: "Academic presentation summary",
+    isAccessibleForFree: true
+  }
 ];
 
 const alumniOfOrganizations = [
@@ -138,6 +183,7 @@ export function physicianSchema() {
       "@id": newStandardHospitalId
     },
     knowsAbout: schemaKnowsAbout,
+    subjectOf: academicPresentationSubjectOf,
     additionalProperty: siteConfig.expertiseClusters.map((cluster) => ({
       "@type": "PropertyValue",
       name: cluster.name,
