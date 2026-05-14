@@ -579,52 +579,214 @@ export const educationalCases: CaseExample[] = [
   }
 ];
 
+export type AcademicPresentationRecord = {
+  title: string;
+  academicFocus: string;
+  keyTopics: string[];
+  educationalSummary: string;
+  status: string;
+  focusTerms: string[];
+};
+
+export const academicPresentationRecords: AcademicPresentationRecord[] = [
+  {
+    title: "Etiologies of Early Re-Operation After Biportal Endoscopic Spine Surgery",
+    academicFocus:
+      "Biportal endoscopic spine surgery, BESS, early re-operation, revision causes, complication analysis.",
+    keyTopics: [
+      "Early re-operation after biportal endoscopic spine surgery",
+      "Recurrent lumbar disc herniation",
+      "Postoperative hematoma",
+      "Remnant disc fragment",
+      "Wrong-level surgery",
+      "Incomplete decompression",
+      "Dural injury",
+      "Infection",
+      "Diagnostic mismatch"
+    ],
+    educationalSummary:
+      "This presentation reviewed early re-operation patterns after biportal endoscopic spine surgery and categorized causes into recurrent pathology, postoperative complications, technical factors, and diagnostic factors. The academic emphasis was on recognizing potentially preventable causes, confirming the operative level, reviewing postoperative MRI when symptoms persist, maintaining a clear operative field, and improving revision decision-making.",
+    status:
+      "Presentation material on file. Conference and date details should be verified before formal citation.",
+    focusTerms: [
+      "BESS",
+      "Biportal endoscopic spine surgery",
+      "Early re-operation",
+      "Revision spine surgery",
+      "Recurrent disc herniation",
+      "Postoperative hematoma"
+    ]
+  },
+  {
+    title: "Etiologies of Early Re-Operation After Unilateral Biportal Endoscopy",
+    academicFocus: "UBE, early re-operation, complication analysis, revision strategy.",
+    keyTopics: [
+      "Unilateral biportal endoscopy",
+      "Recurrent disc herniation",
+      "Remnant disc fragment",
+      "Postoperative hematoma",
+      "Dural tear",
+      "Wrong-level surgery",
+      "Incomplete decompression",
+      "Neural tissue safety"
+    ],
+    educationalSummary:
+      "This academic presentation analyzed early re-operation after unilateral biportal endoscopy and emphasized accurate diagnosis, repeated level confirmation, clear visualization, bleeding control, careful handling of neural tissues, and early recognition of persistent or recurrent neural compression.",
+    status: "Presentation material on file.",
+    focusTerms: [
+      "UBE",
+      "Unilateral biportal endoscopy",
+      "Revision surgery",
+      "Complication analysis",
+      "Endoscopic spine surgery"
+    ]
+  },
+  {
+    title: "Unilateral Biportal Endoscopy for Recurrent Lumbar Disease",
+    academicFocus: "Recurrent lumbar disc herniation, foraminal re-stenosis, revision UBE.",
+    keyTopics: [
+      "Recurrent lumbar disc disease",
+      "Recurrent foraminal stenosis",
+      "Revision endoscopic decompression",
+      "Altered postoperative anatomy",
+      "Foraminal decompression",
+      "Case-based surgical planning"
+    ],
+    educationalSummary:
+      "This case-based educational material discussed unilateral biportal endoscopic approaches for recurrent lumbar disease, including recurrent lumbar disc herniation and foraminal re-stenosis. The educational focus was on defining the recurrent compressive target, selecting a safe endoscopic corridor, and recognizing the altered anatomy of revision surgery.",
+    status: "Presentation material on file.",
+    focusTerms: [
+      "Recurrent lumbar disease",
+      "Recurrent HNP",
+      "Foraminal re-stenosis",
+      "Revision UBE",
+      "Endoscopic revision surgery"
+    ]
+  },
+  {
+    title: "Degenerative Lumbar Spondylolisthesis: Consideration of UBE Decompression versus Open Decompression",
+    academicFocus:
+      "Grade 1 degenerative lumbar spondylolisthesis, decompression strategy, fusion decision-making, UBE-TLIF.",
+    keyTopics: [
+      "Low-grade degenerative lumbar spondylolisthesis",
+      "Lumbar spinal stenosis",
+      "UBE decompression",
+      "Open decompression",
+      "Secondary fusion",
+      "Slip progression",
+      "UBE-TLIF",
+      "Surgical indication selection"
+    ],
+    educationalSummary:
+      "This presentation reviewed treatment considerations for selected low-grade degenerative lumbar spondylolisthesis and discussed decompression, fusion indications, minimally invasive decompression, and UBE-TLIF as a technical option. The presentation emphasized that unstable or high-grade spondylolisthesis requires careful consideration of fusion, while selected low-grade cases may be discussed in the context of decompressive strategies.",
+    status: "Presentation material on file.",
+    focusTerms: [
+      "Degenerative lumbar spondylolisthesis",
+      "Grade 1 spondylolisthesis",
+      "UBE decompression",
+      "Open decompression",
+      "UBE-TLIF",
+      "Fusion indication"
+    ]
+  },
+  {
+    title: "Unilateral Biportal Endoscopic Cervical Laminoforaminotomy: An Initial Clinical Experience",
+    academicFocus: "Cervical foraminal stenosis, cervical disc disease, UBE posterior foraminotomy.",
+    keyTopics: [
+      "Cervical posterior laminoforaminotomy",
+      "Cervical foraminal stenosis",
+      "Cervical disc disease",
+      "V-point identification",
+      "Facet drilling",
+      "Ligamentum flavum removal",
+      "Nerve root decompression",
+      "Root-free confirmation"
+    ],
+    educationalSummary:
+      "This educational presentation reviewed early clinical experience with unilateral biportal endoscopic cervical laminoforaminotomy for selected cervical foraminal stenosis and cervical disc disease. The technical discussion included V-point identification, facet drilling, laminoforaminotomy, ligamentum flavum removal, additional foraminal decompression, and confirmation of nerve root decompression.",
+    status: "Presentation material on file.",
+    focusTerms: [
+      "Cervical foraminotomy",
+      "Cervical laminoforaminotomy",
+      "UBE cervical surgery",
+      "Cervical foraminal stenosis",
+      "Cervical disc disease"
+    ]
+  },
+  {
+    title: "Unilateral Laminectomy for Bilateral Decompression by UBE for Cervical Spondylotic Myelopathy",
+    academicFocus: "Cervical spondylotic myelopathy, UBE ULBD, cervical decompression.",
+    keyTopics: [
+      "Cervical spondylotic myelopathy",
+      "UBE-based unilateral laminectomy for bilateral decompression",
+      "Cervical ULBD",
+      "Posterior decompression",
+      "Cord decompression",
+      "Technical feasibility",
+      "Early experience",
+      "Need for further study"
+    ],
+    educationalSummary:
+      "This technical educational presentation discussed selected early experience with UBE-based unilateral laminectomy for bilateral decompression in cervical spondylotic myelopathy. The material was presented as a technical and academic discussion, and it noted that further study is necessary before broad conclusions can be made.",
+    status: "Presentation material on file.",
+    focusTerms: [
+      "Cervical spondylotic myelopathy",
+      "Cervical ULBD",
+      "UBE",
+      "Posterior cervical decompression",
+      "Endoscopic cervical surgery"
+    ]
+  },
+  {
+    title: "Dural Injury and Revision Decision-Making in Endoscopic Spine Surgery",
+    academicFocus:
+      "Complication recognition, dural injury, postoperative neurologic change, revision decision-making.",
+    keyTopics: [
+      "Dural injury",
+      "Postoperative neurologic deterioration",
+      "Postoperative MRI review",
+      "Revision decision-making",
+      "Complication recognition",
+      "Endoscopic spine surgery safety",
+      "Case-based education"
+    ],
+    educationalSummary:
+      "This case-based educational material focused on complication recognition and revision decision-making in endoscopic spine surgery. The educational emphasis was on postoperative neurologic change, imaging review, identification of compressive pathology or procedure-related complications, and careful decision-making regarding re-exploration.",
+    status: "Internal educational presentation material.",
+    focusTerms: [
+      "Dural injury",
+      "Complication recognition",
+      "Revision spine surgery",
+      "Postoperative MRI",
+      "Endoscopic spine surgery safety"
+    ]
+  }
+];
+
 export const academicActivitySections = [
   {
-    title: "Invited lectures",
+    title: "Academic themes",
     items: [
-      "Verified invited lectures will be added after confirmation for public release."
+      "Surgical indications and limitations in endoscopic spine surgery.",
+      "Complication analysis and revision strategy in complex lumbar spine surgery.",
+      "Technical decision-making in UBE-TLIF and endoscopic lumbar fusion.",
+      "Cervical endoscopic decompression, cervical foraminotomy, and cervical spondylotic myelopathy."
     ]
   },
   {
-    title: "Conference presentations",
+    title: "Educational scope",
     items: [
-      "Verified conference presentations will be added after confirmation for public release."
+      "Physician-facing educational summaries based on selected presentation materials.",
+      "Technical discussion of surgical anatomy, operative planning, and imaging-symptom concordance.",
+      "Professional academic archive for lectures, conference presentations, workshops, and surgeon education."
     ]
   },
   {
-    title: "Surgeon education",
+    title: "Public release policy",
     items: [
-      "Verified surgeon education sessions will be added after confirmation for public release."
-    ]
-  },
-  {
-    title: "Workshops",
-    items: [
-      "Verified workshops and training activities will be added after confirmation for public release."
-    ]
-  },
-  {
-    title: "Research interests",
-    items: [
-      "Clinical outcomes and limitations of biportal endoscopic spine surgery.",
-      "Patient selection in endoscopic lumbar fusion.",
-      "Revision strategy for recurrent stenosis and adjacent segment disease."
-    ]
-  },
-  {
-    title: "Publications",
-    items: [
-      "Verified publications, DOI links, abstracts, or technical notes will be added after confirmation for public release."
-    ]
-  },
-  {
-    title: "Teaching topics",
-    items: [
-      "Biportal endoscopic anatomy and orientation.",
-      "UBE-TLIF indications, cage trajectory, and fixation strategy.",
-      "Revision surgery under endoscopic visualization.",
-      "Surgical decision-making in elderly patients."
+      "Raw PowerPoint files are not publicly uploaded or linked.",
+      "Patient-specific clinical image sets are not publicly provided.",
+      "Any future clinical images must be fully de-identified according to the website editorial policy."
     ]
   }
 ];

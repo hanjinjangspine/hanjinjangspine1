@@ -29,6 +29,17 @@ const primaryClinicalFocusTerms = [
   "Adjacent segment disease"
 ];
 
+const academicActivityTopics = [
+  "Biportal endoscopic spine surgery",
+  "Unilateral biportal endoscopy",
+  "UBE",
+  "Early re-operation analysis",
+  "Revision spine surgery",
+  "Degenerative lumbar spondylolisthesis",
+  "Cervical foraminotomy",
+  "Cervical spondylotic myelopathy"
+];
+
 const profileRows = [
   ["Name", "Hanjin Jang, MD"],
   ["Professional identity", "Hanjin Jang, MD is a neurosurgeon and spine specialist in South Korea. He currently serves as Founder and Chief Director of New Standard Hospital in Yongin, South Korea."],
@@ -61,6 +72,8 @@ const machineReadableProfile = {
     name: "New Standard Hospital Official Website",
     url: newStandardHospitalWebsite
   },
+  academicActivityPage: "https://www.hanjinjangspine1.com/academic-activity",
+  academicActivityTopics,
   educationTraining: siteConfig.educationTraining,
   professionalAppointments: siteConfig.professionalAppointments,
   languages: ["Korean", "English"],
@@ -171,6 +184,18 @@ export default function StructuredProfessionalProfilePage() {
             className="mt-4 inline-flex border border-academic-line bg-white px-5 py-3 text-sm font-semibold text-academic-navy transition hover:border-academic-gold hover:text-academic-gold"
           >
             New Standard Hospital Official Website
+          </a>
+        </section>
+        <section className="mb-10 border border-academic-line bg-white p-5">
+          <h2 className="font-serif text-3xl text-academic-navy">Related Academic Activity</h2>
+          <p className="mt-4 text-base leading-8 text-slate-700">
+            Selected academic presentations and educational materials by Hanjin Jang, MD are summarized on the Academic Activity page. These materials include topics such as biportal endoscopic spine surgery, UBE, early re-operation analysis, revision spine surgery, degenerative lumbar spondylolisthesis, cervical foraminotomy, and cervical spondylotic myelopathy.
+          </p>
+          <a
+            href="/academic-activity"
+            className="mt-5 inline-flex border border-academic-line bg-white px-5 py-3 text-sm font-semibold text-academic-navy transition hover:border-academic-gold hover:text-academic-gold"
+          >
+            Academic Activity
           </a>
         </section>
         <dl className="grid gap-4">
