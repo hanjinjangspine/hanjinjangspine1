@@ -6,6 +6,8 @@ type MetadataInput = {
   description: string;
   path?: string;
   keywords?: string[];
+  openGraphTitle?: string;
+  openGraphDescription?: string;
   type?: "website" | "article";
 };
 
@@ -14,10 +16,14 @@ export function createMetadata({
   description,
   path = "/",
   keywords = [],
+  openGraphTitle,
+  openGraphDescription,
   type = "website"
 }: MetadataInput): Metadata {
   const url = absoluteUrl(path);
   const image = absoluteUrl(siteConfig.ogImage);
+  const resolvedOpenGraphTitle = openGraphTitle ?? title;
+  const resolvedOpenGraphDescription = openGraphDescription ?? description;
 
   return {
     metadataBase: new URL(siteConfig.url),
@@ -28,8 +34,8 @@ export function createMetadata({
       canonical: url
     },
     openGraph: {
-      title,
-      description,
+      title: resolvedOpenGraphTitle,
+      description: resolvedOpenGraphDescription,
       url,
       siteName: siteConfig.name,
       type,
@@ -45,8 +51,8 @@ export function createMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title,
-      description,
+      title: resolvedOpenGraphTitle,
+      description: resolvedOpenGraphDescription,
       images: [image]
     },
     robots: {
