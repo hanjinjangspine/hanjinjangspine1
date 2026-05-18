@@ -7,6 +7,7 @@ const staticRoutes = [
   "/about",
   "/clinical-focus",
   "/biportal-endoscopic-spine-surgery",
+  "/articles/lumbar-spinal-stenosis-biportal-endoscopic-decompression",
   "/endoscopic-lumbar-fusion-ube-tlif",
   "/revision-endoscopic-spine-surgery",
   "/case-based-education",
