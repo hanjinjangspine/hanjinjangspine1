@@ -1,4 +1,5 @@
 import type { ClinicalFocusItem } from "@/lib/content";
+import Link from "next/link";
 
 const fields = [
   ["Clinical problem", "clinicalProblem"],
@@ -30,6 +31,25 @@ export function ClinicalFocusSection({ item }: ClinicalFocusSectionProps) {
               <p className="mt-2 text-sm leading-7 text-slate-600">{item[key]}</p>
             </article>
           ))}
+          {item.relatedResources ? (
+            <article className="border-l-2 border-academic-gold pl-5">
+              <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-academic-charcoal">
+                Related clinical review
+              </h3>
+              <div className="mt-3 grid gap-3">
+                {item.relatedResources.map((resource) => (
+                  <Link
+                    key={resource.href}
+                    href={resource.href}
+                    className="block border border-academic-line bg-white p-4 transition hover:border-academic-gold"
+                  >
+                    <p className="font-serif text-xl leading-snug text-academic-navy">{resource.title}</p>
+                    <p className="mt-2 text-sm leading-7 text-slate-600">{resource.description}</p>
+                  </Link>
+                ))}
+              </div>
+            </article>
+          ) : null}
         </div>
       </div>
     </section>

@@ -19,6 +19,11 @@ export type ClinicalFocusItem = {
   limitations: string;
   risks: string;
   educationalSummary: string;
+  relatedResources?: {
+    title: string;
+    description: string;
+    href: string;
+  }[];
 };
 
 export const clinicalFocusItems: ClinicalFocusItem[] = [
@@ -140,7 +145,15 @@ export const clinicalFocusItems: ClinicalFocusItem[] = [
     risks:
       "Risks include dural tear, nerve injury, hematoma, infection, instability, residual stenosis, and recurrent stenosis.",
     educationalSummary:
-      "In lumbar stenosis, the operative question is not only whether stenosis exists, but which compression explains the patient's symptoms."
+      "In lumbar stenosis, the operative question is not only whether stenosis exists, but which compression explains the patient's symptoms.",
+    relatedResources: [
+      {
+        title: "Clinical Perspectives on Lumbar Spinal Stenosis",
+        description:
+          "Diagnosis, staging, and the role of biportal endoscopic decompression in selected patients.",
+        href: "/articles/lumbar-spinal-stenosis-biportal-endoscopic-decompression"
+      }
+    ]
   },
   {
     title: "Degenerative spondylolisthesis",

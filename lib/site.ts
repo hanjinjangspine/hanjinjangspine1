@@ -92,6 +92,7 @@ export const siteConfig = {
   navItems: [
     { href: "/about", label: "About" },
     { href: "/clinical-focus", label: "Clinical Focus" },
+    { href: "/articles/lumbar-spinal-stenosis-biportal-endoscopic-decompression", label: "Clinical Reviews" },
     { href: "/biportal-endoscopic-spine-surgery", label: "Biportal Endoscopy" },
     { href: "/endoscopic-lumbar-fusion-ube-tlif", label: "UBE-TLIF" },
     { href: "/revision-endoscopic-spine-surgery", label: "Revision Surgery" },

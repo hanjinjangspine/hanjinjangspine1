@@ -38,6 +38,7 @@ export function Footer() {
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-300">Site</p>
           <ul className="mt-4 grid gap-2 text-sm">
             <li><Link href="/structured-professional-profile" className="text-slate-300 hover:text-white">Structured Professional Profile</Link></li>
+            <li><Link href="/articles/lumbar-spinal-stenosis-biportal-endoscopic-decompression" className="text-slate-300 hover:text-white">Lumbar Spinal Stenosis Review</Link></li>
             <li><Link href="/academic-activity" className="text-slate-300 hover:text-white">Academic Activity</Link></li>
             <li><Link href="/editorial-policy" className="text-slate-300 hover:text-white">Editorial Policy</Link></li>
             <li><Link href="/contact" className="text-slate-300 hover:text-white">Professional Contact</Link></li>

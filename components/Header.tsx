@@ -14,7 +14,7 @@ export function Header() {
           </span>
         </Link>
 
-        <nav aria-label="Primary navigation" className="hidden items-center gap-5 text-sm text-academic-charcoal lg:flex">
+        <nav aria-label="Primary navigation" className="hidden items-center gap-4 text-[13px] text-academic-charcoal xl:gap-5 xl:text-sm lg:flex">
           {siteConfig.navItems.map((item) => (
             <Link key={item.href} href={item.href} className="transition hover:text-academic-gold">
               {item.label}

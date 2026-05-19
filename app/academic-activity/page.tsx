@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PageHeader } from "@/components/PageHeader";
 import { academicActivitySections, academicPresentationRecords } from "@/lib/content";
@@ -64,6 +65,22 @@ export default function AcademicActivityPage() {
         <aside className="mb-10 border-l-4 border-academic-gold bg-academic-panel p-5 text-sm leading-7 text-slate-700">
           This page summarizes selected presentation materials. Raw slide files and patient-specific image sets are not publicly provided. Any clinical images used in future updates must be fully de-identified according to the website editorial policy.
         </aside>
+
+        <article className="mb-10 border border-academic-line bg-white p-6">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-academic-gold">Related Clinical Review</p>
+          <h2 className="mt-3 font-serif text-3xl text-academic-navy">
+            Clinical Perspectives on Lumbar Spinal Stenosis
+          </h2>
+          <p className="mt-4 text-base leading-8 text-slate-600">
+            A clinical review on diagnosis, staging, and the role of biportal endoscopic decompression in selected patients.
+          </p>
+          <Link
+            href="/articles/lumbar-spinal-stenosis-biportal-endoscopic-decompression"
+            className="mt-5 inline-flex border border-academic-navy px-4 py-2 text-sm font-semibold text-academic-navy transition hover:bg-academic-navy hover:text-white"
+          >
+            Read the clinical review
+          </Link>
+        </article>
 
         <div className="mb-5">
           <h2 className="font-serif text-3xl text-academic-navy">Presentation Archive</h2>

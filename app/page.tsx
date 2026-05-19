@@ -70,6 +70,15 @@ const homeLinks = [
   }
 ];
 
+const featuredClinicalReviews = [
+  {
+    title: "Clinical Perspectives on Lumbar Spinal Stenosis",
+    description: "Diagnosis, staging, and the role of biportal endoscopic decompression in selected patients.",
+    href: "/articles/lumbar-spinal-stenosis-biportal-endoscopic-decompression",
+    meta: "Clinical Review"
+  }
+];
+
 export default function Home() {
   return (
     <>
@@ -120,6 +129,29 @@ export default function Home() {
               ))}
             </ul>
           </article>
+        </div>
+      </section>
+
+      <section className="border-t border-academic-line bg-white">
+        <div className="mx-auto max-w-6xl px-5 py-14">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-academic-gold">
+            Clinical Reviews
+          </p>
+          <h2 className="mt-3 font-serif text-3xl text-academic-navy">Selected academic review articles</h2>
+          <p className="mt-4 max-w-3xl text-base leading-8 text-slate-600">
+            Physician-authored educational reviews for clinical orientation and professional reference.
+          </p>
+          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {featuredClinicalReviews.map((article) => (
+              <AcademicCard
+                key={article.href}
+                title={article.title}
+                description={article.description}
+                href={article.href}
+                meta={article.meta}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
