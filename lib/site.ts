@@ -107,3 +107,65 @@ export function absoluteUrl(path = "/") {
   const cleanPath = path.startsWith("/") ? path : `/${path}`;
   return `${base}${cleanPath}`;
 }
+
+export type NewStandardPatientResource = {
+  title: string;
+  description: string;
+  href: string;
+  topic: string;
+};
+
+export const newStandardPatientResources: NewStandardPatientResource[] = [
+  {
+    title: "New Standard Hospital Spine Center",
+    description: "Official New Standard Hospital patient information about the spine center and Korean patient-facing care pathways.",
+    href: "https://new-standard.co.kr/sub/r30/spine-center.php",
+    topic: "spine-center"
+  },
+  {
+    title: "Advanced Endoscopic Spine Surgery Scope",
+    description: "Patient-facing Korean information about advanced endoscopic spine surgery scope and individualized evaluation.",
+    href: "https://new-standard.co.kr/sub/r40/advanced-endoscopic-spine-surgery.php",
+    topic: "advanced-endoscopy"
+  },
+  {
+    title: "UBE-TLIF / Endoscopic Lumbar Fusion Patient Information",
+    description: "Patient-facing Korean information about endoscopic lumbar fusion, UBE-TLIF, and treatment decision-making.",
+    href: "https://new-standard.co.kr/sub/r40/ube-tlif-endoscopic-fusion.php",
+    topic: "ube-tlif"
+  },
+  {
+    title: "Revision Endoscopic Spine Surgery Patient Information",
+    description: "Patient-facing Korean information about revision endoscopic spine surgery and symptom re-evaluation after prior surgery.",
+    href: "https://new-standard.co.kr/sub/r40/revision-endoscopic-spine-surgery.php",
+    topic: "revision"
+  },
+  {
+    title: "Cervical Myelopathy / Cervical Endoscopic Decompression Patient Information",
+    description: "Patient-facing Korean information about cervical myelopathy, hand function changes, gait symptoms, and decompression evaluation.",
+    href: "https://new-standard.co.kr/sub/r40/cervical-endoscopic-decompression.php",
+    topic: "cervical-myelopathy"
+  },
+  {
+    title: "Postoperative Numbness / Pain Re-evaluation",
+    description: "Patient-facing Korean information about postoperative numbness, pain, gait symptoms, and re-evaluation after spine surgery.",
+    href: "https://new-standard.co.kr/sub/r70/postoperative-numbness-after-spine-surgery.php",
+    topic: "postoperative-re-evaluation"
+  },
+  {
+    title: "Elderly Spine Surgery Decision-Making",
+    description: "Patient-facing Korean information about elderly spine surgery decision-making, walking function, neurologic symptoms, and medical risk review.",
+    href: "https://new-standard.co.kr/sub/r70/elderly-spine-surgery-decision.php",
+    topic: "elderly-decision"
+  },
+  {
+    title: "Lumbar Spinal Stenosis Patient Information",
+    description: "Official New Standard Hospital patient information about lumbar spinal stenosis, leg numbness, and walking limitation.",
+    href: "https://new-standard.co.kr/sub/r30/spinal-stenosis.php",
+    topic: "lumbar-stenosis"
+  }
+];
+
+export function getNewStandardPatientResources(topics: readonly string[]) {
+  return newStandardPatientResources.filter((resource) => topics.includes(resource.topic));
+}

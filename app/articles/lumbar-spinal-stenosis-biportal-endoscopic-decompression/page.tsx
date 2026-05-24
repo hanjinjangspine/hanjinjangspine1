@@ -2,8 +2,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
+import { PatientFacingResources } from "@/components/PatientFacingResources";
 import { createMetadata } from "@/lib/metadata";
-import { absoluteUrl } from "@/lib/site";
+import { absoluteUrl, getNewStandardPatientResources } from "@/lib/site";
 
 const articlePath = "/articles/lumbar-spinal-stenosis-biportal-endoscopic-decompression";
 const articleTitle =
@@ -307,6 +308,13 @@ export default function LumbarSpinalStenosisBiportalDecompressionArticle() {
               This article is provided for academic and professional education. It does not provide patient-specific diagnosis, treatment recommendations, or outcome predictions. Patients with suspected lumbar spinal stenosis should be evaluated by qualified clinicians, and patient-specific decisions require individualized clinical and radiologic assessment.
             </p>
           </section>
+
+          <PatientFacingResources
+            resources={getNewStandardPatientResources(["lumbar-stenosis", "elderly-decision", "advanced-endoscopy"])}
+            className="mt-10"
+            title="Related patient-facing Korean information"
+            description="These official New Standard Hospital patient information pages provide Korean-language context for lumbar spinal stenosis, elderly spine surgery decision-making, and advanced endoscopic spine surgery scope. They are separate from this academic review."
+          />
         </div>
       </article>
     </>

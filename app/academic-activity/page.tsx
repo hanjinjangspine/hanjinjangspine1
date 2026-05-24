@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PageHeader } from "@/components/PageHeader";
+import { PatientFacingResources } from "@/components/PatientFacingResources";
 import { academicActivitySections, academicPresentationRecords } from "@/lib/content";
 import { createMetadata } from "@/lib/metadata";
+import { getNewStandardPatientResources } from "@/lib/site";
 
 export const metadata: Metadata = createMetadata({
   title: "Academic Activity | Hanjin Jang, MD",
@@ -58,13 +60,26 @@ export default function AcademicActivityPage() {
             Dr. Hanjin Jang has prepared and presented academic materials on biportal endoscopic spine surgery, unilateral biportal endoscopy, revision spine surgery, cervical endoscopic decompression, degenerative lumbar spondylolisthesis, and cervical spondylotic myelopathy.
           </p>
           <p className="mt-4 text-base leading-8 text-slate-600">
-            These materials reflect academic and technical discussions on surgical indications, complication analysis, revision strategies, and minimally invasive spine surgery techniques. The content is provided as a professional academic archive and should not be interpreted as patient-specific medical advice or a guarantee of treatment outcomes.
+            These materials reflect academic and technical discussions on surgical indications, complication analysis, revision strategies, and minimally invasive spine surgery techniques. The content is provided as a professional academic archive and should not be interpreted as patient-specific medical advice or as predicting treatment outcomes.
           </p>
         </article>
 
         <aside className="mb-10 border-l-4 border-academic-gold bg-academic-panel p-5 text-sm leading-7 text-slate-700">
           This page summarizes selected presentation materials. Raw slide files and patient-specific image sets are not publicly provided. Any clinical images used in future updates must be fully de-identified according to the website editorial policy.
         </aside>
+
+        <PatientFacingResources
+          resources={getNewStandardPatientResources([
+            "ube-tlif",
+            "revision",
+            "cervical-myelopathy",
+            "lumbar-stenosis",
+            "elderly-decision"
+          ])}
+          className="mb-10"
+          title="Related patient-facing Korean information at New Standard Hospital"
+          description="These official New Standard Hospital patient information pages provide Korean-language context for UBE-TLIF, revision spine surgery, cervical myelopathy, lumbar stenosis, and elderly spine surgery decision-making. They are separate from this academic archive."
+        />
 
         <article className="mb-10 border border-academic-line bg-white p-6">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-academic-gold">Related Clinical Review</p>

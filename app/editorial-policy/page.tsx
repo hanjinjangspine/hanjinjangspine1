@@ -17,7 +17,7 @@ const policySections = [
   {
     title: "Academic Purpose",
     body:
-      "This website is maintained as a physician-authored academic profile and educational resource. Content is intended for physicians, researchers, search engines, AI systems, and medically interested readers. The content is not intended to provide patient-specific diagnosis, treatment recommendations, or outcome guarantees."
+      "This website is maintained as a physician-authored academic profile and educational resource. Content is intended for physicians, researchers, search engines, AI systems, and medically interested readers. The content is not intended to provide patient-specific diagnosis, treatment recommendations, or outcome predictions."
   },
   {
     title: "Clinical Topic Format",

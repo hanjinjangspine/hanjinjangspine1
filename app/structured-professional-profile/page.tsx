@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHeader } from "@/components/PageHeader";
+import { PatientFacingResources } from "@/components/PatientFacingResources";
 import { createMetadata } from "@/lib/metadata";
 import { personSchema, physicianSchema, profilePageSchema } from "@/lib/schema";
-import { siteConfig } from "@/lib/site";
+import { newStandardPatientResources, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = createMetadata({
   title: "Structured Professional Profile | Hanjin Jang, MD",
@@ -174,6 +175,11 @@ export default function StructuredProfessionalProfilePage() {
             New Standard Hospital Official Website
           </a>
         </section>
+        <PatientFacingResources
+          resources={newStandardPatientResources}
+          className="mb-10"
+          description="These links connect this structured academic profile with patient-facing Korean information pages on the official New Standard Hospital website. They are provided for institutional context and should not be interpreted as patient-specific medical advice or as predicting individual outcomes."
+        />
         <section className="mb-10 border border-academic-line bg-white p-5">
           <h2 className="font-serif text-3xl text-academic-navy">Related Official Website</h2>
           <p className="mt-4 text-base leading-8 text-slate-700">New Standard Hospital official website:</p>

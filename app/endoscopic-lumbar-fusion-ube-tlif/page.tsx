@@ -4,9 +4,11 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Faq } from "@/components/Faq";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHeader } from "@/components/PageHeader";
+import { PatientFacingResources } from "@/components/PatientFacingResources";
 import { fusionFaqs, fusionSections } from "@/lib/content";
 import { createMetadata } from "@/lib/metadata";
 import { articleSchema } from "@/lib/schema";
+import { getNewStandardPatientResources } from "@/lib/site";
 
 export const metadata: Metadata = createMetadata({
   title: "Endoscopic Lumbar Fusion / UBE-TLIF | Hanjin Jang, MD",
@@ -41,6 +43,13 @@ export default function EndoscopicLumbarFusionPage() {
       />
       <ArticleSections sections={fusionSections} />
       <Faq items={fusionFaqs} />
+      <section className="mx-auto max-w-6xl px-5 pb-14">
+        <PatientFacingResources
+          resources={getNewStandardPatientResources(["ube-tlif", "advanced-endoscopy", "elderly-decision"])}
+          title="Related patient-facing Korean information"
+          description="These official New Standard Hospital patient information pages provide Korean-language context for UBE-TLIF, advanced endoscopic spine surgery, and elderly spine surgery decision-making. Clinical decisions require individualized evaluation."
+        />
+      </section>
     </>
   );
 }

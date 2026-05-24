@@ -69,7 +69,7 @@ export default function ContactPage() {
             Visit New Standard Hospital Official Website
           </a>
           <p className="mt-6 text-sm leading-7 text-slate-600">
-            This website is an academic physician profile and physician-authored educational resource. It is not intended for patient-specific medical advice or outcome guarantees.
+            This website is an academic physician profile and physician-authored educational resource. It is not intended for patient-specific medical advice or outcome predictions.
           </p>
         </article>
         <div className="grid gap-6 md:grid-cols-2">

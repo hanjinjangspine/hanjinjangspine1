@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PageHeader } from "@/components/PageHeader";
+import { PatientFacingResources } from "@/components/PatientFacingResources";
 import {
   clinicalImageDeidentificationChecklist,
   educationalCases,
   type CaseExample
 } from "@/lib/content";
 import { createMetadata } from "@/lib/metadata";
+import { getNewStandardPatientResources } from "@/lib/site";
 
 export const metadata: Metadata = createMetadata({
   title: "Case-Based Education | Endoscopic Spine Surgery",
@@ -55,7 +57,7 @@ export default function CaseBasedEducationPage() {
             De-identification Notice
           </p>
           <p className="mt-3 text-sm leading-7 text-slate-600">
-            All educational cases on this page are de-identified and presented for academic discussion. They are not patient testimonials, treatment guarantees, or advertisements for a particular outcome. Clinical decisions require individualized evaluation by a qualified physician.
+            All educational cases on this page are de-identified and presented for academic discussion. They are not patient testimonials, outcome predictions, or advertisements for a particular outcome. Clinical decisions require individualized evaluation by a qualified physician.
           </p>
           <div className="mt-6 border-t border-academic-line pt-5">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-academic-gold">
@@ -68,6 +70,18 @@ export default function CaseBasedEducationPage() {
             </ul>
           </div>
         </div>
+        <PatientFacingResources
+          resources={getNewStandardPatientResources([
+            "spine-center",
+            "advanced-endoscopy",
+            "ube-tlif",
+            "revision",
+            "cervical-myelopathy"
+          ])}
+          className="mb-8"
+          title="Related patient-facing Korean information"
+          description="For patient-facing Korean information about related conditions and treatment decision-making, see the official New Standard Hospital pages below. These links are provided for institutional context and are separate from the de-identified educational case materials on this site."
+        />
         <div className="grid gap-8">
           {educationalCases.map((caseExample) => {
             const images = caseExample.images ?? [];

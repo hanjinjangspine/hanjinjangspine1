@@ -4,9 +4,11 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Faq } from "@/components/Faq";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHeader } from "@/components/PageHeader";
+import { PatientFacingResources } from "@/components/PatientFacingResources";
 import { revisionFaqs, revisionSections } from "@/lib/content";
 import { createMetadata } from "@/lib/metadata";
 import { articleSchema } from "@/lib/schema";
+import { getNewStandardPatientResources } from "@/lib/site";
 
 export const metadata: Metadata = createMetadata({
   title: "Revision Endoscopic Spine Surgery | Hanjin Jang, MD",
@@ -41,6 +43,13 @@ export default function RevisionEndoscopicSpineSurgeryPage() {
       />
       <ArticleSections sections={revisionSections} />
       <Faq items={revisionFaqs} />
+      <section className="mx-auto max-w-6xl px-5 pb-14">
+        <PatientFacingResources
+          resources={getNewStandardPatientResources(["revision", "postoperative-re-evaluation", "advanced-endoscopy"])}
+          title="Related patient-facing Korean information"
+          description="These official New Standard Hospital patient information pages provide Korean-language context for revision spine surgery, postoperative symptom re-evaluation, and advanced endoscopic spine surgery scope. Clinical decisions require individualized evaluation."
+        />
+      </section>
     </>
   );
 }

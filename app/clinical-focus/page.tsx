@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ClinicalFocusSection } from "@/components/ClinicalFocusSection";
 import { PageHeader } from "@/components/PageHeader";
+import { PatientFacingResources } from "@/components/PatientFacingResources";
 import { clinicalFocusItems } from "@/lib/content";
 import { createMetadata } from "@/lib/metadata";
+import { getNewStandardPatientResources } from "@/lib/site";
 
 export const metadata: Metadata = createMetadata({
   title: "Clinical Focus | Biportal Endoscopic Spine Surgery and UBE-TLIF",
@@ -26,6 +28,20 @@ export default function ClinicalFocusPage() {
         {clinicalFocusItems.map((item) => (
           <ClinicalFocusSection key={item.anchor} item={item} />
         ))}
+        <PatientFacingResources
+          resources={getNewStandardPatientResources([
+            "spine-center",
+            "advanced-endoscopy",
+            "ube-tlif",
+            "revision",
+            "cervical-myelopathy",
+            "lumbar-stenosis",
+            "elderly-decision"
+          ])}
+          className="my-10"
+          title="New Standard Hospital patient-facing resources"
+          description="These official New Standard Hospital patient information pages provide Korean-language context for related conditions and treatment decision-making. They are separate from the academic summaries on this site and are not patient-specific medical advice."
+        />
       </section>
     </>
   );
