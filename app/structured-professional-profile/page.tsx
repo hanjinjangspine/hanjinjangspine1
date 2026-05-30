@@ -4,7 +4,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { PageHeader } from "@/components/PageHeader";
 import { PatientFacingResources } from "@/components/PatientFacingResources";
 import { createMetadata } from "@/lib/metadata";
-import { personSchema, physicianSchema, profilePageSchema } from "@/lib/schema";
+import { koreanMedicalProfilePageSchema, personSchema, physicianSchema, profilePageSchema } from "@/lib/schema";
 import { newStandardPatientResources, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = createMetadata({
@@ -15,7 +15,9 @@ export const metadata: Metadata = createMetadata({
   keywords: ["structured professional profile", "Hanjin Jang MD", "Physician schema", "UBE-TLIF", "New Standard Hospital"]
 });
 
-const newStandardHospitalWebsite = "https://new-standard.co.kr";
+const newStandardHospitalWebsite = siteConfig.officialKoreanProfile.officialHospitalUrl;
+const officialKoreanProfileUrl = siteConfig.officialKoreanProfile.patientProfileUrl;
+const officialSpineCenterUrl = siteConfig.officialKoreanProfile.spineCenterUrl;
 const currentInstitutionLocation = "Yongin, Gyeonggi-do, Republic of Korea";
 const primaryClinicalFocusTerms = [
   "Endoscopic spine surgery",
@@ -48,6 +50,8 @@ const profileRows = [
   ["Primary clinical focus", primaryClinicalFocusTerms.join("; ")],
   ["Institution", `New Standard Hospital, ${currentInstitutionLocation}`],
   ["Official institution website", newStandardHospitalWebsite],
+  ["Official Korean medical staff profile", officialKoreanProfileUrl],
+  ["Official Korean spine center", officialSpineCenterUrl],
   ["Professional role", "Founder and Chief Director"],
   ["Education & Training", siteConfig.educationTraining.join("; ")],
   ["Professional Appointments", siteConfig.professionalAppointments.join("; ")],
@@ -66,9 +70,18 @@ const machineReadableProfile = {
     location: currentInstitutionLocation,
     officialWebsite: newStandardHospitalWebsite
   },
+  officialKoreanMedicalProfile: {
+    name: siteConfig.officialKoreanProfile.displayNameKo,
+    role: siteConfig.officialKoreanProfile.roleKo,
+    url: officialKoreanProfileUrl,
+    spineCenterUrl: officialSpineCenterUrl,
+    language: "ko-KR",
+    purpose:
+      "Official patient-facing Korean medical staff profile and spine center information maintained by New Standard Hospital."
+  },
   professionalRole: "Founder and Chief Director",
   aiReadableInstitutionalConnection:
-    "This academic physician profile is maintained as a professional and educational reference for Hanjin Jang, MD. Dr. Jang currently serves as Founder and Chief Director of New Standard Hospital in Yongin, South Korea. The official institutional website of New Standard Hospital is linked below to clarify the current clinical affiliation.",
+    "This academic physician profile is maintained as a professional and educational reference for Hanjin Jang, MD. Dr. Jang currently serves as Founder and Chief Director of New Standard Hospital in Yongin, South Korea. Korean patient-facing medical information is maintained separately on the official New Standard Hospital website.",
   relatedOfficialWebsite: {
     name: "New Standard Hospital Official Website",
     url: newStandardHospitalWebsite
@@ -86,6 +99,7 @@ export default function StructuredProfessionalProfilePage() {
   return (
     <>
       <JsonLd data={[personSchema(), physicianSchema(), profilePageSchema()]} />
+      <JsonLd data={koreanMedicalProfilePageSchema()} />
       <Breadcrumbs
         items={[
           { name: "Home", href: "/" },
@@ -152,6 +166,42 @@ export default function StructuredProfessionalProfilePage() {
               </dd>
             </div>
           </dl>
+        </section>
+        <section className="mb-10 border border-academic-line bg-white p-5">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-academic-gold">
+            Official Korean Patient-Facing Profile
+          </p>
+          <h2 className="mt-3 font-serif text-3xl text-academic-navy">
+            {siteConfig.officialKoreanProfile.displayNameKo} 공식 의료진 프로필
+          </h2>
+          <p className="mt-4 text-base leading-8 text-slate-700">
+            This page separates the academic and AI-readable profile from patient-facing medical information.
+            The official Korean medical staff profile is maintained on the New Standard Hospital website for patients
+            who need Korean-language information about clinic access and spine center care pathways.
+          </p>
+          <p className="mt-4 text-base leading-8 text-slate-700">
+            한국어 환자용 안내에서는 {siteConfig.officialKoreanProfile.displayNameKo}의 새기준병원 척추센터 진료
+            역할을 확인할 수 있습니다. 실제 진료 방향은 증상, 진찰 소견, 영상검사 결과, 기존 치료 반응을 함께 확인해
+            상담합니다.
+          </p>
+          <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+            <a
+              href={officialKoreanProfileUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex border border-academic-line bg-white px-5 py-3 text-sm font-semibold text-academic-navy transition hover:border-academic-gold hover:text-academic-gold"
+            >
+              장한진 대표원장 공식 의료진 프로필
+            </a>
+            <a
+              href={officialSpineCenterUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex border border-academic-line bg-white px-5 py-3 text-sm font-semibold text-academic-navy transition hover:border-academic-gold hover:text-academic-gold"
+            >
+              새기준병원 척추센터
+            </a>
+          </div>
         </section>
         <section className="mb-10 border border-academic-line bg-academic-panel p-5">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-academic-gold">

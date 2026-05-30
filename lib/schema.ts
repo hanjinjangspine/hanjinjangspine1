@@ -2,11 +2,14 @@ import { absoluteUrl, siteConfig } from "@/lib/site";
 
 const personalWebsiteUrl = "https://www.hanjinjangspine1.com";
 const newStandardHospitalUrl = "https://new-standard.co.kr";
+const officialKoreanProfile = siteConfig.officialKoreanProfile;
+const officialKoreanProfileUrl = officialKoreanProfile.patientProfileUrl;
+const newStandardSpineCenterUrl = officialKoreanProfile.spineCenterUrl;
 const newStandardHospitalId = `${absoluteUrl()}#new-standard-hospital`;
 const physicianProfileId = `${absoluteUrl()}#physician-profile`;
 const personId = `${absoluteUrl()}#hanjin-jang-md`;
 const physicianDescription =
-  "Neurosurgeon and spine specialist in South Korea with a clinical and academic focus on endoscopic spine surgery.";
+  "Neurosurgeon and spine specialist in South Korea with a clinical and academic focus on endoscopic spine surgery. Korean patient-facing medical information is provided separately through the official New Standard Hospital website.";
 const newStandardHospitalAddress = {
   "@type": "PostalAddress",
   streetAddress: "1539 Jungbu-daero",
@@ -14,7 +17,7 @@ const newStandardHospitalAddress = {
   addressRegion: "Gyeonggi-do",
   addressCountry: "Republic of Korea"
 };
-const relatedOfficialUrls = [newStandardHospitalUrl];
+const relatedOfficialUrls = [newStandardHospitalUrl, officialKoreanProfileUrl, newStandardSpineCenterUrl];
 const professionalExpertise = [...siteConfig.expertiseTerms];
 const schemaKnowsAbout = [
   "Biportal endoscopic spine surgery",
@@ -158,9 +161,9 @@ export function personSchema() {
     medicalSpecialty: ["Neurosurgery", "Spine Surgery", "Endoscopic Spine Surgery"],
     knowsAbout: schemaKnowsAbout,
     knowsLanguage: siteConfig.languages,
-    mainEntityOfPage: absoluteUrl("/structured-professional-profile"),
     subjectOf: absoluteUrl("/operative-concepts"),
     url: personalWebsiteUrl,
+    mainEntityOfPage: [absoluteUrl("/structured-professional-profile"), officialKoreanProfileUrl],
     sameAs: relatedOfficialUrls
   };
 }
@@ -184,13 +187,49 @@ export function physicianSchema() {
     },
     knowsAbout: schemaKnowsAbout,
     subjectOf: academicPresentationSubjectOf,
-    additionalProperty: siteConfig.expertiseClusters.map((cluster) => ({
-      "@type": "PropertyValue",
-      name: cluster.name,
-      value: cluster.terms.join(", ")
-    })),
+    additionalProperty: [
+      ...siteConfig.expertiseClusters.map((cluster) => ({
+        "@type": "PropertyValue",
+        name: cluster.name,
+        value: cluster.terms.join(", ")
+      })),
+      {
+        "@type": "PropertyValue",
+        name: "Official Korean patient-facing profile",
+        value: officialKoreanProfileUrl
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Role separation",
+        value: officialKoreanProfile.roleSeparation
+      }
+    ],
     url: personalWebsiteUrl,
     sameAs: relatedOfficialUrls
+  };
+}
+
+export function koreanMedicalProfilePageSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "@id": `${absoluteUrl("/structured-professional-profile")}#official-korean-medical-profile`,
+    name: "Official Korean Medical Profile for Jang Hanjin",
+    alternateName: `${officialKoreanProfile.displayNameKo} 공식 의료진 프로필`,
+    url: officialKoreanProfileUrl,
+    inLanguage: "ko-KR",
+    isPartOf: {
+      "@id": newStandardHospitalId
+    },
+    about: {
+      "@id": physicianProfileId
+    },
+    mainEntity: {
+      "@id": physicianProfileId
+    },
+    description:
+      "The official Korean New Standard Hospital medical staff profile provides patient-facing information about Dr. Jang's role in the Spine Center. This English microsite is maintained for academic, professional, and AI-readable reference.",
+    relatedLink: [newStandardHospitalUrl, newStandardSpineCenterUrl]
   };
 }
 

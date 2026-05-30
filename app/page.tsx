@@ -79,6 +79,27 @@ const featuredClinicalReviews = [
   }
 ];
 
+const officialKoreanResources = [
+  {
+    title: "장한진 대표원장 공식 의료진 프로필",
+    description:
+      "새기준병원 본원에서 제공하는 한국어 환자용 의료진 소개 페이지입니다.",
+    href: siteConfig.officialKoreanProfile.patientProfileUrl
+  },
+  {
+    title: "새기준병원 척추센터",
+    description:
+      "척추관협착증, 허리디스크, 다리저림, 보행장애 등 환자용 진료 안내를 확인할 수 있습니다.",
+    href: siteConfig.officialKoreanProfile.spineCenterUrl
+  },
+  {
+    title: "새기준병원 공식 홈페이지",
+    description:
+      "진료시간, 오시는 길, 본원 의료진과 센터별 안내는 공식 병원 홈페이지에서 확인할 수 있습니다.",
+    href: siteConfig.officialKoreanProfile.officialHospitalUrl
+  }
+];
+
 export default function Home() {
   return (
     <>
@@ -129,6 +150,48 @@ export default function Home() {
               ))}
             </ul>
           </article>
+        </div>
+      </section>
+
+      <section className="border-t border-academic-line bg-white">
+        <div className="mx-auto max-w-6xl px-5 py-14">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-academic-gold">
+            Official Korean Medical Profile
+          </p>
+          <div className="mt-3 grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+            <div>
+              <h2 className="font-serif text-3xl text-academic-navy">
+                한국어 환자용 진료 안내는 새기준병원 공식 홈페이지에서 확인합니다
+              </h2>
+              <p className="mt-4 text-base leading-8 text-slate-700">
+                This English microsite is an academic and AI-readable professional profile for Hanjin Jang, MD.
+                Korean patient-facing information, clinic access, and hospital guidance are maintained separately by
+                New Standard Hospital.
+              </p>
+              <p className="mt-4 text-base leading-8 text-slate-700">
+                {siteConfig.officialKoreanProfile.displayNameKo} is presented on the official New Standard Hospital
+                website as {siteConfig.officialKoreanProfile.roleKo}. Clinical decisions depend on symptoms,
+                neurologic findings, imaging studies, and prior treatment response.
+              </p>
+            </div>
+            <div className="grid gap-4">
+              {officialKoreanResources.map((resource) => (
+                <a
+                  key={resource.href}
+                  href={resource.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border border-academic-line bg-academic-panel p-5 transition hover:border-academic-gold"
+                >
+                  <span className="text-xs font-semibold uppercase tracking-[0.16em] text-academic-gold">
+                    New Standard Hospital
+                  </span>
+                  <strong className="mt-2 block font-serif text-2xl text-academic-navy">{resource.title}</strong>
+                  <span className="mt-3 block text-sm leading-7 text-slate-600">{resource.description}</span>
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

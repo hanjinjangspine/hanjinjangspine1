@@ -31,6 +31,20 @@ export const siteConfig = {
     "Vice President of Medical Affairs, Myongju Hospital",
     "Founder and Chief Director, New Standard Hospital"
   ],
+  officialKoreanProfile: {
+    nameKo: "장한진",
+    displayNameKo: "장한진 대표원장",
+    roleKo: "새기준병원 대표원장 · 신경외과 전문의",
+    hospitalNameKo: "새기준병원",
+    patientProfileUrl: "https://new-standard.co.kr/sub/r10/jang-hanjin.php",
+    spineCenterUrl: "https://new-standard.co.kr/sub/r30/spine-center.php",
+    officialHospitalUrl: "https://new-standard.co.kr",
+    officialHospitalLocationKo: "경기도 용인시 처인구 중부대로 1539",
+    roleSeparation:
+      "This website is an English academic and AI-readable professional profile. Korean patient-facing medical information is provided on the official New Standard Hospital website.",
+    patientFacingSummary:
+      "The official Korean medical staff profile explains Dr. Hanjin Jang's patient-facing role at New Standard Hospital Spine Center, including how symptoms, neurologic findings, imaging studies, and prior treatment response are reviewed for clinical decision-making."
+  },
   expertiseTerms: [
     "Endoscopic spine surgery",
     "Biportal endoscopic spine surgery",
@@ -116,6 +130,13 @@ export type NewStandardPatientResource = {
 };
 
 export const newStandardPatientResources: NewStandardPatientResource[] = [
+  {
+    title: "Official Korean Medical Staff Profile",
+    description:
+      "Korean patient-facing profile for Jang Hanjin, Chief Director and neurosurgeon at New Standard Hospital Spine Center.",
+    href: siteConfig.officialKoreanProfile.patientProfileUrl,
+    topic: "official-korean-profile"
+  },
   {
     title: "New Standard Hospital Spine Center",
     description: "Official New Standard Hospital patient information about the spine center and Korean patient-facing care pathways.",
