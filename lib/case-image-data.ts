@@ -399,5 +399,51 @@ export const caseImageData = {
         height: 1130
       }
     ]
+  },
+
+  case07: {
+    imagesAvailable: true,
+    images: [
+      {
+        src: "/cases/case-07-ube-tlif-l45-l5s1/images/preop-xray-selected-panel.jpg",
+        type: "preoperative",
+        caption:
+          "De-identified preoperative radiograph demonstrating spondylolisthesis and segmental instability at L4-5 and bilateral foraminal stenosis with severe facet arthropathy at L5-S1.",
+        alt:
+          "De-identified preoperative radiograph for post-laminectomy recurrent stenosis and bilateral foraminal stenosis educational case.",
+        width: 1280,
+        height: 510
+      },
+      {
+        src: "/cases/case-07-ube-tlif-l45-l5s1/images/preop-mri-selected-panel.jpg",
+        type: "preoperative",
+        caption:
+          "De-identified preoperative MRI demonstrating recurrent/residual stenosis at L4-5 and bilateral foraminal stenosis at L5-S1, used for operative planning of UBE-TLIF with bilateral decompression at both levels.",
+        alt:
+          "De-identified preoperative MRI for post-laminectomy recurrent stenosis and bilateral foraminal stenosis educational case.",
+        width: 1280,
+        height: 1030
+      },
+      {
+        src: "/cases/case-07-ube-tlif-l45-l5s1/images/postop-xray-selected-panel.jpg",
+        type: "postoperative",
+        caption:
+          "De-identified postoperative radiograph after UBE-TLIF at L4-5 and L5-S1 with bilateral decompression and posterior stabilization.",
+        alt:
+          "De-identified postoperative radiograph after UBE-TLIF L4-5-S1 for post-laminectomy recurrent stenosis and bilateral foraminal stenosis.",
+        width: 960,
+        height: 890
+      },
+      {
+        src: "/cases/case-07-ube-tlif-l45-l5s1/images/postop-mri-selected-panel.jpg",
+        type: "postoperative",
+        caption:
+          "De-identified postoperative MRI after bilateral decompression and biportal endoscopic fusion at L4-5 and L5-S1.",
+        alt:
+          "De-identified postoperative MRI after UBE-TLIF L4-5-S1 for post-laminectomy recurrent stenosis and bilateral foraminal stenosis.",
+        width: 1280,
+        height: 1030
+      }
+    ]
   }
-} satisfies Record<"case01" | "case02" | "case03" | "case04" | "case05" | "case06", CaseImageSet>;
+} satisfies Record<"case01" | "case02" | "case03" | "case04" | "case05" | "case06" | "case07", CaseImageSet>;

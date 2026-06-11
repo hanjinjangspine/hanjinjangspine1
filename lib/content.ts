@@ -625,6 +625,43 @@ export const educationalCases: CaseExample[] = [
     educationalPoint:
       "This case illustrates four teaching points. First, lumbosacral transitional anatomy with lumbarization of the sacral segment produces a sixth lumbar-type vertebra (L6) and requires systematic whole-spine level counting and segmental radiographic confirmation before surgical planning; correct level designation is a prerequisite for accurate operative targeting. Second, L3-4 was treated with UBE-ULBD (Unilateral Biportal Endoscopic Unilateral Laminotomy for Bilateral Decompression), which achieves bilateral canal decompression through a unilateral endoscopic corridor without requiring interbody fusion at that level. Third, L4-5 and L5-6 were treated with Biportal Endoscopic TLIF (Biportal Endoscopic Transforaminal Lumbar Interbody Fusion) because those levels required decompression combined with interbody stabilization; this is a fully endoscopic biportal fusion approach performed through a biportal endoscopic approach with endoscopic visualization, decompression, interbody preparation, and stabilization. Fourth, for a patient with blood transfusion limitations, blood-loss-conscious preoperative planning and a fully endoscopic biportal operative strategy are relevant technical considerations; this is a case-specific planning observation and should not be interpreted as a general claim about all patients or all indications.",
     ...caseImageData.case06
+  },
+  {
+    caseNumber: "Case 07",
+    title: "UBE-TLIF at L4-5 and L5-S1 for Post-laminectomy Recurrent Stenosis and Bilateral Foraminal Stenosis",
+    shortTitle: "UBE-TLIF L4-5-S1 for Post-laminectomy Recurrent Stenosis and Bilateral Foraminal Stenosis",
+    diagnosis:
+      "L4-5 post-laminectomy recurrent and residual stenosis with degenerative spondylolisthesis and segmental instability. L5-S1 bilateral foraminal stenosis with severe facet arthropathy and facet disruption. Right-dominant bilateral L5 and S1 radiculopathy with motor weakness and gait disturbance.",
+    procedure:
+      "UBE-TLIF (Unilateral Biportal Endoscopic Transforaminal Lumbar Interbody Fusion) at L4-5 and L5-S1, each with bilateral decompression and foraminal decompression.",
+    surgicalLevel: "L4-5 and L5-S1.",
+    clinicalPresentation:
+      "A 71-year-old de-identified male presented with right-dominant bilateral L5 and S1 radiculopathy, motor weakness, and gait disturbance. The symptoms developed in the context of previous lumbar laminectomy and were concordant with imaging findings of recurrent stenosis at L4-5 and bilateral foraminal stenosis at L5-S1.",
+    neurologicFindings:
+      "Preoperative neurologic examination documented right-dominant bilateral radicular symptoms in L5 and S1 distributions, motor weakness, and gait disturbance concordant with the stenotic levels. Specific motor grades and sensory findings should be confirmed from the de-identified clinical record before publication.",
+    conservativeTreatmentSummary:
+      "Symptoms persisted despite conservative management. Surgical treatment was considered because the clinical findings remained significant and were concordant with multilevel imaging findings in the setting of prior laminectomy.",
+    imagingSummary:
+      "Preoperative radiographs demonstrated spondylolisthesis and segmental instability at L4-5 and severe facet arthropathy with facet disruption at L5-S1. Preoperative MRI demonstrated recurrent and residual stenosis at L4-5 and bilateral foraminal stenosis at L5-S1, concordant with the patient's right-dominant bilateral radicular symptoms and neurologic findings.",
+    surgicalRationale:
+      "UBE-TLIF was selected at both L4-5 and L5-S1 because each level required decompression combined with interbody stabilization. At L4-5, the post-laminectomy recurrent stenosis with spondylolisthesis and segmental instability indicated the need for fusion in addition to decompression. At L5-S1, bilateral foraminal stenosis with severe facet arthropathy and facet disruption required foraminal decompression and stabilization. Bilateral decompression was performed at each level to address the bilateral symptom pattern.",
+    operativeNoteSummary:
+      "UBE-TLIF was performed at L4-5 and L5-S1. At each level, bilateral decompression and foraminal decompression were performed through the biportal endoscopic approach, followed by disc space preparation, interbody cage placement, and posterior fixation. In the post-laminectomy field at L4-5, careful dissection was required to identify and protect neural structures in the setting of prior surgical changes. At L5-S1, foraminal decompression addressed the bilateral foraminal stenosis and facet disruption pattern.",
+    operativeTime:
+      "To be added after manual verification from the anesthesia record.",
+    estimatedBloodLoss:
+      "To be added after de-identification and editorial review.",
+    hospitalStay:
+      "To be added after de-identification and editorial review.",
+    complications:
+      "To be added after de-identification and editorial review. If no perioperative complication was documented, this field may state that no perioperative complication was documented in this educational case summary.",
+    postoperativeCourse:
+      "To be added after de-identification and editorial review. If neurologic or functional changes were documented after surgery, they should be described as an observed course in this de-identified case only and should not be interpreted as predicting a similar course in other patients.",
+    postoperativeImagingSummary:
+      "Postoperative radiographs and MRI demonstrated interbody fusion and posterior stabilization at L4-5 and L5-S1 with decompression at the operative levels. Imaging is presented only after full de-identification.",
+    educationalPoint:
+      "This case illustrates three teaching points. First, post-laminectomy recurrent stenosis with spondylolisthesis and segmental instability represents an indication for fusion rather than decompression alone; the prior laminectomy alters the surgical field and requires careful neural identification and tissue handling at re-entry. Second, bilateral foraminal stenosis with severe facet arthropathy and facet disruption at an adjacent level may require foraminal decompression as a component of the fusion procedure, not only central decompression. Third, when UBE-TLIF is performed at two adjacent levels in a revision setting, operative sequencing, level confirmation, and neural protection at each stage are important technical considerations; this is presented as a case-specific teaching observation and should not be interpreted as a general outcome claim.",
+    ...caseImageData.case07
   }
 ];
 
