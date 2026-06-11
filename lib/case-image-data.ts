@@ -1,4 +1,4 @@
-export type CaseImageType = "history" | "preoperative" | "postoperative" | "imaging";
+export type CaseImageType = "history" | "preoperative" | "postoperative";
 
 export type CaseImage = {
   src: string;
@@ -349,6 +349,46 @@ export const caseImageData = {
     imagesAvailable: true,
     images: [
       {
+        src: "/cases/case-06-l6-lumbarization/images/preop-xray-selected-panel.jpg",
+        type: "preoperative",
+        caption:
+          "De-identified preoperative radiograph demonstrating lumbosacral transitional anatomy with L6 lumbarization and alignment at the corrected operative levels.",
+        alt:
+          "De-identified preoperative radiograph for multilevel lumbar stenosis with L6 lumbarization educational case.",
+        width: 1260,
+        height: 960
+      },
+      {
+        src: "/cases/case-06-l6-lumbarization/images/preop-mri-selected-panel.jpg",
+        type: "preoperative",
+        caption:
+          "De-identified preoperative MRI demonstrating multilevel lumbar canal stenosis at the corrected levels, used for operative planning of UBE-ULBD at L3-4 and Biportal Endoscopic TLIF at L4-5 and L5-6.",
+        alt:
+          "De-identified preoperative MRI for multilevel lumbar stenosis with L6 lumbarization educational case.",
+        width: 1260,
+        height: 960
+      },
+      {
+        src: "/cases/case-06-l6-lumbarization/images/postop-xray-selected-panel.jpg",
+        type: "postoperative",
+        caption:
+          "De-identified postoperative radiograph after UBE-ULBD at L3-4 and Biportal Endoscopic TLIF at L4-5 and L5-6.",
+        alt:
+          "De-identified postoperative radiograph after UBE-ULBD and Biportal Endoscopic TLIF for multilevel lumbar stenosis with L6 lumbarization.",
+        width: 840,
+        height: 960
+      },
+      {
+        src: "/cases/case-06-l6-lumbarization/images/postop-mri-selected-panel.jpg",
+        type: "postoperative",
+        caption:
+          "De-identified postoperative MRI after decompression and biportal endoscopic fusion at the operative levels.",
+        alt:
+          "De-identified postoperative MRI after UBE-ULBD and Biportal Endoscopic TLIF for multilevel lumbar stenosis with L6 lumbarization.",
+        width: 1260,
+        height: 960
+      },
+      {
         src: "/cases/case-06-l6-lumbarization/images/gait-comparison-lowerbody.jpg",
         type: "history",
         caption:
@@ -357,17 +397,6 @@ export const caseImageData = {
           "De-identified lower-body gait observation for a lumbosacral transitional vertebra educational case.",
         width: 1590,
         height: 1130
-      },
-      // Editorial note: Separate preoperative and postoperative montage images should be prepared before final publication.
-      {
-        src: "/cases/case-06-l6-lumbarization/images/xray-mri-montage.jpg",
-        type: "imaging",
-        caption:
-          "De-identified radiographic and MRI image set used for educational discussion of transitional anatomy, corrected level numbering, decompression, and biportal endoscopic fusion strategy.",
-        alt:
-          "De-identified radiographic and MRI image set for a multilevel lumbar stenosis with L6 lumbarization educational case.",
-        width: 1200,
-        height: 1920
       }
     ]
   }

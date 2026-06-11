@@ -96,10 +96,6 @@ export default function CaseBasedEducationPage() {
                 images: images.filter((image) => image.type === "preoperative")
               },
               {
-                title: "Radiographic and MRI Image Set",
-                images: images.filter((image) => image.type === "imaging")
-              },
-              {
                 title: "Postoperative Images",
                 images: images.filter((image) => image.type === "postoperative")
               }
