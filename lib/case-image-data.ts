@@ -343,5 +343,31 @@ export const caseImageData = {
         height: 857
       }
     ]
+  },
+
+  case06: {
+    imagesAvailable: true,
+    images: [
+      {
+        src: "/cases/case-06-l6-lumbarization/images/gait-comparison-lowerbody.jpg",
+        type: "history",
+        caption:
+          "De-identified comparative lower-body gait observation used for functional assessment and educational discussion in this transitional-anatomy case.",
+        alt:
+          "De-identified comparative lower-body gait observation for a lumbosacral transitional vertebra educational case.",
+        width: 1590,
+        height: 1130
+      },
+      {
+        src: "/cases/case-06-l6-lumbarization/images/xray-mri-montage.jpg",
+        type: "preoperative",
+        caption:
+          "De-identified preoperative radiograph and MRI montage demonstrating the lumbarized transitional segment and the clinically concordant level.",
+        alt:
+          "De-identified preoperative radiograph and MRI montage for a lumbosacral transitional vertebra educational case.",
+        width: 1200,
+        height: 1920
+      }
+    ]
   }
-} satisfies Record<"case01" | "case02" | "case03" | "case04" | "case05", CaseImageSet>;
+} satisfies Record<"case01" | "case02" | "case03" | "case04" | "case05" | "case06", CaseImageSet>;

@@ -589,6 +589,42 @@ export const educationalCases: CaseExample[] = [
     educationalPoint:
       "This case illustrates the use of endoscopic posterior cervical decompression for multilevel cervical spondylotic myelopathy. In cervical myelopathy, the operative goal is not simply nerve-root decompression but adequate spinal cord decompression at the clinically concordant levels. During UBE cervical ULBD, careful orientation to laminar anatomy, ligamentous structures, the dura, and the spinal cord is essential. Because the cervical spinal cord is less tolerant of compression, traction, or instrument misdirection, controlled decompression and avoidance of blind instrument movement are critical technical considerations.",
     ...caseImageData.case05
+  },
+  {
+    caseNumber: "Case 06",
+    title: "Multilevel Lumbar Spinal Stenosis With L6 Lumbarization: Corrected Level Numbering and UBE-ULBD With Biportal Endoscopic TLIF Strategy in a Patient With Blood Transfusion Limitations",
+    shortTitle: "Multilevel Stenosis With L6 Lumbarization — UBE-ULBD and Biportal Endoscopic TLIF",
+    diagnosis:
+      "Multilevel lumbar spinal stenosis in the setting of lumbosacral transitional anatomy with lumbarization of the sacral segment, producing a sixth lumbar-type vertebra designated L6. Corrected level numbering was required before surgical planning. Symptomatic neural compression was present at L3-4, L4-5, and L5-6 as defined by corrected level designations.",
+    procedure:
+      "L3-4: UBE-ULBD (Unilateral Biportal Endoscopic Unilateral Laminotomy for Bilateral Decompression). L4-5 and L5-6: Biportal Endoscopic TLIF (Biportal Endoscopic Transforaminal Lumbar Interbody Fusion) with decompression at each fusion level.",
+    surgicalLevel:
+      "L3-4 (UBE-ULBD); L4-5 and L5-6 (Biportal Endoscopic TLIF). Level designations reflect corrected numbering after identification of the lumbarized transitional vertebra as L6. Whole-spine level confirmation was performed before the operative plan was finalized.",
+    clinicalPresentation:
+      "The patient presented with multilevel lumbar radicular symptoms and gait disturbance that persisted despite conservative management. Preoperative evaluation was conducted in a patient with blood transfusion limitations, which influenced the surgical planning, approach selection, and blood-loss management strategy.",
+    neurologicFindings:
+      "Preoperative neurologic examination documented radicular symptoms and gait disturbance concordant with the multilevel stenotic pattern. Specific motor grades and sensory findings should be included only as verified from the de-identified clinical record.",
+    conservativeTreatmentSummary:
+      "Symptoms persisted despite conservative management. Surgical treatment was considered because the clinical findings remained significant and were concordant with the multilevel imaging findings at the corrected levels.",
+    imagingSummary:
+      "Preoperative radiographs and MRI demonstrated multilevel lumbar spinal stenosis together with a lumbosacral transitional vertebra characterized by lumbarization, producing a sixth lumbar-type segment (L6). Whole-spine level counting and segmental radiographic confirmation were performed to establish corrected level designations before surgical planning. Imaging findings were interpreted together with the patient's symptoms and neurologic examination. Neural compression at L3-4, L4-5, and L5-6 was evaluated for the appropriate procedure at each level.",
+    surgicalRationale:
+      "The surgical plan was individualized to the pattern of neural compression and instability at each corrected level. L3-4 was addressed with UBE-ULBD (Unilateral Biportal Endoscopic Unilateral Laminotomy for Bilateral Decompression) because decompression alone was considered appropriate at that level. L4-5 and L5-6 were addressed with Biportal Endoscopic TLIF (Biportal Endoscopic Transforaminal Lumbar Interbody Fusion) because those levels required both decompression and interbody stabilization. In a patient with blood transfusion limitations, a fully endoscopic biportal strategy with attention to hemostasis and a low-blood-loss working environment was a relevant technical consideration integrated into preoperative planning.",
+    operativeNoteSummary:
+      "The operative plan comprised UBE-ULBD at L3-4 and Biportal Endoscopic TLIF at L4-5 and L5-6. Level confirmation was performed at each stage using radiographic and anatomic landmarks, with specific attention to the corrected level designations required by the lumbarized L6 transitional anatomy. At L3-4, unilateral biportal endoscopic access was used to achieve bilateral canal decompression through a unilateral laminotomy corridor. At L4-5 and L5-6, biportal endoscopic transforaminal interbody fusion was performed including decompression, disc space preparation, interbody cage placement, and posterior fixation at each level. Continuous saline irrigation and the endoscopic working environment supported hemostasis throughout, which was a relevant operative consideration in a patient with blood transfusion limitations.",
+    operativeTime: "To be added after de-identification and editorial review.",
+    estimatedBloodLoss:
+      "Low intraoperative blood loss consistent with the endoscopic approach. A specific volume should be confirmed after de-identification and editorial review.",
+    hospitalStay: "To be added after de-identification and editorial review.",
+    complications:
+      "To be added after de-identification and editorial review. If no perioperative complication was documented, this field may state that no perioperative complication was documented in this educational case summary.",
+    postoperativeCourse:
+      "To be added after de-identification and editorial review. If symptom or neurologic changes were documented after surgery, they should be described as an observed course in this de-identified case only and should not be interpreted as predicting a similar course in other patients.",
+    postoperativeImagingSummary:
+      "Postoperative imaging, if used, should demonstrate decompression at the operated levels and fusion construct at L4-5 and L5-6, presented only after full de-identification. Original screenshot overlays and identifiable image labels should not be used.",
+    educationalPoint:
+      "This case illustrates four teaching points. First, lumbosacral transitional anatomy with lumbarization of the sacral segment produces a sixth lumbar-type vertebra (L6) and requires systematic whole-spine level counting and segmental radiographic confirmation before surgical planning; correct level designation is a prerequisite for accurate operative targeting. Second, L3-4 was treated with UBE-ULBD (Unilateral Biportal Endoscopic Unilateral Laminotomy for Bilateral Decompression), which achieves bilateral canal decompression through a unilateral endoscopic corridor without requiring interbody fusion at that level. Third, L4-5 and L5-6 were treated with Biportal Endoscopic TLIF (Biportal Endoscopic Transforaminal Lumbar Interbody Fusion) because those levels required decompression combined with interbody stabilization; this is a fully endoscopic biportal fusion approach performed through a biportal endoscopic approach with endoscopic visualization, decompression, interbody preparation, and stabilization. Fourth, for a patient with blood transfusion limitations, blood-loss-conscious preoperative planning and a fully endoscopic biportal operative strategy are relevant technical considerations; this is a case-specific planning observation and should not be interpreted as a general claim about all patients or all indications.",
+    ...caseImageData.case06
   }
 ];
 

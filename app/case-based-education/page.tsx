@@ -14,7 +14,7 @@ import { getNewStandardPatientResources } from "@/lib/site";
 export const metadata: Metadata = createMetadata({
   title: "Case-Based Education | Endoscopic Spine Surgery",
   description:
-    "De-identified educational case frameworks for biportal endoscopic decompression, UBE-TLIF, revision endoscopic lumbar interbody fusion, adjacent segment disease, and cervical spondylotic myelopathy.",
+    "De-identified educational case frameworks for biportal endoscopic decompression, UBE-TLIF, revision endoscopic lumbar interbody fusion, adjacent segment disease, cervical spondylotic myelopathy, and UBE-ULBD and biportal endoscopic TLIF for multilevel lumbar stenosis with L6 lumbarization and corrected level numbering.",
   path: "/case-based-education",
   keywords: ["case-based education", "biportal endoscopic decompression", "UBE-TLIF cases", "revision endoscopic decompression"]
 });
@@ -48,7 +48,7 @@ export default function CaseBasedEducationPage() {
       <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Case-Based Education", href: "/case-based-education" }]} />
       <PageHeader
         eyebrow="Case-Based Education"
-        title="Five de-identified educational case frameworks"
+        title="Six de-identified educational case frameworks"
         description="Case pages document diagnosis, clinical presentation, neurologic findings, imaging, procedure details, operative note summaries, postoperative course, and educational points without endorsement or promotional comparison language."
       />
       <section className="mx-auto max-w-6xl px-5 py-14">
