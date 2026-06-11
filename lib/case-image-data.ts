@@ -1,4 +1,4 @@
-export type CaseImageType = "history" | "preoperative" | "postoperative";
+export type CaseImageType = "history" | "preoperative" | "postoperative" | "imaging";
 
 export type CaseImage = {
   src: string;
@@ -352,19 +352,20 @@ export const caseImageData = {
         src: "/cases/case-06-l6-lumbarization/images/gait-comparison-lowerbody.jpg",
         type: "history",
         caption:
-          "De-identified comparative lower-body gait observation used for functional assessment and educational discussion in this transitional-anatomy case.",
+          "De-identified lower-body gait observation used for functional assessment and educational discussion. This is not a generalized outcome claim.",
         alt:
-          "De-identified comparative lower-body gait observation for a lumbosacral transitional vertebra educational case.",
+          "De-identified lower-body gait observation for a lumbosacral transitional vertebra educational case.",
         width: 1590,
         height: 1130
       },
+      // Editorial note: Separate preoperative and postoperative montage images should be prepared before final publication.
       {
         src: "/cases/case-06-l6-lumbarization/images/xray-mri-montage.jpg",
-        type: "preoperative",
+        type: "imaging",
         caption:
-          "De-identified preoperative radiograph and MRI montage demonstrating the lumbarized transitional segment and the clinically concordant level.",
+          "De-identified radiographic and MRI image set used for educational discussion of transitional anatomy, corrected level numbering, decompression, and biportal endoscopic fusion strategy.",
         alt:
-          "De-identified preoperative radiograph and MRI montage for a lumbosacral transitional vertebra educational case.",
+          "De-identified radiographic and MRI image set for a multilevel lumbar stenosis with L6 lumbarization educational case.",
         width: 1200,
         height: 1920
       }
