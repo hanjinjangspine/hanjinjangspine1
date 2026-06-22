@@ -3,9 +3,17 @@ import { caseImageData, type CaseImage } from "@/lib/case-image-data";
 
 export type { CaseImage };
 
+export type SectionVideo = {
+  src: string;
+  poster: string;
+  caption: string;
+  label: string;
+};
+
 export type ContentSection = {
   title: string;
   body: string;
+  video?: SectionVideo;
 };
 
 export type ClinicalFocusItem = {
@@ -1096,6 +1104,19 @@ export const operativeConcepts: OperativeConcept[] = [
         title: "Discectomy and root decompression",
         body:
           "Once the exiting root is identified and protected, the foraminal or extraforaminal disc fragment is removed and the root is confirmed to be mobile and decompressed along its visualized course. Handling near the dorsal root ganglion is deliberate and gentle, because the exiting root and ganglion are sensitive to traction and manipulation in this corridor."
+      },
+      {
+        title: "Intraoperative video excerpt",
+        body:
+          "The following is a short, de-identified educational operative excerpt. It illustrates a technical step within the right L5-S1 foraminal corridor and is provided for surgical education.",
+        video: {
+          src: "/media/operative-concepts/ube-far-lateral-l5s1/ube_far_lateral_l5s1_deidentified_excerpt_810_830.mp4",
+          poster: "/media/operative-concepts/ube-far-lateral-l5s1/ube_far_lateral_l5s1_video_poster.jpg",
+          caption:
+            "De-identified intraoperative excerpt showing endoscopic work within the right L5-S1 foraminal corridor during far-lateral biportal decompression and discectomy.",
+          label:
+            "De-identified educational intraoperative video excerpt of far-lateral biportal decompression and discectomy at the right L5-S1 foraminal corridor"
+        }
       },
       {
         title: "What this procedure is not",
