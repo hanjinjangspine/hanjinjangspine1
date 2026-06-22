@@ -1053,5 +1053,65 @@ export const operativeConcepts: OperativeConcept[] = [
           "The plan should define realistic goals such as walking tolerance, radicular symptom relief, neurologic protection, and avoidance of unnecessary operative burden."
       }
     ]
+  },
+  {
+    slug: "ube-far-lateral-l5s1",
+    title: "UBE Far-Lateral Approach and Foraminotomy with Discectomy at L5-S1",
+    excerpt:
+      "A technical note on right L5-S1 foraminal disc herniation and exiting L5 root decompression.",
+    keywords: [
+      "UBE far-lateral approach",
+      "L5-S1 foraminal disc herniation",
+      "Exiting L5 nerve root",
+      "Foraminotomy",
+      "Endoscopic discectomy"
+    ],
+    sections: [
+      {
+        title: "Anatomic problem",
+        body:
+          "A foraminal or foraminal-extraforaminal disc herniation at the right L5-S1 level compresses the exiting right L5 nerve root within and lateral to the foramen. This pattern is distinct from the common posterolateral herniation that affects the traversing root in the lateral recess, and it requires the surgical target to be defined as the exiting L5 root rather than the traversing S1 root."
+      },
+      {
+        title: "Why a far-lateral corridor",
+        body:
+          "The exiting L5 root and the compressive fragment lie at or beyond the lateral margin of the foramen, away from the central canal. A far-lateral working corridor reaches this zone directly over the L5-S1 junction, allowing the exiting root to be decompressed without entering the central canal or working through the standard interlaminar window aimed at the traversing root."
+      },
+      {
+        title: "Defining the surgical target",
+        body:
+          "The objective is focal decompression of the exiting right L5 root at L5-S1 through foraminotomy and removal of the foraminal disc fragment. The target is a single root and a single compressive lesion; the operative plan is framed around that specific concordance rather than around a generalized canal-widening procedure."
+      },
+      {
+        title: "UBE far-lateral approach and portal planning",
+        body:
+          "Two paramedian portals are placed lateral to the standard interlaminar position so the endoscope and instruments converge over the foraminal and extraforaminal region of L5-S1. Orientation is maintained to the L5 transverse process, the sacral ala, the pars interarticularis, and the lateral facet complex, which frame the exiting-root corridor at this level."
+      },
+      {
+        title: "Foraminotomy",
+        body:
+          "Foraminotomy enlarges the bony foramen by addressing the lateral isthmus and the under-surface of the superior articular process while preserving as much of the facet as the decompression allows. The aim is to expose and free the exiting L5 root along its course, recognizing that the L5-S1 foramen and the adjacent sacral ala impose specific anatomic constraints on instrument trajectory."
+      },
+      {
+        title: "Discectomy and root decompression",
+        body:
+          "Once the exiting root is identified and protected, the foraminal or extraforaminal disc fragment is removed and the root is confirmed to be mobile and decompressed along its visualized course. Handling near the dorsal root ganglion is deliberate and gentle, because the exiting root and ganglion are sensitive to traction and manipulation in this corridor."
+      },
+      {
+        title: "What this procedure is not",
+        body:
+          "This is a targeted far-lateral foraminotomy and discectomy for the exiting L5 root. It is not unilateral laminotomy for bilateral decompression, not UBE-TLIF, and not a fusion procedure. It is not a central canal decompression, not a bilateral decompression, and not a traversing S1 root operation; defining these boundaries explicitly helps keep the operative plan matched to the anatomic problem."
+      },
+      {
+        title: "Technical considerations, limitations, and risks",
+        body:
+          "Facet and pars preservation are weighed against the bone removal needed for adequate foraminal decompression, because excessive resection at L5-S1 can raise concern for segmental instability and shift the plan toward stabilization. Risks include exiting-root or dorsal root ganglion irritation, dural injury, incomplete decompression, recurrent herniation, and bleeding in the foraminal corridor; when foraminal collapse, instability, or disc-height loss dominate, a fusion strategy rather than isolated foraminotomy may be more appropriate."
+      },
+      {
+        title: "Educational summary",
+        body:
+          "A far-lateral foraminal disc herniation at L5-S1 is most coherently treated when the exiting L5 root is named as the sole target and the corridor, foraminotomy, and discectomy are planned around that root. The technical discipline lies in reaching the foraminal zone directly while preserving enough of the facet and pars to avoid creating instability."
+      }
+    ]
   }
 ];
