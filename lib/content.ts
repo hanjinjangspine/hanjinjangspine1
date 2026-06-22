@@ -1119,6 +1119,19 @@ export const operativeConcepts: OperativeConcept[] = [
         }
       },
       {
+        title: "Extended educational operative sequence",
+        body:
+          "The following is a longer, de-identified educational sequence assembled with English captions for teaching. It is an educational operative sequence rather than a patient case or outcome video, and it follows the steps described above through to confirmation of the decompressed exiting root.",
+        video: {
+          src: "/media/operative-concepts/ube-far-lateral-l5s1/UBE_FarLateral_L5S1_Edu_90s_EN_web_720p.mp4",
+          poster: "/media/operative-concepts/ube-far-lateral-l5s1/UBE_FarLateral_L5S1_Edu_90s_EN_poster.jpg",
+          caption:
+            "De-identified 90-second educational sequence demonstrating the far-lateral biportal approach, foraminal decompression, discectomy, and final confirmation of exiting L5 root decompression at L5-S1.",
+          label:
+            "De-identified 90-second English-captioned educational operative sequence of the far-lateral biportal approach, foraminal decompression, discectomy, and confirmation of exiting right L5 root decompression at L5-S1"
+        }
+      },
+      {
         title: "What this procedure is not",
         body:
           "This is a targeted far-lateral foraminotomy and discectomy for the exiting L5 root. It is not unilateral laminotomy for bilateral decompression, not UBE-TLIF, and not a fusion procedure. It is not a central canal decompression, not a bilateral decompression, and not a traversing S1 root operation; defining these boundaries explicitly helps keep the operative plan matched to the anatomic problem."
