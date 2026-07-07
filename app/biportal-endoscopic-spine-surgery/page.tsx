@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { ArticleSections } from "@/components/ArticleSections";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -40,6 +41,19 @@ export default function BiportalEndoscopyPage() {
         description="An academic explanation of the two-portal endoscopic platform, anatomical orientation, irrigation, visualization, applications, and limitations."
       />
       <ArticleSections sections={biportalSections} />
+      <section className="mx-auto max-w-3xl px-5 pb-4">
+        <h2 className="font-serif text-3xl text-academic-navy">Related operative concept</h2>
+        <ul className="mt-5 grid gap-3 text-base leading-8 text-slate-600">
+          <li>
+            <Link
+              href="/operative-concepts/interbody-cage-selection-and-approach-rationale"
+              className="font-semibold text-academic-navy underline decoration-academic-gold underline-offset-4"
+            >
+              Interbody cage selection and endoscopic approach rationale
+            </Link>
+          </li>
+        </ul>
+      </section>
       <Faq items={biportalFaqs} />
     </>
   );
