@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { ArticleSections } from "@/components/ArticleSections";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Faq } from "@/components/Faq";
@@ -42,7 +42,7 @@ export default function BiportalEndoscopyPage() {
       />
       <ArticleSections sections={biportalSections} />
       <section className="mx-auto max-w-3xl px-5 pb-4">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-academic-gold">Related operative concept</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-academic-gold">Related operative concepts</p>
         <Link
           href="/operative-concepts/ube-far-lateral-l5s1"
           className="mt-3 block border border-academic-line bg-white p-5 transition hover:border-academic-gold"
@@ -53,6 +53,18 @@ export default function BiportalEndoscopyPage() {
           <p className="mt-2 text-sm leading-7 text-slate-600">
             A technical note on right L5-S1 foraminal disc herniation and exiting L5 root decompression through a
             far-lateral biportal corridor.
+          </p>
+        </Link>
+        <Link
+          href="/operative-concepts/interbody-cage-selection-and-approach-rationale"
+          className="mt-3 block border border-academic-line bg-white p-5 transition hover:border-academic-gold"
+        >
+          <p className="font-serif text-xl leading-snug text-academic-navy">
+            Interbody Cage Selection and Endoscopic Approach Rationale in Biportal Spine Surgery
+          </p>
+          <p className="mt-2 text-sm leading-7 text-slate-600">
+            Technical considerations in interbody cage selection and the rationale for endoscopic approach preferences,
+            as an operative concept for surgical education.
           </p>
         </Link>
       </section>

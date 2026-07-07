@@ -1063,6 +1063,75 @@ export const operativeConcepts: OperativeConcept[] = [
     ]
   },
   {
+    slug: "interbody-cage-selection-and-approach-rationale",
+    title: "Interbody Cage Selection and Endoscopic Approach Rationale in Biportal Spine Surgery",
+    excerpt:
+      "Technical considerations in interbody cage selection during biportal endoscopic spine surgery, and the rationale for endoscopic approach preferences, presented as an operative concept for surgical education.",
+    keywords: [
+      "Interbody cage selection",
+      "UBE-TLIF",
+      "Biportal endoscopic spine surgery",
+      "Endoscopic approach rationale"
+    ],
+    sections: [
+      {
+        title: "Scope",
+        body:
+          "This article describes technical considerations in interbody cage selection during biportal endoscopic spine surgery, and the rationale for the surgeon's approach preferences among endoscopic techniques. It is written as an operative concept for surgical education and is not a treatment recommendation, an outcome claim, a superiority claim, or a description of any identifiable patient."
+      },
+      {
+        title: "Evolution of spinal endoscopic access",
+        body:
+          "Spinal endoscopy developed more slowly than laparoscopic or arthroscopic surgery, largely because the spinal working field is narrow. Early spinal endoscopy used a single working channel shared by the endoscope and instruments (single-portal endoscopy; historically PELD or PID depending on a posterior or lateral approach). With aperture sizes around 4–5 mm, the reachable working range and the extent of bony work were limited. A subsequent iteration enlarged the aperture (stenoscopic approach, roughly 8 mm to 1 cm), allowing thicker instruments and more bony removal, but the fundamental constraint remained: instruments had to travel along the same corridor as the endoscope."
+      },
+      {
+        title: "Unilateral biportal endoscopic (UBE) corridor",
+        body:
+          "UBE establishes two portals on the same side: one for the endoscope and one for instrumentation. Because the spinal interlaminar interval is narrow, the two portals often run nearly parallel. Decoupling the visualization channel from the working channel provides an arthroscopy-like corridor, a wider range of instrument motion, and the ability to introduce a broad set of conventional instruments through a modestly sized skin incision. A practical advantage for the surgeon is instrument continuity: much of the instrumentation is shared with microscopic and arthroscopic sets, which supports transfer of existing skill and shared setup with arthroscopic procedures. Dedicated small-aperture instruments with adapted working angles are increasingly available."
+      },
+      {
+        title: "Handling of incidental durotomy",
+        body:
+          "Historically, a dural tear beyond roughly 1 cm prompted conversion to a microscopic approach for direct repair because of cerebrospinal fluid leak. With current endoscopic clip and closure options, management within the endoscopic corridor is more often feasible, and routine conversion is no longer assumed. Management is individualized to the tear."
+      },
+      {
+        title: "Interbody cage selection",
+        body:
+          "No single cage type is universally superior; selection integrates disc-space geometry, endplate and bone-mineral-density (BMD) status, positioning intent, and fusion strategy."
+      },
+      {
+        title: "Titanium 3D-printed cages",
+        body:
+          "Porous printed architecture is intended to permit bony ongrowth/ingrowth; even partial bridging through the pores may support early fixation. Smaller paired cages allow more selective positioning and angulation within the disc space; procedure time can be efficient. Consideration: the construct is stiff. In low-BMD bone, or with suboptimal insertion angle, there is concern for subsidence into or through the endplate. BMD is therefore a key pre-operative parameter, and endplate integrity is protected by unhurried, well-angled insertion."
+      },
+      {
+        title: "PEEK cages",
+        body:
+          "A larger footprint (e.g., a wide ROM-type cage) can cover more endplate surface in a single implant. The PEEK body acts primarily as a spacer; osteoconductive material (e.g., bone graft with DBM) is packed within and around it to support fusion. Radiolucent body with metallic markers is used for radiographic localization; the implant outline is inferred from markers rather than seen directly."
+      },
+      {
+        title: "Cage placement patterns",
+        body:
+          "Paired cages may be placed in varied configurations — oblique, V-shaped (mirrored), or one axial and one angled — according to disc-space geometry. Remaining disc-space volume is typically filled with graft material to support fusion. On radiographs, titanium cages are directly visible and early bony bridging is readily assessed; PEEK cage position is confirmed via markers, and fusion is assessed on CT."
+      },
+      {
+        title: "Approach preferences among endoscopic techniques",
+        body:
+          "Preference for a biportal endoscopic approach over drilling-based single-corridor decompression rests on several technical factors. Irrigation dynamics: with continuous drill use in a single-corridor technique, inflow and outflow can approach a similar corridor, degrading visual clarity as drill activity increases. The biportal corridor supports a more controllable operative field during bony work. Ergonomics: long-instrument single-corridor techniques can impose sustained shoulder and postural load on the surgeon over a career of cases."
+      },
+      {
+        title: "What this concept is not",
+        body:
+          "Not a description of any identifiable patient. Not a claim of superiority over other techniques, devices, or institutions. Not a claim regarding infection rates or an absence of complications. Not an outcome guarantee or a statement of expected recovery. Not a recommendation that any specific patient should undergo surgery."
+      },
+      {
+        title: "Educational disclaimer",
+        body:
+          "Educational operative concept. For medical professional reference. Not a treatment recommendation, outcome claim, or description of any identifiable patient. Clinical decisions are individualized by the treating physician."
+      }
+    ]
+  },
+  {
     slug: "ube-far-lateral-l5s1",
     title: "UBE Far-Lateral Approach and Foraminotomy with Discectomy at L5-S1",
     excerpt:
