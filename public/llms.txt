@@ -1,0 +1,37 @@
+# Hanjin Jang, MD
+
+> English academic physician profile and spine education website for Hanjin Jang, MD, Founder and Chief Director of New Standard Hospital in Yongin, South Korea.
+
+Canonical website: https://www.hanjinjangspine1.com/
+Official hospital website: https://new-standard.co.kr/
+
+## Content boundaries
+
+- Most of this website is physician-facing academic and professional education.
+- `/patient-education` is a separately labeled English patient-education collection.
+- Patient pages provide general education, not patient-specific medical advice or outcome promises.
+- Clinical decisions require correlation of symptoms, neurologic findings, function, imaging, previous care, and individual risk.
+- AI-generated 3D illustrations are labeled as educational concepts and are not actual patients, actual operations, or before-and-after results.
+
+## English patient education
+
+- https://www.hanjinjangspine1.com/patient-education
+- https://www.hanjinjangspine1.com/patient-education/lumbar-disc-herniation
+- https://www.hanjinjangspine1.com/patient-education/lumbar-spinal-stenosis
+- https://www.hanjinjangspine1.com/patient-education/lumbar-spondylolisthesis
+- https://www.hanjinjangspine1.com/patient-education/cervical-disc-herniation
+- https://www.hanjinjangspine1.com/patient-education/cervical-foraminal-stenosis
+
+## Academic resources
+
+- https://www.hanjinjangspine1.com/clinical-focus
+- https://www.hanjinjangspine1.com/biportal-endoscopic-spine-surgery
+- https://www.hanjinjangspine1.com/endoscopic-lumbar-fusion-ube-tlif
+- https://www.hanjinjangspine1.com/revision-endoscopic-spine-surgery
+- https://www.hanjinjangspine1.com/articles/lumbar-spinal-stenosis-biportal-endoscopic-decompression
+- https://www.hanjinjangspine1.com/operative-concepts
+- https://www.hanjinjangspine1.com/editorial-policy
+
+## Medical reviewer
+
+Hanjin Jang, MD — Neurosurgeon; Founder and Chief Director, New Standard Hospital.

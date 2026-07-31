@@ -1,4 +1,5 @@
 import { absoluteUrl, siteConfig } from "@/lib/site";
+import type { PatientEducationGuide } from "@/lib/patient-education";
 
 const personalWebsiteUrl = "https://www.hanjinjangspine1.com";
 const newStandardHospitalUrl = "https://new-standard.co.kr";
@@ -9,7 +10,7 @@ const newStandardHospitalId = `${absoluteUrl()}#new-standard-hospital`;
 const physicianProfileId = `${absoluteUrl()}#physician-profile`;
 const personId = `${absoluteUrl()}#hanjin-jang-md`;
 const physicianDescription =
-  "Neurosurgeon and spine specialist in South Korea with a clinical and academic focus on endoscopic spine surgery. Korean patient-facing medical information is provided separately through the official New Standard Hospital website.";
+  "Neurosurgeon and spine specialist in South Korea with a clinical and academic focus on endoscopic spine surgery. This site is primarily an academic resource and includes a clearly separated English Patient Education collection; Korean clinical access and hospital guidance are provided through the official New Standard Hospital website.";
 const newStandardHospitalAddress = {
   "@type": "PostalAddress",
   streetAddress: "1539 Jungbu-daero",
@@ -228,7 +229,7 @@ export function koreanMedicalProfilePageSchema() {
       "@id": physicianProfileId
     },
     description:
-      "The official Korean New Standard Hospital medical staff profile provides patient-facing information about Dr. Jang's role in the Spine Center. This English microsite is maintained for academic, professional, and AI-readable reference.",
+      "The official Korean New Standard Hospital medical staff profile provides patient-facing information about Dr. Jang's role in the Spine Center. This English microsite is primarily maintained for academic, professional, and AI-readable reference and includes a clearly separated general Patient Education collection.",
     relatedLink: [newStandardHospitalUrl, newStandardSpineCenterUrl]
   };
 }
@@ -321,5 +322,95 @@ export function faqSchema(items: FaqItem[]) {
         text: item.answer
       }
     }))
+  };
+}
+
+export function patientEducationCollectionSchema(guides: PatientEducationGuide[]) {
+  const path = "/patient-education";
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${absoluteUrl(path)}#collection`,
+    name: "Spine Patient Education",
+    description:
+      "English patient guides to five common lumbar and cervical spine conditions, reviewed by Hanjin Jang, MD.",
+    url: absoluteUrl(path),
+    inLanguage: "en-US",
+    isPartOf: {
+      "@id": `${absoluteUrl()}#website`
+    },
+    about: {
+      "@id": physicianProfileId
+    },
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: guides.length,
+      itemListElement: guides.map((guide, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: guide.title,
+        url: absoluteUrl(`/patient-education/${guide.slug}`)
+      }))
+    }
+  };
+}
+
+export function patientEducationPageSchema(guide: PatientEducationGuide) {
+  const path = `/patient-education/${guide.slug}`;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "@id": `${absoluteUrl(path)}#medical-web-page`,
+    name: `${guide.title}: A Patient Guide`,
+    description: guide.description,
+    url: absoluteUrl(path),
+    inLanguage: "en-US",
+    datePublished: guide.lastReviewed,
+    dateModified: guide.lastReviewed,
+    lastReviewed: guide.lastReviewed,
+    isAccessibleForFree: true,
+    audience: {
+      "@type": "Patient",
+      audienceType: "Patients and caregivers"
+    },
+    reviewedBy: {
+      "@id": physicianProfileId
+    },
+    author: {
+      "@id": personId
+    },
+    publisher: {
+      "@id": newStandardHospitalId
+    },
+    isPartOf: {
+      "@id": `${absoluteUrl("/patient-education")}#collection`
+    },
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      contentUrl: absoluteUrl(guide.conditionImage.src),
+      caption: guide.conditionImage.caption
+    },
+    mainEntity: {
+      "@type": "MedicalCondition",
+      name: guide.title,
+      description: guide.overview,
+      signOrSymptom: guide.symptoms.map((symptom) => ({
+        "@type": "MedicalSignOrSymptom",
+        name: symptom
+      })),
+      possibleTreatment: [
+        ...guide.nonsurgicalCare,
+        guide.procedure.title
+      ].map((treatment) => ({
+        "@type": "MedicalTherapy",
+        name: treatment
+      }))
+    },
+    relatedLink: [
+      ...guide.relatedAcademic.map((item) => absoluteUrl(item.href)),
+      ...guide.sources.map((source) => source.href)
+    ]
   };
 }

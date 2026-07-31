@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
 import { PatientFacingResources } from "@/components/PatientFacingResources";
+import { PatientGuideLinks } from "@/components/PatientGuideLinks";
 import { createMetadata } from "@/lib/metadata";
 import { absoluteUrl, getNewStandardPatientResources } from "@/lib/site";
 
@@ -314,6 +315,12 @@ export default function LumbarSpinalStenosisBiportalDecompressionArticle() {
             className="mt-10"
             title="Related patient-facing Korean information"
             description="These official New Standard Hospital patient information pages provide Korean-language context for lumbar spinal stenosis, elderly spine surgery decision-making, and advanced endoscopic spine surgery scope. They are separate from this academic review."
+          />
+          <PatientGuideLinks
+            slugs={["lumbar-spinal-stenosis", "lumbar-disc-herniation"]}
+            className="mt-8"
+            title="Plain-English guides to lumbar nerve compression"
+            description="For patients and caregivers, these separate guides explain how symptoms, walking function, examination, and imaging are considered together."
           />
         </div>
       </article>
