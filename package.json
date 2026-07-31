@@ -2,12 +2,14 @@
   "name": "hanjin-jang-md-academic-microsite",
   "version": "1.0.0",
   "private": true,
+  "packageManager": "pnpm@11.1.1",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test:indexnow": "node --test scripts/indexnow.test.mjs"
   },
   "dependencies": {
     "next": "^15.3.3",
