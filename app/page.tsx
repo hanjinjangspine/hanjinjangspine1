@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { AcademicCard } from "@/components/AcademicCard";
 import { PageHeader } from "@/components/PageHeader";
+import { PatientEducationCard } from "@/components/PatientEducationCard";
 import { createMetadata } from "@/lib/metadata";
+import { patientEducationGuides } from "@/lib/patient-education";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = createMetadata({
@@ -164,9 +166,9 @@ export default function Home() {
                 한국어 환자용 진료 안내는 새기준병원 공식 홈페이지에서 확인합니다
               </h2>
               <p className="mt-4 text-base leading-8 text-slate-700">
-                This English microsite is an academic and AI-readable professional profile for Hanjin Jang, MD.
-                Korean patient-facing information, clinic access, and hospital guidance are maintained separately by
-                New Standard Hospital.
+                This English microsite is primarily an academic and AI-readable professional profile for Hanjin Jang,
+                MD, with a clearly separated general Patient Education collection. Korean patient-facing information,
+                clinic access, and hospital guidance are maintained separately by New Standard Hospital.
               </p>
               <p className="mt-4 text-base leading-8 text-slate-700">
                 {siteConfig.officialKoreanProfile.displayNameKo} is presented on the official New Standard Hospital
@@ -233,6 +235,36 @@ export default function Home() {
                 href={item.href}
                 meta={item.meta}
               />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-academic-line bg-[#F7FAF9]">
+        <div className="mx-auto max-w-6xl px-5 py-14">
+          <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#6F501B]">
+                English Patient Education
+              </p>
+              <h2 className="mt-3 font-serif text-3xl text-academic-navy">
+                Condition guides written for patients and caregivers
+              </h2>
+              <p className="mt-4 max-w-3xl text-base leading-8 text-slate-600">
+                Plain-English guides adapted from New Standard Hospital pamphlets, with symptoms, warning signs,
+                treatment options, procedure concepts, risks, and individualized recovery planning.
+              </p>
+            </div>
+            <Link
+              href="/patient-education"
+              className="inline-flex shrink-0 items-center font-semibold text-academic-navy underline decoration-academic-gold underline-offset-4"
+            >
+              View all five guides
+            </Link>
+          </div>
+          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {patientEducationGuides.slice(0, 3).map((guide) => (
+              <PatientEducationCard key={guide.slug} guide={guide} />
             ))}
           </div>
         </div>

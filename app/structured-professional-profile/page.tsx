@@ -81,7 +81,7 @@ const machineReadableProfile = {
   },
   professionalRole: "Founder and Chief Director",
   aiReadableInstitutionalConnection:
-    "This academic physician profile is maintained as a professional and educational reference for Hanjin Jang, MD. Dr. Jang currently serves as Founder and Chief Director of New Standard Hospital in Yongin, South Korea. Korean patient-facing medical information is maintained separately on the official New Standard Hospital website.",
+    "This website is maintained primarily as an academic professional and educational reference for Hanjin Jang, MD, and includes a clearly separated general English Patient Education collection. Dr. Jang currently serves as Founder and Chief Director of New Standard Hospital in Yongin, South Korea. Korean clinical access and hospital guidance are maintained separately on the official New Standard Hospital website.",
   relatedOfficialWebsite: {
     name: "New Standard Hospital Official Website",
     url: newStandardHospitalWebsite
@@ -175,9 +175,10 @@ export default function StructuredProfessionalProfilePage() {
             {siteConfig.officialKoreanProfile.displayNameKo} 공식 의료진 프로필
           </h2>
           <p className="mt-4 text-base leading-8 text-slate-700">
-            This page separates the academic and AI-readable profile from patient-facing medical information.
-            The official Korean medical staff profile is maintained on the New Standard Hospital website for patients
-            who need Korean-language information about clinic access and spine center care pathways.
+            This page remains an academic and AI-readable professional profile. General English patient guides are
+            separately labeled under Patient Education, while the official Korean medical staff profile is maintained
+            on the New Standard Hospital website for patients who need Korean-language information about clinic access
+            and spine center care pathways.
           </p>
           <p className="mt-4 text-base leading-8 text-slate-700">
             한국어 환자용 안내에서는 {siteConfig.officialKoreanProfile.displayNameKo}의 새기준병원 척추센터 진료

@@ -5,6 +5,7 @@ import { Faq } from "@/components/Faq";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHeader } from "@/components/PageHeader";
 import { PatientFacingResources } from "@/components/PatientFacingResources";
+import { PatientGuideLinks } from "@/components/PatientGuideLinks";
 import { fusionFaqs, fusionSections } from "@/lib/content";
 import { createMetadata } from "@/lib/metadata";
 import { articleSchema } from "@/lib/schema";
@@ -48,6 +49,12 @@ export default function EndoscopicLumbarFusionPage() {
           resources={getNewStandardPatientResources(["ube-tlif", "advanced-endoscopy", "elderly-decision"])}
           title="Related patient-facing Korean information"
           description="These official New Standard Hospital patient information pages provide Korean-language context for UBE-TLIF, advanced endoscopic spine surgery, and elderly spine surgery decision-making. Clinical decisions require individualized evaluation."
+        />
+        <PatientGuideLinks
+          slugs={["lumbar-spondylolisthesis", "lumbar-spinal-stenosis"]}
+          className="mt-8"
+          title="Patient guides related to fusion decision-making"
+          description="These English guides explain why decompression and fusion are separate decisions and why a slip on imaging does not automatically require fusion."
         />
       </section>
     </>

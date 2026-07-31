@@ -5,6 +5,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Faq } from "@/components/Faq";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHeader } from "@/components/PageHeader";
+import { PatientGuideLinks } from "@/components/PatientGuideLinks";
 import { biportalFaqs, biportalSections } from "@/lib/content";
 import { createMetadata } from "@/lib/metadata";
 import { articleSchema } from "@/lib/schema";
@@ -69,6 +70,13 @@ export default function BiportalEndoscopyPage() {
         </Link>
       </section>
       <Faq items={biportalFaqs} />
+      <section className="mx-auto max-w-6xl px-5 pb-14">
+        <PatientGuideLinks
+          slugs={["lumbar-disc-herniation", "lumbar-spinal-stenosis", "cervical-disc-herniation", "cervical-foraminal-stenosis"]}
+          title="Conditions for which an endoscopic approach may be discussed"
+          description="An endoscopic technique is an access method, not a diagnosis. These patient guides explain the clinical problems, alternatives, limitations, and warning signs before a procedure is considered."
+        />
+      </section>
     </>
   );
 }

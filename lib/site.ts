@@ -41,7 +41,7 @@ export const siteConfig = {
     officialHospitalUrl: "https://new-standard.co.kr",
     officialHospitalLocationKo: "경기도 용인시 처인구 중부대로 1539",
     roleSeparation:
-      "This website is an English academic and AI-readable professional profile. Korean patient-facing medical information is provided on the official New Standard Hospital website.",
+      "This website is primarily an English academic and AI-readable professional profile. Its clearly separated Patient Education section provides general English patient guides, while Korean patient-facing medical information remains on the official New Standard Hospital website.",
     patientFacingSummary:
       "The official Korean medical staff profile explains Dr. Hanjin Jang's patient-facing role at New Standard Hospital Spine Center, including how symptoms, neurologic findings, imaging studies, and prior treatment response are reviewed for clinical decision-making."
   },
@@ -107,9 +107,7 @@ export const siteConfig = {
     { href: "/about", label: "About" },
     { href: "/clinical-focus", label: "Clinical Focus" },
     { href: "/articles/lumbar-spinal-stenosis-biportal-endoscopic-decompression", label: "Clinical Reviews" },
-    { href: "/biportal-endoscopic-spine-surgery", label: "Biportal Endoscopy" },
-    { href: "/endoscopic-lumbar-fusion-ube-tlif", label: "UBE-TLIF" },
-    { href: "/revision-endoscopic-spine-surgery", label: "Revision Surgery" },
+    { href: "/patient-education", label: "Patient Education" },
     { href: "/case-based-education", label: "Cases" },
     { href: "/operative-concepts", label: "Concepts" },
     { href: "/for-referring-physicians", label: "Referring Physicians" }

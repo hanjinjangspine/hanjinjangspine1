@@ -6,9 +6,10 @@ type PageHeaderProps = {
   title: string;
   description: string;
   children?: ReactNode;
+  eyebrowTone?: "academic" | "patient";
 };
 
-export function PageHeader({ eyebrow, title, description, children }: PageHeaderProps) {
+export function PageHeader({ eyebrow, title, description, children, eyebrowTone = "academic" }: PageHeaderProps) {
   return (
     <section className="relative overflow-hidden border-b border-academic-line bg-white">
       <div className="absolute inset-y-0 right-0 hidden w-1/2 opacity-70 lg:block">
@@ -16,7 +17,13 @@ export function PageHeader({ eyebrow, title, description, children }: PageHeader
       </div>
       <div className="relative mx-auto max-w-6xl px-5 py-14 md:py-20">
         {eyebrow ? (
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-academic-gold">{eyebrow}</p>
+          <p
+            className={`mb-4 text-xs font-semibold uppercase tracking-[0.22em] ${
+              eyebrowTone === "patient" ? "text-[#6F501B]" : "text-academic-gold"
+            }`}
+          >
+            {eyebrow}
+          </p>
         ) : null}
         <h1 className="max-w-4xl font-serif text-4xl leading-tight text-academic-navy md:text-6xl">
           {title}

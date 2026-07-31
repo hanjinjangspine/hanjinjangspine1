@@ -8,7 +8,7 @@ export function Footer() {
         <div>
           <p className="font-serif text-2xl">{siteConfig.name}</p>
           <p className="mt-3 max-w-md text-sm leading-7 text-slate-300">
-            Physician-authored academic resource on endoscopic spine surgery, biportal endoscopic spine surgery, endoscopic lumbar fusion, UBE-TLIF, and complex revision spine surgery.
+            Physician-authored academic resource on endoscopic spine surgery, with a clearly separated English patient education library for common lumbar and cervical conditions.
           </p>
           <p className="mt-5 max-w-md text-xs uppercase leading-6 tracking-[0.14em] text-slate-400">
             Hanjin Jang, MD · Founder and Chief Director,{" "}
@@ -37,6 +37,7 @@ export function Footer() {
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-300">Site</p>
           <ul className="mt-4 grid gap-2 text-sm">
+            <li><Link href="/patient-education" className="text-slate-300 hover:text-white">English Patient Education</Link></li>
             <li><Link href="/structured-professional-profile" className="text-slate-300 hover:text-white">Structured Professional Profile</Link></li>
             <li><Link href="/articles/lumbar-spinal-stenosis-biportal-endoscopic-decompression" className="text-slate-300 hover:text-white">Lumbar Spinal Stenosis Review</Link></li>
             <li><Link href="/academic-activity" className="text-slate-300 hover:text-white">Academic Activity</Link></li>
@@ -47,7 +48,7 @@ export function Footer() {
       </div>
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-6xl px-5 py-5 text-xs leading-6 text-slate-400">
-          This website is an academic professional profile and physician-authored educational resource. It is not patient-specific medical advice, an outcome claim, a platform for individual patient stories, or a substitute for individualized clinical evaluation.
+          This website is an academic professional profile and physician-authored educational resource. Patient guides provide general information only. Nothing on this site is patient-specific medical advice, an outcome claim, a platform for individual patient stories, or a substitute for individualized clinical evaluation.
         </div>
       </div>
     </footer>
