@@ -1,9 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
+import { MedicalImageViewer } from "@/components/MedicalImageViewer";
 import { PageHeader } from "@/components/PageHeader";
 import { RelatedPatientEducation } from "@/components/RelatedPatientEducation";
 import { createMetadata } from "@/lib/metadata";
@@ -154,13 +154,14 @@ export default async function PatientEducationGuidePage({ params }: PatientEduca
                 </ol>
               </div>
               <figure className="overflow-hidden border border-academic-line bg-[#5E5955] p-3 shadow-academic md:p-5">
-                <Image
+                <MedicalImageViewer
                   src={guide.procedure.image.src}
                   alt={guide.procedure.image.alt}
                   width={guide.procedure.image.width}
                   height={guide.procedure.image.height}
+                  caption={guide.procedure.image.caption}
                   sizes="(max-width: 1024px) 100vw, 55vw"
-                  className="h-auto w-full object-contain"
+                  imageClassName="h-auto w-full object-contain"
                 />
                 <figcaption className="bg-white px-4 py-4 text-sm leading-7 text-slate-600">
                   {guide.procedure.image.caption}
