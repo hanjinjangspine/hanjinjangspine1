@@ -40,7 +40,7 @@ export function PageHeader({ eyebrow, title, description, children, eyebrowTone 
 
         <div className="order-2 min-w-0 md:order-1 lg:order-2">
           {image ? (
-            <figure className="overflow-hidden border border-academic-line bg-academic-panel shadow-academic">
+            <figure className="mx-auto w-full max-w-[34rem] overflow-hidden border border-academic-line bg-academic-panel shadow-academic lg:max-w-[30rem]">
               <MedicalImageViewer
                 src={image.src}
                 alt={image.alt}
@@ -49,8 +49,8 @@ export function PageHeader({ eyebrow, title, description, children, eyebrowTone 
                 caption={image.caption}
                 fill
                 priority
-                sizes="(max-width: 767px) calc(100vw - 2.5rem), (max-width: 1023px) calc(100vw - 2.5rem), 44vw"
-                mediaClassName="relative aspect-[16/10] w-full"
+                sizes="(max-width: 767px) calc(100vw - 2.5rem), (max-width: 1023px) 34rem, 30rem"
+                mediaClassName="relative aspect-[16/10] w-full md:aspect-[4/3] lg:aspect-[3/2]"
                 imageClassName="object-contain"
               />
               {image.caption ? (
@@ -60,7 +60,7 @@ export function PageHeader({ eyebrow, title, description, children, eyebrowTone 
               ) : null}
             </figure>
           ) : (
-            <div className="aspect-[16/10] overflow-hidden border border-academic-line bg-academic-panel shadow-academic">
+            <div className="mx-auto aspect-[16/10] w-full max-w-[34rem] overflow-hidden border border-academic-line bg-academic-panel shadow-academic lg:max-w-[30rem]">
               <SpineMotif />
             </div>
           )}

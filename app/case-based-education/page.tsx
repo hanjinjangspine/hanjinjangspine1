@@ -136,15 +136,17 @@ export default function CaseBasedEducationPage() {
                           <h3 className="font-serif text-2xl text-academic-navy">{group.title}</h3>
                           <div className="mt-4 grid gap-5 md:grid-cols-2">
                             {group.images.map((image) => (
-                              <figure key={image.src} className="border border-academic-line bg-academic-panel p-3">
-                                <Image
-                                  src={image.src}
-                                  alt={image.alt}
-                                  width={image.width}
-                                  height={image.height}
-                                  sizes="(min-width: 768px) 50vw, 100vw"
-                                  className="h-auto w-full"
-                                />
+                              <figure key={image.src} className="overflow-hidden border border-academic-line bg-academic-panel p-3">
+                                <div className="flex w-full items-center justify-center bg-slate-950">
+                                  <Image
+                                    src={image.src}
+                                    alt={image.alt}
+                                    width={image.width}
+                                    height={image.height}
+                                    sizes="(max-width: 767px) calc(100vw - 4rem), (max-width: 1199px) calc(50vw - 3rem), 32rem"
+                                    className="h-auto max-h-96 w-full object-contain lg:max-h-[26rem]"
+                                  />
+                                </div>
                                 <figcaption className="mt-3 text-xs leading-6 text-slate-500">
                                   {image.caption}
                                 </figcaption>
