@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
+import { PageHeader } from "@/components/PageHeader";
 import { PatientFacingResources } from "@/components/PatientFacingResources";
 import { PatientGuideLinks } from "@/components/PatientGuideLinks";
 import { createMetadata } from "@/lib/metadata";
@@ -145,23 +146,17 @@ export default function LumbarSpinalStenosisBiportalDecompressionArticle() {
           { name: "Lumbar Spinal Stenosis and Biportal Decompression", href: articlePath }
         ]}
       />
-      <article className="bg-white">
-        <header className="border-b border-academic-line bg-white">
-          <div className="mx-auto max-w-4xl px-5 py-14 md:py-20">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-academic-gold">Clinical Review</p>
-            <h1 className="mt-5 font-serif text-4xl leading-tight text-academic-navy md:text-5xl">
-              {articleTitle}
-            </h1>
-            <div className="mt-8 grid gap-3 border-l-4 border-academic-gold pl-5 text-sm leading-7 text-slate-600">
-              <p className="font-semibold text-academic-navy">Han-Jin Jang, MD</p>
-              <p>Neurosurgeon · Specialist in Biportal Endoscopic Spine Surgery</p>
-              <p>Chief of Neurosurgery, New Standard Hospital</p>
-              <p>Yongin-si, Gyeonggi-do, Republic of Korea</p>
-              <p>Published: May 2026</p>
-            </div>
-          </div>
-        </header>
+      <PageHeader eyebrow="Clinical Review" title={articleTitle} description={articleDescription}>
+        <div className="grid gap-2 border-l-4 border-academic-gold pl-5 text-sm leading-7 text-slate-600">
+          <p className="font-semibold text-academic-navy">Han-Jin Jang, MD</p>
+          <p>Neurosurgeon · Specialist in Biportal Endoscopic Spine Surgery</p>
+          <p>Chief of Neurosurgery, New Standard Hospital</p>
+          <p>Yongin-si, Gyeonggi-do, Republic of Korea</p>
+          <p>Published: May 2026</p>
+        </div>
+      </PageHeader>
 
+      <article className="bg-white">
         <div className="mx-auto max-w-4xl px-5 py-12">
           <section className="border-b border-academic-line pb-10">
             <h2 className="font-serif text-3xl text-academic-navy">Abstract</h2>
