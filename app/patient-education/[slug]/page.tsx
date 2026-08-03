@@ -153,7 +153,7 @@ export default async function PatientEducationGuidePage({ params }: PatientEduca
                   ))}
                 </ol>
               </div>
-              <figure className="overflow-hidden border border-academic-line bg-[#5E5955] p-3 shadow-academic md:p-5">
+              <figure className="mx-auto w-full max-w-[42rem] overflow-hidden border border-academic-line bg-[#5E5955] p-3 shadow-academic md:p-5">
                 <MedicalImageViewer
                   src={guide.procedure.image.src}
                   alt={guide.procedure.image.alt}
@@ -161,7 +161,7 @@ export default async function PatientEducationGuidePage({ params }: PatientEduca
                   height={guide.procedure.image.height}
                   caption={guide.procedure.image.caption}
                   sizes="(max-width: 1024px) 100vw, 55vw"
-                  imageClassName="h-auto w-full object-contain"
+                  imageClassName="mx-auto h-auto max-h-[22rem] w-full object-contain"
                 />
                 <figcaption className="bg-white px-4 py-4 text-sm leading-7 text-slate-600">
                   {guide.procedure.image.caption}
