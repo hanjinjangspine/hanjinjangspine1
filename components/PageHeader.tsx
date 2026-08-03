@@ -1,5 +1,5 @@
-import Image from "next/image";
 import type { ReactNode } from "react";
+import { MedicalImageViewer } from "@/components/MedicalImageViewer";
 import { SpineMotif } from "@/components/SpineMotif";
 
 type PageHeaderImage = {
@@ -41,16 +41,18 @@ export function PageHeader({ eyebrow, title, description, children, eyebrowTone 
         <div className="order-2 min-w-0 md:order-1 lg:order-2">
           {image ? (
             <figure className="overflow-hidden border border-academic-line bg-academic-panel shadow-academic">
-              <div className="relative aspect-[16/10] w-full">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  priority
-                  sizes="(max-width: 767px) calc(100vw - 2.5rem), (max-width: 1023px) calc(100vw - 2.5rem), 44vw"
-                  className="object-contain"
-                />
-              </div>
+              <MedicalImageViewer
+                src={image.src}
+                alt={image.alt}
+                width={image.width}
+                height={image.height}
+                caption={image.caption}
+                fill
+                priority
+                sizes="(max-width: 767px) calc(100vw - 2.5rem), (max-width: 1023px) calc(100vw - 2.5rem), 44vw"
+                mediaClassName="relative aspect-[16/10] w-full"
+                imageClassName="object-contain"
+              />
               {image.caption ? (
                 <figcaption className="border-t border-academic-line bg-white px-4 py-3 text-sm leading-6 text-slate-600">
                   {image.caption}
