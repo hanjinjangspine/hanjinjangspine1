@@ -1,5 +1,14 @@
+import Image from "next/image";
 import type { ReactNode } from "react";
 import { SpineMotif } from "@/components/SpineMotif";
+
+type PageHeaderImage = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  caption?: string;
+};
 
 type PageHeaderProps = {
   eyebrow?: string;
@@ -7,29 +16,53 @@ type PageHeaderProps = {
   description: string;
   children?: ReactNode;
   eyebrowTone?: "academic" | "patient";
+  image?: PageHeaderImage;
 };
 
-export function PageHeader({ eyebrow, title, description, children, eyebrowTone = "academic" }: PageHeaderProps) {
+export function PageHeader({ eyebrow, title, description, children, eyebrowTone = "academic", image }: PageHeaderProps) {
   return (
-    <section className="relative overflow-hidden border-b border-academic-line bg-white">
-      <div className="absolute inset-y-0 right-0 hidden w-1/2 opacity-70 lg:block">
-        <SpineMotif />
-      </div>
-      <div className="relative mx-auto max-w-6xl px-5 py-14 md:py-20">
-        {eyebrow ? (
-          <p
-            className={`mb-4 text-xs font-semibold uppercase tracking-[0.22em] ${
-              eyebrowTone === "patient" ? "text-[#6F501B]" : "text-academic-gold"
-            }`}
-          >
-            {eyebrow}
-          </p>
-        ) : null}
-        <h1 className="max-w-4xl font-serif text-4xl leading-tight text-academic-navy md:text-6xl">
-          {title}
-        </h1>
-        <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">{description}</p>
-        {children ? <div className="mt-8">{children}</div> : null}
+    <section className="border-b border-academic-line bg-white" data-page-hero>
+      <div className="mx-auto grid max-w-6xl items-center gap-7 px-5 py-10 md:gap-8 md:py-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)] lg:gap-12 lg:py-14">
+        <div className="order-1 min-w-0 md:order-2 lg:order-1">
+          {eyebrow ? (
+            <p
+              className={`mb-4 text-xs font-semibold uppercase tracking-[0.22em] ${
+                eyebrowTone === "patient" ? "text-[#6F501B]" : "text-academic-gold"
+              }`}
+            >
+              {eyebrow}
+            </p>
+          ) : null}
+          <h1 className="font-serif text-4xl leading-tight text-academic-navy lg:text-5xl">{title}</h1>
+          <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">{description}</p>
+          {children ? <div className="mt-6">{children}</div> : null}
+        </div>
+
+        <div className="order-2 min-w-0 md:order-1 lg:order-2">
+          {image ? (
+            <figure className="overflow-hidden border border-academic-line bg-academic-panel shadow-academic">
+              <div className="relative aspect-[16/10] w-full">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  priority
+                  sizes="(max-width: 767px) calc(100vw - 2.5rem), (max-width: 1023px) calc(100vw - 2.5rem), 44vw"
+                  className="object-contain"
+                />
+              </div>
+              {image.caption ? (
+                <figcaption className="border-t border-academic-line bg-white px-4 py-3 text-sm leading-6 text-slate-600">
+                  {image.caption}
+                </figcaption>
+              ) : null}
+            </figure>
+          ) : (
+            <div className="aspect-[16/10] overflow-hidden border border-academic-line bg-academic-panel shadow-academic">
+              <SpineMotif />
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );

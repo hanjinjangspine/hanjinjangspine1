@@ -81,6 +81,7 @@ export default async function PatientEducationGuidePage({ params }: PatientEduca
         eyebrowTone="patient"
         title={guide.title}
         description={guide.subtitle}
+        image={guide.conditionImage}
       >
         <p className="max-w-3xl border-l-2 border-academic-gold pl-4 text-sm leading-7 text-slate-600">
           We do not make treatment decisions from an MRI alone. Symptoms, neurologic findings, function, previous care,
@@ -89,25 +90,10 @@ export default async function PatientEducationGuidePage({ params }: PatientEduca
       </PageHeader>
 
       <article className="bg-white">
-        <section className="mx-auto grid max-w-6xl gap-10 px-5 py-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#6F501B]">What it means</p>
-            <h2 className="mt-3 font-serif text-3xl text-academic-navy">Understanding {guide.shortTitle.toLowerCase()}</h2>
-            <p className="mt-5 text-base leading-8 text-slate-700">{guide.overview}</p>
-          </div>
-          <figure className="overflow-hidden border border-academic-line bg-[#ECE8E4] p-3 shadow-academic md:p-5">
-            <Image
-              src={guide.conditionImage.src}
-              alt={guide.conditionImage.alt}
-              width={guide.conditionImage.width}
-              height={guide.conditionImage.height}
-              sizes="(max-width: 1024px) 100vw, 55vw"
-              className="h-auto w-full object-contain"
-            />
-            <figcaption className="bg-white px-4 py-4 text-sm leading-7 text-slate-600">
-              {guide.conditionImage.caption}
-            </figcaption>
-          </figure>
+        <section className="mx-auto max-w-4xl px-5 py-10 md:py-12">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#6F501B]">What it means</p>
+          <h2 className="mt-3 font-serif text-3xl text-academic-navy">Understanding {guide.shortTitle.toLowerCase()}</h2>
+          <p className="mt-5 text-base leading-8 text-slate-700">{guide.overview}</p>
         </section>
 
         <section className="border-y border-academic-line bg-[#F7FAF9]">
