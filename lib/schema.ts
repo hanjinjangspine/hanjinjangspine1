@@ -301,11 +301,15 @@ export function articleSchema(input: {
     author: {
       "@id": personId
     },
+    reviewedBy: {
+      "@id": physicianProfileId
+    },
     publisher: {
       "@id": newStandardHospitalId
     },
     about: input.keywords ?? siteConfig.keywords,
     inLanguage: "en",
+    datePublished: "2026-05-09",
     dateModified: "2026-05-09"
   };
 }
