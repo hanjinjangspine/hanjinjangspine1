@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { createMetadata } from "@/lib/metadata";
 import { organizationSchema, personSchema, physicianSchema, websiteSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site";
+import SiteAnalytics from "@/components/SiteAnalytics";
 
 export const metadata: Metadata = createMetadata({
   title: siteConfig.title,
@@ -21,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-sans antialiased">
+        <SiteAnalytics />
         <JsonLd data={[physicianSchema(), organizationSchema(), personSchema(), websiteSchema()]} />
         <Header />
         <main>{children}</main>
