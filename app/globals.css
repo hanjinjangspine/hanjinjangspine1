@@ -30,8 +30,11 @@ summary::-webkit-details-marker {
 
 /* 콘텐츠 사진의 소유 표기: 로고·아이콘은 스크립트에서 제외합니다. */
 .photo-ownership-host {
-  position: relative !important;
-  isolation: isolate;
+  isolation: auto;
+}
+
+.photo-ownership-positioned {
+  position: relative;
 }
 
 .photo-ownership-badge {

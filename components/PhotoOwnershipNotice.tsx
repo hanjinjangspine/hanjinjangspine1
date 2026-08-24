@@ -19,6 +19,9 @@ export default function PhotoOwnershipNotice() {
       if (!host || host.dataset.photoOwnershipMarked === "true") return;
       host.dataset.photoOwnershipMarked = "true";
       host.classList.add("photo-ownership-host");
+      if (window.getComputedStyle(host).position === "static") {
+        host.classList.add("photo-ownership-positioned");
+      }
       const badge = document.createElement("span");
       badge.className = "photo-ownership-badge";
       badge.textContent = ownerText;
