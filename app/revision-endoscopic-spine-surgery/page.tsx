@@ -1,3 +1,4 @@
+import { RelatedCasebank } from "@/components/RelatedCasebank";
 import type { Metadata } from "next";
 import { ArticleSections } from "@/components/ArticleSections";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -50,6 +51,7 @@ export default function RevisionEndoscopicSpineSurgeryPage() {
           description="These official New Standard Hospital patient information pages provide Korean-language context for revision spine surgery, postoperative symptom re-evaluation, and advanced endoscopic spine surgery scope. Clinical decisions require individualized evaluation."
         />
       </section>
+    <RelatedCasebank group="revision" />
     </>
   );
 }

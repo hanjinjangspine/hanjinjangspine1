@@ -1,3 +1,4 @@
+import { RelatedCasebank } from "@/components/RelatedCasebank";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -319,6 +320,7 @@ export default function LumbarSpinalStenosisBiportalDecompressionArticle() {
           />
         </div>
       </article>
+    <RelatedCasebank group="decompression" />
     </>
   );
 }

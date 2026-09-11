@@ -105,12 +105,12 @@ export const siteConfig = {
   ],
   navItems: [
     { href: "/about", label: "About" },
+    { href: "/casebank", label: "Casebank" },
+    { href: "/publications", label: "Publications" },
     { href: "/clinical-focus", label: "Clinical Focus" },
-    { href: "/articles/lumbar-spinal-stenosis-biportal-endoscopic-decompression", label: "Clinical Reviews" },
-    { href: "/patient-education", label: "Patient Education" },
-    { href: "/case-based-education", label: "Cases" },
     { href: "/operative-concepts", label: "Concepts" },
-    { href: "/for-referring-physicians", label: "Referring Physicians" }
+    { href: "/evidence-library", label: "Evidence" },
+    { href: "/patient-education", label: "Patient Education" }
   ]
 } as const;
 

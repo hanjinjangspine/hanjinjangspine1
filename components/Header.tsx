@@ -1,7 +1,10 @@
+"use client";
 import Link from "next/link";
+import { useRef } from "react";
 import { siteConfig } from "@/lib/site";
 
 export function Header() {
+  const mobileMenu = useRef<HTMLDetailsElement>(null);
   return (
     <header className="sticky top-0 z-50 border-b border-academic-line bg-white/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4">
@@ -28,12 +31,15 @@ export function Header() {
           </Link>
         </nav>
 
-        <details className="relative shrink-0 lg:hidden">
+        <details ref={mobileMenu} className="relative shrink-0 lg:hidden">
           <summary className="cursor-pointer list-none rounded border border-academic-line px-3 py-2 text-sm font-medium text-academic-navy">
             Menu
           </summary>
           <nav
             aria-label="Mobile navigation"
+            onClick={(event) => {
+              if ((event.target as HTMLElement).closest("a") && mobileMenu.current) mobileMenu.current.open = false;
+            }}
             className="absolute right-0 mt-3 w-72 border border-academic-line bg-white p-3 shadow-academic"
           >
             <div className="grid gap-1">

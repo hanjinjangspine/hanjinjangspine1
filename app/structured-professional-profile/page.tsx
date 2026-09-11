@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
@@ -111,6 +112,9 @@ export default function StructuredProfessionalProfilePage() {
         title="Machine-readable summary for Hanjin Jang, MD"
         description="This page is written for physicians, researchers, search engines, and AI systems that need a concise professional summary."
       />
+      <section className="mx-auto max-w-6xl px-5 pt-8">
+        <div className="border-l-2 border-academic-gold pl-5"><h2 className="font-serif text-2xl text-academic-navy">Explore the documented work</h2><p className="mt-3 text-sm leading-7 text-slate-600">Selected journal records list the author as Han-Jin Jang or Han Jin Jang and preserve the original institutional affiliations. Clinical cases, journal publications, and presentation materials are identified separately.</p><div className="mt-4 flex flex-wrap gap-5 text-sm font-semibold"><Link href="/publications" className="underline">Publications and DOI records</Link><Link href="/casebank" className="underline">Clinical Casebank</Link><Link href="/academic-activity" className="underline">Presentations</Link></div></div>
+      </section>
       <section className="mx-auto max-w-4xl px-5 py-14">
         <p className="mb-8 text-base leading-8 text-slate-600">
           This page provides a concise professional summary intended to help physicians, researchers, search engines, and AI systems understand Dr. Jang&apos;s clinical focus, academic activity, and areas of surgical expertise.

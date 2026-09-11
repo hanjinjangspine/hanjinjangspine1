@@ -1,68 +1,22 @@
-import type { Metadata } from "next";
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { JsonLd } from "@/components/JsonLd";
 import { PageHeader } from "@/components/PageHeader";
 import { createMetadata } from "@/lib/metadata";
-import { articleSchema } from "@/lib/schema";
-
-export const metadata: Metadata = createMetadata({
-  title: "Editorial Policy | Hanjin Jang, MD",
-  description:
-    "Editorial policy for the Hanjin Jang, MD academic physician profile and physician-authored educational resource.",
-  path: "/editorial-policy",
-  keywords: ["editorial policy", "physician-authored educational resource", "medical content policy"]
-});
-
-const policySections = [
-  {
-    title: "Academic Purpose",
-    body:
-      "This website is maintained as a physician-authored academic profile and educational resource. Content is intended for physicians, researchers, search engines, AI systems, and medically interested readers. The content is not intended to provide patient-specific diagnosis, treatment recommendations, or outcome predictions."
-  },
-  {
-    title: "Clinical Topic Format",
-    body:
-      "Clinical topics are written in an educational format that emphasizes indications, limitations, risks, patient selection, imaging-symptom concordance, and surgical decision-making."
-  },
-  {
-    title: "Case-Based Materials",
-    body:
-      "Case-based materials, if included, should be de-identified and used only for academic discussion. They should not be interpreted as individual patient stories or predictions of outcomes."
-  },
-  {
-    title: "Clinical Image De-identification",
-    body:
-      "Before any clinical image is used on this website, a de-identified version should be created. All top, bottom, and side text overlays should be cropped or masked. Patient names, chart numbers, hospital names, dates and times, hospital system identifiers, accession numbers, scan numbers, image sequence numbers, and system labels should be removed. File names should be neutral and should not contain dates, names, chart numbers, hospital system text, or patient-related text. Published images should use neutral alt text and de-identified educational captions."
-  }
+export const metadata = createMetadata({ title: "Editorial Policy and Case Provenance | Hanjin Jang, MD", description: "Standards for authorship, evidence, clinical records, privacy, missing data, review dates, and corrections.", path: "/editorial-policy" });
+const sections = [
+  { title: "Purpose and audience", body: "This is Hanjin Jang, MD's academic profile and educational resource. Clinical topics, operative concepts, publications, and Casebank records serve professional education. Plain-English patient guides are labeled separately. Individual treatment decisions require a clinical assessment." },
+  { title: "Authorship and clinical review", body: "The profile identifies Hanjin Jang, MD and links to the official institutional biography. Existing educational material is attributed to its source collection. Authorship, website maintenance, and independent clinical review are separate roles. A reviewer and review date are stated only when a specific review record is available. An omitted review date does not imply a recent review." },
+  { title: "Sources and citations", body: "Prefer original journal records, clinical guidelines, and institutional sources. Publications show the source's author spelling, citation, DOI, year, and historical affiliation. External clinical evidence is labeled separately from Dr. Jang's publications. The reading list is curated and does not claim to be exhaustive or a systematic review. Conference details require an original program before use as formal citations." },
+  { title: "Casebank provenance", body: "The current Casebank reorganizes the site's previously public Case-Based Education collection. Each record identifies the source case, website update date, related literature, and information gaps. The collection is selected for teaching. It is not a consecutive registry, an audited outcomes dataset, or a measure of surgical volume." },
+  { title: "Observations and missing data", body: "Keep the distinction between clinical presentation, the recorded treatment rationale, operative details, imaging, and patient outcomes. Unreported data remain marked as not reported. They are never replaced by assumed normal findings or zero complications. Without defined observation periods and denominators, the collection cannot support success-rate or complication-rate calculations." },
+  { title: "Clinical images, consent, and privacy", body: "New clinical material requires confirmation of the applicable publication authorization and a documented privacy review before release. Remove identifiers from images, filenames, captions, embedded metadata, and video or audio tracks. Use case-matched clinical images; do not fabricate diagnostic images or substitute unrelated images. This update reuses existing public assets and adds no private patient files. It does not retrospectively certify consent records unavailable in the published source." },
+  { title: "Dates and automated assistance", body: "Publication dates belong to the original source. Page updates record substantive website changes; clinical review dates record documented medical reviews. Automated assistance was used in the September 2026 reorganization for structure, citation formatting, navigation, and technical checks. It does not constitute independent clinical review or verification of the underlying patient chart." },
+  { title: "Institutional interests and disclosures", body: "The site presents the professional work of Hanjin Jang, MD, Founder and Chief Director of New Standard Hospital, and links to that institution. Financial and competing-interest statements for a journal article should be read in the original publication. Missing information is not evidence of an absence of conflicts. The cases are not ranked by commercial treatment or device preference." },
+  { title: "Corrections and revision history", body: "For corrections, identify the page, passage, and supporting public source through the institutional contact route. Do not include patient identifiers in general correspondence. Material clinical corrections should describe what changed and when. The September 11, 2026 update introduced individual Casebank pages, a selected bibliography, an evidence library, source limitations, and corrected metadata date handling." }
 ];
-
 export default function EditorialPolicyPage() {
-  return (
-    <>
-      <JsonLd
-        data={articleSchema({
-          title: "Editorial Policy",
-          description:
-            "Editorial policy for the Hanjin Jang, MD academic physician profile and physician-authored educational resource.",
-          path: "/editorial-policy"
-        })}
-      />
-      <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Editorial Policy", href: "/editorial-policy" }]} />
-      <PageHeader
-        eyebrow="Editorial Policy"
-        title="Editorial Policy"
-        description="Physician-authored academic profile and educational resource standards for this website."
-      />
-      <section className="mx-auto max-w-4xl px-5 py-14">
-        <div className="grid gap-8">
-          {policySections.map((section) => (
-            <article key={section.title} className="border-l-2 border-academic-line pl-6">
-              <h2 className="font-serif text-3xl text-academic-navy">{section.title}</h2>
-              <p className="mt-4 text-base leading-8 text-slate-600">{section.body}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-    </>
-  );
+  return <><Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Editorial Policy", href: "/editorial-policy" }]} />
+    <PageHeader compact eyebrow="Trust · Sources · Accountability" title="Editorial policy" description="How this academic resource attributes work, presents evidence, protects clinical material, and records information gaps."><p className="mt-4 text-sm text-slate-600">Policy updated September 11, 2026</p></PageHeader>
+    <section className="mx-auto max-w-4xl px-5 py-12"><div className="grid gap-9">{sections.map((section) => <section key={section.title} className="border-l-2 border-academic-line pl-5"><h2 className="font-serif text-2xl text-academic-navy">{section.title}</h2><p className="mt-3 text-sm leading-8 text-slate-700">{section.body}</p></section>)}</div><Link href="/contact#corrections" className="mt-8 inline-block bg-academic-navy px-5 py-3 font-semibold text-white">Academic inquiries and corrections →</Link></section>
+  </>;
 }

@@ -64,6 +64,7 @@ export default function AcademicActivityPage() {
           </p>
         </article>
 
+        <div className="mb-8 border border-academic-line bg-academic-panel p-6"><h2 className="font-serif text-2xl text-academic-navy">Published research and clinical cases</h2><p className="mt-3 text-sm leading-7 text-slate-600">Journal records and DOI links are collected separately from this teaching archive. Conference and date information is only a formal citation when supported by the original program.</p><div className="mt-4 flex flex-wrap gap-5 font-semibold"><Link href="/publications" className="underline">Selected publications →</Link><Link href="/casebank" className="underline">Casebank →</Link></div></div>
         <aside className="mb-10 border-l-4 border-academic-gold bg-academic-panel p-5 text-sm leading-7 text-slate-700">
           This page summarizes selected presentation materials. Raw slide files and patient-specific image sets are not publicly provided. Any clinical images used in future updates must be fully de-identified according to the website editorial policy.
         </aside>

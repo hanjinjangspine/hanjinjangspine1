@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CasebankFeature } from "@/components/CasebankFeature";
 import { AcademicCard } from "@/components/AcademicCard";
 import { PageHeader } from "@/components/PageHeader";
 import { PatientEducationCard } from "@/components/PatientEducationCard";
@@ -34,6 +35,8 @@ const clinicalFocusTerms = [
 ];
 
 const homeLinks = [
+  { title: "Selected Publications", description: "Trace journal records, DOI links, author names, and historical affiliations.", href: "/publications", meta: "Research" },
+  { title: "Evidence Library", description: "Clinical studies and guidelines with their scope and limits of applicability.", href: "/evidence-library", meta: "Evidence" },
   {
     title: "About Dr. Jang",
     description: "Professional role, philosophy, education, training, and appointment history.",
@@ -47,9 +50,9 @@ const homeLinks = [
     meta: "Topics"
   },
   {
-    title: "Case-Based Education",
-    description: "De-identified educational case frameworks for physician-facing discussion.",
-    href: "/case-based-education",
+    title: "Clinical Casebank",
+    description: "Search published clinical cases, inspect images, and follow case-specific reasoning and evidence.",
+    href: "/casebank",
     meta: "Cases"
   },
   {
@@ -107,7 +110,7 @@ export default function Home() {
     <>
       <PageHeader
         eyebrow={siteConfig.name}
-        title="A New Standard in Endoscopic Spine Surgery"
+        title="Endoscopic Spine Surgery: Clinical Reasoning, Cases, and Evidence"
         description={`${siteConfig.role}, ${siteConfig.institution}. Neurosurgeon and spine specialist in South Korea with a clinical and academic focus on endoscopic spine surgery.`}
       >
         <div className="flex flex-col gap-3 sm:flex-row">
@@ -130,6 +133,7 @@ export default function Home() {
           Current Institution: New Standard Hospital, Yongin, South Korea
         </p>
       </PageHeader>
+      <CasebankFeature />
       <section className="mx-auto max-w-6xl px-5 py-14">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <article className="border border-academic-line bg-academic-panel p-6">

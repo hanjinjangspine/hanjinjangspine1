@@ -1,3 +1,4 @@
+import { RelatedCasebank } from "@/components/RelatedCasebank";
 import type { Metadata } from "next";
 import { AcademicCard } from "@/components/AcademicCard";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -35,6 +36,7 @@ export default function OperativeConceptsPage() {
           ))}
         </div>
       </section>
+    <RelatedCasebank group="all" />
     </>
   );
 }

@@ -63,3 +63,9 @@ summary::-webkit-details-marker {
     font-size: 0.61rem;
   }
 }
+
+:where(a, button, input, select, summary):focus-visible { outline: 3px solid #93703b; outline-offset: 4px; }
+[id] { scroll-margin-top: 6.5rem; }
+.skip-link { position: fixed; top: -8rem; left: 1rem; z-index: 100; padding: .8rem 1rem; background: #0b1f33; color: white; }
+.skip-link:focus { top: 1rem; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

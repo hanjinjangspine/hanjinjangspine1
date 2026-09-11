@@ -37,6 +37,10 @@ export function Footer() {
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-300">Site</p>
           <ul className="mt-4 grid gap-2 text-sm">
+            <li><Link href="/casebank" className="text-slate-300 hover:text-white">Clinical Casebank</Link></li>
+            <li><Link href="/publications" className="text-slate-300 hover:text-white">Selected Publications</Link></li>
+            <li><Link href="/evidence-library" className="text-slate-300 hover:text-white">Evidence Library</Link></li>
+            <li><Link href="/for-referring-physicians" className="text-slate-300 hover:text-white">For Referring Physicians</Link></li>
             <li><Link href="/patient-education" className="text-slate-300 hover:text-white">English Patient Education</Link></li>
             <li><Link href="/structured-professional-profile" className="text-slate-300 hover:text-white">Structured Professional Profile</Link></li>
             <li><Link href="/articles/lumbar-spinal-stenosis-biportal-endoscopic-decompression" className="text-slate-300 hover:text-white">Lumbar Spinal Stenosis Review</Link></li>

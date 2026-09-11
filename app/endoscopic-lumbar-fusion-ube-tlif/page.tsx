@@ -1,3 +1,4 @@
+import { RelatedCasebank } from "@/components/RelatedCasebank";
 import type { Metadata } from "next";
 import { ArticleSections } from "@/components/ArticleSections";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -57,6 +58,7 @@ export default function EndoscopicLumbarFusionPage() {
           description="These English guides explain why decompression and fusion are separate decisions and why a slip on imaging does not automatically require fusion."
         />
       </section>
+    <RelatedCasebank group="fusion" />
     </>
   );
 }
