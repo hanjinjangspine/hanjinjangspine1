@@ -1,3 +1,4 @@
+import { RelatedCasebank } from "@/components/RelatedCasebank";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PageHeader } from "@/components/PageHeader";
@@ -58,6 +59,7 @@ export default function ForReferringPhysiciansPage() {
           ))}
         </div>
       </section>
+    <RelatedCasebank group="revision" />
     </>
   );
 }

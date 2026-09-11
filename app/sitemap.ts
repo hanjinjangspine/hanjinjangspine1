@@ -1,3 +1,5 @@
+import pageDates from "@/lib/page-dates.json";
+import { casebankCases, casebankUpdated } from "@/lib/casebank";
 import type { MetadataRoute } from "next";
 import { operativeConcepts } from "@/lib/content";
 import { patientEducationGuides, patientEducationReviewDate } from "@/lib/patient-education";
@@ -11,7 +13,9 @@ const staticRoutes = [
   "/articles/lumbar-spinal-stenosis-biportal-endoscopic-decompression",
   "/endoscopic-lumbar-fusion-ube-tlif",
   "/revision-endoscopic-spine-surgery",
-  "/case-based-education",
+  "/casebank",
+  "/publications",
+  "/evidence-library",
   "/academic-activity",
   "/patient-education",
   "/operative-concepts",
@@ -25,9 +29,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const conceptRoutes = operativeConcepts.map((concept) => `/operative-concepts/${concept.slug}`);
   const patientGuideRoutes = patientEducationGuides.map((guide) => `/patient-education/${guide.slug}`);
 
-  return [...staticRoutes, ...conceptRoutes, ...patientGuideRoutes].map((route) => ({
+  return [...staticRoutes, ...conceptRoutes, ...patientGuideRoutes, ...casebankCases.map((item) => "/casebank/" + item.slug)].map((route) => ({
     url: absoluteUrl(route),
-    lastModified: new Date(route.startsWith("/patient-education") ? patientEducationReviewDate : "2026-05-09"),
+    lastModified: new Date(route.startsWith("/casebank") ? casebankUpdated : route.startsWith("/patient-education") ? patientEducationReviewDate : route.startsWith("/operative-concepts/") ? pageDates["/operative-concepts/[slug]"] : (pageDates as Record<string, string>)[route] ?? "2026-08-24"),
     changeFrequency: route === "/" || route === "/patient-education" ? "weekly" : "monthly",
     priority: route === "/" ? 1 : route.startsWith("/patient-education") ? 0.8 : 0.7
   }));

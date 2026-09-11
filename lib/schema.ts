@@ -1,3 +1,4 @@
+import { publications } from "@/lib/evidence";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 import type { PatientEducationGuide } from "@/lib/patient-education";
 
@@ -158,14 +159,14 @@ export function personSchema() {
     nationality: "Korean",
     alumniOf: alumniOfOrganizations,
     worksFor: worksForOrganizations,
-    affiliation: affiliationOrganizations,
+    affiliation: [{ "@id": newStandardHospitalId }],
     medicalSpecialty: ["Neurosurgery", "Spine Surgery", "Endoscopic Spine Surgery"],
     knowsAbout: schemaKnowsAbout,
     knowsLanguage: siteConfig.languages,
-    subjectOf: absoluteUrl("/operative-concepts"),
+    subjectOf: publications.map((item) => ({ "@type": "ScholarlyArticle", name: item.title, url: item.href, identifier: item.doi })),
     url: personalWebsiteUrl,
     mainEntityOfPage: [absoluteUrl("/structured-professional-profile"), officialKoreanProfileUrl],
-    sameAs: relatedOfficialUrls
+    sameAs: [officialKoreanProfileUrl]
   };
 }
 
@@ -246,7 +247,7 @@ export function profilePageSchema() {
       "@id": personId
     },
     mainEntity: {
-      "@id": physicianProfileId
+      "@id": personId
     }
   };
 }
@@ -291,6 +292,9 @@ export function articleSchema(input: {
   description: string;
   path: string;
   keywords?: string[];
+  datePublished?: string;
+  dateModified?: string;
+  reviewedBy?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -301,16 +305,14 @@ export function articleSchema(input: {
     author: {
       "@id": personId
     },
-    reviewedBy: {
-      "@id": physicianProfileId
-    },
+    ...(input.reviewedBy ? { reviewedBy: { "@type": "Person", name: input.reviewedBy } } : {}),
     publisher: {
       "@id": newStandardHospitalId
     },
     about: input.keywords ?? siteConfig.keywords,
     inLanguage: "en",
-    datePublished: "2026-05-09",
-    dateModified: "2026-05-09"
+    ...(input.datePublished ? { datePublished: input.datePublished } : {}),
+    ...(input.dateModified ? { dateModified: input.dateModified } : {})
   };
 }
 

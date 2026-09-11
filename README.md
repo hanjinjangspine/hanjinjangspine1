@@ -37,7 +37,7 @@ Most editable academic content lives in:
 - `app/contact/page.tsx` for official hospital contact placeholders
 - `public/og-image.svg` for the social preview image
 
-Before publishing, replace placeholders for publications, lectures, case metrics, hospital URL, official contact channels, and any verified biographical details.
+Do not fill missing case metrics or review dates by inference. Published-case source records remain in lib/content.ts; lib/casebank.ts selects explicit source case numbers and converts drafting placeholders into an honest not-reported status.
 
 ## SEO and Structured Data
 
@@ -57,14 +57,14 @@ The robots route allows indexing and explicitly allows `OAI-SearchBot`, `GPTBot`
 
 ## Canonical URL
 
-The production canonical URL is fixed in `lib/site.ts` as `https://hanjinjangspine1.com`.
+The production canonical URL is fixed in `lib/site.ts` as `https://www.hanjinjangspine1.com`.
 Sitemap, robots, canonical metadata, Open Graph URLs, and JSON-LD URLs are generated from that value.
 
 ## Deploying to Vercel
 
 1. Push the project to a Git repository.
 2. Import the repository into Vercel.
-3. Confirm the deployment domain is `https://hanjinjangspine1.com`.
+3. Confirm the deployment domain is `https://www.hanjinjangspine1.com`.
 4. Deploy.
 5. After deployment, confirm:
    - `/sitemap.xml`
@@ -75,3 +75,16 @@ Sitemap, robots, canonical metadata, Open Graph URLs, and JSON-LD URLs are gener
 ## Editorial Guardrails
 
 This site is written as an academic physician-authored resource, not a patient advertisement. Keep future edits neutral and avoid promotional claims, anecdotal endorsements, or outcome promises. Use language such as clinical focus, surgical concept, technical considerations, limitations, risks, patient selection, and imaging-symptom concordance.
+
+
+## September 2026 Casebank release
+
+- /casebank: searchable collection, with seven independently addressable case records.
+- /publications: two source-linked selected journal records with author spelling and original affiliation.
+- /evidence-library: five curated references, explicitly separating authored work from external evidence.
+- /case-based-education: permanent redirect to /casebank; legacy links remain usable.
+- Shared navigation, author/institution context, correction route, and topic-to-case links.
+
+Clinical review dates are not website update dates. The default article schema no longer invents a common review or publication date. Patient guide review dates are retained from their original data.
+Casebank records are selected by stable source case number. Add a new case only after source verification, applicable publication authorization, and image/privacy review; do not automatically expose new private files or internal database records.
+No private case database or new patient material was uploaded in this release.

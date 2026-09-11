@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { AcademicTrust } from "@/components/AcademicTrust";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
@@ -26,8 +27,10 @@ export default function RootLayout({
         <SiteAnalytics />
         <JsonLd data={[physicianSchema(), organizationSchema(), personSchema(), websiteSchema()]} />
         <PhotoOwnershipNotice />
+        <a href="#main-content" className="skip-link">Skip to content</a>
         <Header />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
+        <AcademicTrust />
         <Footer />
       </body>
     </html>

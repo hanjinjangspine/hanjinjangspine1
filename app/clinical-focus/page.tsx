@@ -1,3 +1,5 @@
+import { RelatedCasebank } from "@/components/RelatedCasebank";
+import { EvidenceReferences } from "@/components/EvidenceReferences";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ClinicalFocusSection } from "@/components/ClinicalFocusSection";
@@ -21,13 +23,19 @@ export default function ClinicalFocusPage() {
       <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Clinical Focus", href: "/clinical-focus" }]} />
       <PageHeader
         eyebrow="Clinical Focus"
-        title="Endoscopic spine surgery for degenerative lumbar disease"
+        title="Endoscopic spine surgery for degenerative spine disease"
         description="Each topic is presented as an academic framework: clinical problem, surgical concept, indications, technical considerations, limitations, risks, and educational summary."
       />
       <section className="mx-auto max-w-6xl px-5 py-4">
         {clinicalFocusItems.map((item) => (
           <ClinicalFocusSection key={item.anchor} item={item} />
         ))}
+        <section id="cervical-spondylotic-myelopathy" className="my-10 border border-academic-line bg-academic-panel p-6">
+          <h2 className="font-serif text-3xl text-academic-navy">Degenerative cervical myelopathy</h2>
+          <p className="mt-4 text-sm leading-8 text-slate-700">The Casebank includes a published cervical decompression case. Its educational focus is the relationship between myelopathic symptoms, cord compression, operative level selection, and the limitations of a posterior endoscopic approach.</p>
+          <p className="mt-4 text-sm leading-8 text-slate-700">Clinical guidelines organize management around severity and progression. They do not validate one endoscopic corridor for every patient. A case-specific approach still requires assessment of alignment, stability, the compression pattern, and neurologic findings.</p>
+          <div className="mt-6"><EvidenceReferences ids={["dcm-guideline-2017", "ao-spine-2025"]} /></div>
+        </section>
         <PatientFacingResources
           resources={getNewStandardPatientResources([
             "spine-center",
@@ -43,6 +51,7 @@ export default function ClinicalFocusPage() {
           description="These official New Standard Hospital patient information pages provide Korean-language context for related conditions and treatment decision-making. They are separate from the academic summaries on this site and are not patient-specific medical advice."
         />
       </section>
+    <RelatedCasebank group="all" />
     </>
   );
 }

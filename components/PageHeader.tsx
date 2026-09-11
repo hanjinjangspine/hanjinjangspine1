@@ -17,12 +17,13 @@ type PageHeaderProps = {
   children?: ReactNode;
   eyebrowTone?: "academic" | "patient";
   image?: PageHeaderImage;
+  compact?: boolean;
 };
 
-export function PageHeader({ eyebrow, title, description, children, eyebrowTone = "academic", image }: PageHeaderProps) {
+export function PageHeader({ eyebrow, title, description, children, eyebrowTone = "academic", image, compact = false }: PageHeaderProps) {
   return (
     <section className="border-b border-academic-line bg-white" data-page-hero>
-      <div className="mx-auto grid max-w-6xl items-center gap-7 px-5 py-10 md:gap-8 md:py-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)] lg:gap-12 lg:py-14">
+      <div className={compact ? "mx-auto max-w-6xl px-5 py-8 md:py-12" : "mx-auto grid max-w-6xl items-center gap-7 px-5 py-10 md:gap-8 md:py-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)] lg:gap-12 lg:py-14"}>
         <div className="order-1 min-w-0 md:order-2 lg:order-1">
           {eyebrow ? (
             <p
@@ -38,7 +39,7 @@ export function PageHeader({ eyebrow, title, description, children, eyebrowTone 
           {children ? <div className="mt-6">{children}</div> : null}
         </div>
 
-        <div className="order-2 min-w-0 md:order-1 lg:order-2">
+        {!compact ? <div className="order-2 min-w-0 md:order-1 lg:order-2">
           {image ? (
             <figure className="mx-auto w-full max-w-[34rem] overflow-hidden border border-academic-line bg-academic-panel shadow-academic lg:max-w-[30rem]">
               <MedicalImageViewer
@@ -64,7 +65,7 @@ export function PageHeader({ eyebrow, title, description, children, eyebrowTone 
               <SpineMotif />
             </div>
           )}
-        </div>
+        </div> : null}
       </div>
     </section>
   );

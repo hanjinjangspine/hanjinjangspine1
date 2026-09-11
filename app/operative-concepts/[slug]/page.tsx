@@ -1,3 +1,4 @@
+import { RelatedCasebank } from "@/components/RelatedCasebank";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArticleSections } from "@/components/ArticleSections";
@@ -72,6 +73,7 @@ export default async function OperativeConceptPage({ params }: PageProps) {
       />
       <PageHeader eyebrow="Operative Concept" title={concept.title} description={concept.excerpt} />
       <ArticleSections sections={concept.sections} />
+    <RelatedCasebank group="all" />
     </>
   );
 }

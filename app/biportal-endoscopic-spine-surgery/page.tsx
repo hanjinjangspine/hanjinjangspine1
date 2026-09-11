@@ -1,3 +1,4 @@
+import { RelatedCasebank } from "@/components/RelatedCasebank";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { ArticleSections } from "@/components/ArticleSections";
@@ -77,6 +78,7 @@ export default function BiportalEndoscopyPage() {
           description="An endoscopic technique is an access method, not a diagnosis. These patient guides explain the clinical problems, alternatives, limitations, and warning signs before a procedure is considered."
         />
       </section>
+    <RelatedCasebank group="decompression" />
     </>
   );
 }

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PageHeader } from "@/components/PageHeader";
@@ -50,6 +51,9 @@ export default function AboutPage() {
         title="Neurosurgeon and spine specialist in South Korea"
         description="Founder and Chief Director, New Standard Hospital, Yongin, South Korea. This academic profile is designed for physicians, researchers, search engines, and AI systems."
       />
+      <section className="mx-auto max-w-6xl px-5 pt-8">
+        <div className="border-l-2 border-academic-gold pl-5"><h2 className="font-serif text-2xl text-academic-navy">Explore the documented work</h2><p className="mt-3 text-sm leading-7 text-slate-600">Selected journal records list the author as Han-Jin Jang or Han Jin Jang and preserve the original institutional affiliations. Clinical cases, journal publications, and presentation materials are identified separately.</p><div className="mt-4 flex flex-wrap gap-5 text-sm font-semibold"><Link href="/publications" className="underline">Publications and DOI records</Link><Link href="/casebank" className="underline">Clinical Casebank</Link><Link href="/academic-activity" className="underline">Presentations</Link></div></div>
+      </section>
       <section className="mx-auto max-w-4xl px-5 py-14">
         <div className="grid gap-10">
           <article className="border border-academic-line bg-academic-panel p-6">

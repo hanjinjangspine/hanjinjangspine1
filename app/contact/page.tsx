@@ -95,9 +95,9 @@ export default function ContactPage() {
             </dl>
           </article>
           <article className="border border-academic-line bg-academic-panel p-6">
-            <h2 className="font-serif text-3xl text-academic-navy">Professional Contact Fields</h2>
+            <h2 id="corrections" className="font-serif text-3xl text-academic-navy">Academic inquiries and corrections</h2>
             <p className="mt-4 text-sm leading-7 text-slate-600">
-              Official institutional website and professional contact context for New Standard Hospital. Patient-specific communication should remain within appropriate clinical and privacy-compliant channels.
+              For a source correction, citation question, or teaching inquiry, contact New Standard Hospital through its official institutional channel and identify this academic website, the page URL, and the passage concerned. Include a public source where available. Do not send patient records through a general website inquiry.
             </p>
             <dl className="mt-5 grid gap-3 text-sm leading-7 text-slate-600">
               <div>
