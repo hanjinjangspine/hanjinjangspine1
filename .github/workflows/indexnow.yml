@@ -63,7 +63,8 @@ jobs:
             exit 0
           fi
 
-          git fetch --no-tags --depth=1 origin main:refs/remotes/origin/main
+          # Keep the deployed commit's parent available for the content diff.
+          git fetch --no-tags --depth=2 origin main:refs/remotes/origin/main
           if [[ "$DEPLOY_SHA" == "$(git rev-parse origin/main)" ]]; then
             echo "should_submit=true" >> "$GITHUB_OUTPUT"
           else

@@ -9,6 +9,7 @@ import {
   assertRobotsAllowsCrawling,
   discoverIndexNowKey,
   extractSitemapUrls,
+  getChangedFiles,
   selectUrlsForChanges,
   submitIndexNow
 } from "./submit-indexnow.mjs";
@@ -16,7 +17,8 @@ import {
 const sitemapUrls = [
   `${SITE_ORIGIN}/`,
   `${SITE_ORIGIN}/about`,
-  `${SITE_ORIGIN}/case-based-education`,
+  `${SITE_ORIGIN}/casebank`,
+  `${SITE_ORIGIN}/casebank/lumbar-stenosis-biportal-decompression`,
   `${SITE_ORIGIN}/operative-concepts`,
   `${SITE_ORIGIN}/operative-concepts/ube-far-lateral-l5s1`,
   `${SITE_ORIGIN}/patient-education`,
@@ -81,7 +83,10 @@ test("clinical media changes select the pages that use the media", () => {
     sitemapUrls
   });
 
-  assert.deepEqual(cases.urls, [`${SITE_ORIGIN}/case-based-education`]);
+  assert.deepEqual(cases.urls, [
+    `${SITE_ORIGIN}/casebank`,
+    `${SITE_ORIGIN}/casebank/lumbar-stenosis-biportal-decompression`
+  ]);
   assert.deepEqual(education.urls, [
     `${SITE_ORIGIN}/patient-education`,
     `${SITE_ORIGIN}/patient-education/lumbar-disc-herniation`
@@ -105,6 +110,11 @@ test("automation-only changes do not submit content URLs", () => {
 test("manual submit-all selects every sitemap URL", () => {
   const result = selectUrlsForChanges({ changedFiles: [], sitemapUrls, submitAll: true });
   assert.deepEqual(result, { mode: "all", urls: sitemapUrls });
+});
+
+test("missing git history cannot silently report no content changes", () => {
+  assert.throws(() => getChangedFiles("", "HEAD"), /base and head revision/u);
+  assert.throws(() => getChangedFiles("HEAD^", ""), /base and head revision/u);
 });
 
 test("robots validation requires crawling and the canonical sitemap", () => {

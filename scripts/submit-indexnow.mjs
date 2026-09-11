@@ -120,7 +120,7 @@ export function selectUrlsForChanges({
     }
 
     if (file.startsWith("public/cases/")) {
-      selected.add(new URL("/case-based-education", origin).toString());
+      addMatchingPrefix(selected, "/casebank", sitemapUrls);
       continue;
     }
 
@@ -162,8 +162,8 @@ function git(args) {
   }).trim();
 }
 
-function getChangedFiles(base, head) {
-  if (!base || !head) return [];
+export function getChangedFiles(base, head) {
+  if (!base || !head) throw new Error("A base and head revision are required; use --all for an explicit full submission.");
   const output = git(["diff", "--name-only", "--diff-filter=ACDMRTUXB", base, head, "--"]);
   return output ? output.split(/\r?\n/u) : [];
 }
@@ -311,7 +311,7 @@ export async function main(argv = process.argv.slice(2)) {
   assertRobotsAllowsCrawling(robotsText, origin);
   const sitemapUrls = extractSitemapUrls(sitemapXml, origin);
   const selection = selectUrlsForChanges({
-    changedFiles: getChangedFiles(options.base, options.head),
+    changedFiles: options.submitAll ? [] : getChangedFiles(options.base, options.head),
     sitemapUrls,
     origin,
     submitAll: options.submitAll
