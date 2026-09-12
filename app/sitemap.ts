@@ -1,5 +1,6 @@
 import pageDates from "@/lib/page-dates.json";
 import { casebankCases, casebankUpdated } from "@/lib/casebank";
+import { casebankArchive } from "@/lib/casebank-archive";
 import type { MetadataRoute } from "next";
 import { operativeConcepts } from "@/lib/content";
 import { patientEducationGuides, patientEducationReviewDate } from "@/lib/patient-education";
@@ -31,7 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [...staticRoutes, ...conceptRoutes, ...patientGuideRoutes, ...casebankCases.map((item) => "/casebank/" + item.slug)].map((route) => ({
     url: absoluteUrl(route),
-    lastModified: new Date(route.startsWith("/casebank") ? casebankUpdated : route.startsWith("/patient-education") ? patientEducationReviewDate : route.startsWith("/operative-concepts/") ? pageDates["/operative-concepts/[slug]"] : (pageDates as Record<string, string>)[route] ?? "2026-08-24"),
+    lastModified: new Date(route === "/casebank" ? casebankArchive.updated : route.startsWith("/casebank/") ? casebankUpdated : route.startsWith("/patient-education") ? patientEducationReviewDate : route.startsWith("/operative-concepts/") ? pageDates["/operative-concepts/[slug]"] : (pageDates as Record<string, string>)[route] ?? "2026-08-24"),
     changeFrequency: route === "/" || route === "/patient-education" ? "weekly" : "monthly",
     priority: route === "/" ? 1 : route.startsWith("/patient-education") ? 0.8 : 0.7
   }));
