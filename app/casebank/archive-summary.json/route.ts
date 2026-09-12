@@ -2,18 +2,20 @@ import { casebankArchive } from "@/lib/casebank-archive";
 import { casebankCards } from "@/lib/casebank";
 import { absoluteUrl } from "@/lib/site";
 import { driveVideoInventory } from "@/lib/drive-video-inventory";
+import { archiveVideos, videoArchiveUpdated } from "@/lib/video-archive";
 
 export const dynamic = "force-static";
 
 export function GET() {
   return Response.json({
     title: "Casebank public aggregate summary",
-    version: "2026-09-12-v2",
+    version: "2026-09-13-v3",
     source: absoluteUrl("/casebank#count-method"),
     custodian: "Hanjin Jang, MD",
     ...casebankArchive,
     driveVideoInventory,
     publishedTeachingEntries: casebankCards.length,
+    publishedVideoArchive: { updated: videoArchiveUpdated, catalogueRecords: 100, publishedEntries: archiveVideos.length, recordedLevelDistribution: [1, 2, null].map((levels) => ({ recordedLevels: levels, entries: archiveVideos.filter(v => levels === null ? !v.recordedLevels.length : v.recordedLevels.length === levels).length })), source: absoluteUrl("/casebank/video-archive"), definition: "One public excerpt per eligible catalogue record. Not a count of unique patients or operations; overlap with detailed teaching cases is not established." },
     teachingLevelDistribution: [1, 2, 3, null].map((levels) => ({
       treatedLevels: levels,
       entries: casebankCards.filter((entry) => entry.levelCount === levels).length,

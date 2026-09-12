@@ -13,5 +13,5 @@ export const driveVideoInventory = {
   scope: "Eight identified surgical-media collections in the connected Google Drive account, including their descendants. This is not an inventory of every Drive account or every folder.",
   countingMethod: "One record per distinct Drive file ID with a video MIME type. Original filenames, folder paths and file links remain private. File copies and alternate edits may remain in this total.",
   matchingMethod: "Filename-and-size grouping identifies review candidates only. A metadata match does not verify identical file contents or a unique clinical case.",
-  publicationScope: "Private file listing does not authorize publication. The open video collection currently reuses the existing Case 08 teaching sequence."
+  publicationScope: "The Drive listing remains a file inventory. Separately authorized excerpts from the retained 100-record video catalogue are available in the open operative archive. Neither publication nor file matching establishes unique patients, verified operative indications or outcomes."
 } as const;
