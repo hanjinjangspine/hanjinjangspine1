@@ -1,7 +1,7 @@
 export const evidenceCheckedDate = "2026-09-11";
 export type EvidenceReference = {
   id: string; title: string; citation: string; href: string; doi: string;
-  kind: string; context: string; limitation: string; authorRecord?: string;
+  kind: string; context: string; limitation: string; authorRecord?: string; authorship?: string;
 };
 export const evidenceReferences: EvidenceReference[] = [
   {
@@ -11,6 +11,7 @@ export const evidenceReferences: EvidenceReference[] = [
     href: "https://pubmed.ncbi.nlm.nih.gov/27583117/",
     doi: "10.4055/cios.2016.8.3.325", kind: "Coauthored publication · technical report",
     authorRecord: "The indexed author list includes Han-Jin Jang, with a Barun Hospital, Jinju affiliation.",
+    authorship: "Han-Jin Jang is fifth in the six-author byline. Dae-Jung Choi is the corresponding author. Author order does not establish a specific CRediT contribution or the operator of an individual case.",
     context: "A published technical discussion of biportal revision discectomy, scar dissection, and preservation of remaining stabilizing structures.",
     limitation: "This report concerns recurrent disc herniation. It does not establish the benefit of revision fusion or validate outcomes in the cases on this website."
   },
@@ -21,6 +22,7 @@ export const evidenceReferences: EvidenceReference[] = [
     href: "https://www.kjnt.org/DOIx.php?id=10.13004/kjnt.2012.8.2.59",
     doi: "10.13004/kjnt.2012.8.2.59", kind: "Coauthored publication · retrospective study",
     authorRecord: "The journal lists Han Jin Jang and Cheol Su Jwa, Department of Neurosurgery, National Medical Center, Seoul.",
+    authorship: "Han Jin Jang is the first-listed author of this two-author paper. Cheol Su Jwa is the corresponding author. Specific CRediT contribution categories are not assigned here.",
     context: "A retrospective study examining tracheostomy timing in patients with acute cervical cord injury.",
     limitation: "An acute spinal cord injury study; it is not evidence for elective endoscopic decompression or the Casebank's operative outcomes."
   },
@@ -56,4 +58,3 @@ export const publications = evidenceReferences.filter((item) => item.authorRecor
 export function getEvidence(ids: readonly string[]) {
   return evidenceReferences.filter((item) => ids.includes(item.id));
 }
-
