@@ -22,7 +22,7 @@ export function CasebankArchiveSummary() {
             </div>
           ))}
         </dl>
-        <p className="mt-7 text-sm leading-7 text-slate-600">The clinical archive contains records attributed to Dr. Jang. Video collections and published teaching entries are counted separately because they may overlap. Archive totals measure retained records; they do not establish a lifetime total of unique patients or operations.</p>
+        <p className="mt-7 text-sm leading-7 text-slate-600">The clinical archive contains records attributed to Dr. Jang. Video collections and published teaching entries are counted separately because they may overlap. Archive totals measure retained records; they do not establish a lifetime total of unique patients, UBE operations, or successful treatments.</p>
         <a href="#published-cases" className="mt-4 inline-block text-sm font-semibold underline">Browse the {casebankCards.length} open teaching entries →</a>
         <details id="count-method" className="mt-7 border-t border-academic-line pt-5">
           <summary className="cursor-pointer font-semibold text-academic-navy">Sources, counting method and annual records</summary>
@@ -47,6 +47,8 @@ export function CasebankArchiveSummary() {
             </table>
           </div>
           <p className="mt-4 text-xs leading-6 text-slate-600">Archive custodian: Hanjin Jang, MD. Original clinical and media records remain private. Public teaching material follows the <Link href="/editorial-policy" className="underline">editorial and de-identification policy</Link>.</p>
+          <p className="mt-4 text-sm leading-7 text-slate-600"><strong className="text-academic-navy">Verification scope.</strong> Counts were checked by a technical recount of the retained source records. This is not an independent clinical audit. A separate case-level medical reviewer and review date are not documented for this website edition; the journal-based entry retains its original publication context.</p>
+          <div className="mt-5 border-t border-academic-line pt-4 text-sm leading-7 text-slate-600"><h3 className="font-semibold text-academic-navy">Cite the aggregate summary</h3><p className="mt-2">Hanjin Jang, MD academic resource. Casebank archive counts and counting method. Updated {casebankArchive.updated}. https://www.hanjinjangspine1.com/casebank#count-method. State the access date and retain the collection definitions when citing these counts.</p><a href="/casebank/archive-summary.json" download className="mt-3 inline-block font-semibold underline">Download aggregate counts and definitions (JSON) →</a><p className="mt-2 text-xs">Contains only public counts, annual totals and definitions. It contains no patient records or private media.</p></div>
         </details>
       </div>
     </section>

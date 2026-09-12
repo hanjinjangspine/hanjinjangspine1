@@ -50,9 +50,17 @@ export default function AboutPage() {
       <PageHeader
         eyebrow="About Dr. Jang"
         title="Neurosurgeon and spine specialist in South Korea"
-        description="Founder and Chief Director, New Standard Hospital, Yongin, South Korea. This academic profile is designed for physicians, researchers, search engines, and AI systems."
+        description="Hanjin Jang, MD · 장한진. Neurosurgeon, Founder and Chief Director of New Standard Hospital in Yongin, South Korea. A professional profile for physicians, researchers and readers of the teaching collection."
       />
       <section className="mx-auto max-w-6xl px-5 pt-8">
+        <section aria-labelledby="profile-sources" className="mb-8 border border-academic-line p-6">
+          <h2 id="profile-sources" className="font-serif text-2xl text-academic-navy">Verify the professional profile</h2>
+          <dl className="mt-5 grid gap-5 text-sm leading-7 md:grid-cols-3">
+            <div><dt className="font-semibold text-academic-navy">Current clinical role</dt><dd className="mt-2 text-slate-600">The <a href={siteConfig.officialKoreanProfile.patientProfileUrl} className="underline">official Korean physician profile</a> identifies 장한진 as a neurosurgery specialist and representative director. This is the institution&apos;s own profile.</dd></div>
+            <div><dt className="font-semibold text-academic-navy">Published author names</dt><dd className="mt-2 text-slate-600"><Link href="/publications#jang-cord-injury-2012" className="underline">Han Jin Jang (2012)</Link> and <Link href="/publications#jang-revision-2016" className="underline">Han-Jin Jang (2016)</Link> appear in the linked journal records, abbreviated Jang HJ in citations. Historical affiliations are retained.</dd></div>
+            <div><dt className="font-semibold text-academic-navy">Scope of the evidence</dt><dd className="mt-2 text-slate-600">Journal authorship confirms participation in those publications. It does not identify the operating surgeon for every illustrated case or verify the private archive&apos;s clinical outcomes. <Link href="/editorial-policy#review-status" className="underline">See the current review status</Link>.</dd></div>
+          </dl>
+        </section>
         <div className="mb-8 border border-academic-line bg-academic-panel p-6">
           <h2 className="font-serif text-2xl text-academic-navy">Clinical case archive</h2>
           <p className="mt-3 text-base leading-8 text-slate-600"><strong className="text-academic-navy">{formatArchiveCount(casebankArchive.clinicalRecords)} archived clinical records</strong> attributed to Dr. Jang across {casebankArchive.clinicalSourceSites} source institutions, spanning available records from 2016 to 2026. The Casebank also documents {casebankArchive.historicalVideoCases} historical video case records and a separate {casebankArchive.videoCatalogueCases}-case video catalogue.</p>
@@ -84,7 +92,7 @@ export default function AboutPage() {
               New Standard Hospital is a spine and joint-focused medical institution where multidisciplinary care includes neurosurgery, orthopedic surgery, internal medicine, anesthesiology, and radiology.
             </p>
             <p className="mt-4 text-base leading-8 text-slate-600">
-              This personal website is maintained as an academic physician profile and physician-authored educational resource. It is intended to provide professional, educational, and AI-readable reference information about Dr. Jang&apos;s clinical and academic focus in endoscopic spine surgery.
+              This personal website presents Dr. Jang&apos;s clinical and academic work for professional education. Source-labelled case summaries, original journal records and patient guides help readers distinguish clinical observations from general teaching. The institutional relationship is disclosed in the editorial policy.
             </p>
             <a
               href="https://new-standard.co.kr"
