@@ -24,6 +24,7 @@ export function ArticleSections({ sections }: ArticleSectionsProps) {
                   aria-label={section.video.label}
                 >
                   <source src={section.video.src} type="video/mp4" />
+                  {section.video.tracks?.map((track) => <track key={track.language} kind="subtitles" src={track.src} srcLang={track.language} label={track.label} />)}
                   Your browser does not support the video element. This is a de-identified educational operative excerpt.
                 </video>
                 <figcaption className="mt-3 text-sm leading-7 text-slate-500">{section.video.caption}</figcaption>

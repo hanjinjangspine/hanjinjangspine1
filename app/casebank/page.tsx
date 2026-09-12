@@ -4,6 +4,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { JsonLd } from "@/components/JsonLd";
 import { CasebankExplorer } from "@/components/CasebankExplorer";
 import { CasebankArchiveSummary } from "@/components/CasebankArchiveSummary";
+import { DriveVideoInventory } from "@/components/DriveVideoInventory";
 import { casebankArchive, formatArchiveCount } from "@/lib/casebank-archive";
 import { casebankCards, casebankUpdated } from "@/lib/casebank";
 import { createMetadata } from "@/lib/metadata";
@@ -21,6 +22,7 @@ export default function CasebankPage() {
       <div className="mt-5 flex flex-wrap gap-5 text-sm font-semibold"><a href="#published-cases" className="underline">Read the {casebankCards.length} teaching entries</a><a href="#count-method" className="underline">Archive counts and method</a><Link href="/patient-education" className="underline">Patient guides</Link></div>
     </PageHeader>
     <CasebankArchiveSummary />
+    <DriveVideoInventory />
     <section id="published-cases" className="mx-auto max-w-6xl scroll-mt-24 px-5 pb-12 pt-4">
       <h2 className="mb-6 font-serif text-3xl text-academic-navy">Published teaching cases · {casebankCards.length} entries</h2>
       <div className="mb-8 grid gap-6 border-l-2 border-academic-gold pl-5 md:grid-cols-2">

@@ -21,6 +21,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/"
       }
     ],
-    sitemap: absoluteUrl("/sitemap.xml")
+    sitemap: [absoluteUrl("/sitemap.xml"), absoluteUrl("/video-sitemap.xml")]
   };
 }

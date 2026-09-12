@@ -1,16 +1,18 @@
 import { casebankArchive } from "@/lib/casebank-archive";
 import { casebankCards } from "@/lib/casebank";
 import { absoluteUrl } from "@/lib/site";
+import { driveVideoInventory } from "@/lib/drive-video-inventory";
 
 export const dynamic = "force-static";
 
 export function GET() {
   return Response.json({
     title: "Casebank public aggregate summary",
-    version: "2026-09-12-v1",
+    version: "2026-09-12-v2",
     source: absoluteUrl("/casebank#count-method"),
     custodian: "Hanjin Jang, MD",
     ...casebankArchive,
+    driveVideoInventory,
     publishedTeachingEntries: casebankCards.length,
     teachingLevelDistribution: [1, 2, 3, null].map((levels) => ({
       treatedLevels: levels,
