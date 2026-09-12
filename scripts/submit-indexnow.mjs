@@ -216,7 +216,7 @@ export function assertRobotsAllowsCrawling(robotsText, origin = SITE_ORIGIN) {
 
     if (lowerLine.startsWith("sitemap:")) {
       const sitemap = line.slice("sitemap:".length).trim();
-      canonicalSitemapFound = sitemap === `${origin}/sitemap.xml`;
+      canonicalSitemapFound ||= sitemap === `${origin}/sitemap.xml`;
     }
   }
 

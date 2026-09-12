@@ -128,6 +128,20 @@ test("robots validation requires crawling and the canonical sitemap", () => {
   assert.throws(() => assertRobotsAllowsCrawling("User-agent: *\nAllow: /"), /canonical sitemap/u);
 });
 
+test("robots accepts the canonical sitemap alongside a video sitemap in either order", () => {
+  const main = `Sitemap: ${SITE_ORIGIN}/sitemap.xml`;
+  const video = `Sitemap: ${SITE_ORIGIN}/video-sitemap.xml`;
+  for (const declarations of [[main, video], [video, main]]) {
+    assert.doesNotThrow(() =>
+      assertRobotsAllowsCrawling(["User-agent: *", "Allow: /", ...declarations].join("\n"))
+    );
+  }
+  assert.throws(
+    () => assertRobotsAllowsCrawling(`User-agent: *\nAllow: /\n${video}`),
+    /canonical sitemap/u
+  );
+});
+
 test("key discovery requires one exact 32-character filename-content match", async () => {
   const directory = await mkdtemp(path.join(os.tmpdir(), "indexnow-key-test-"));
   const dummyKey = "0123456789abcdef0123456789abcdef";
