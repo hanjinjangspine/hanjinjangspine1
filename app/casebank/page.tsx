@@ -3,23 +3,27 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PageHeader } from "@/components/PageHeader";
 import { JsonLd } from "@/components/JsonLd";
 import { CasebankExplorer } from "@/components/CasebankExplorer";
+import { CasebankArchiveSummary } from "@/components/CasebankArchiveSummary";
+import { casebankArchive, formatArchiveCount } from "@/lib/casebank-archive";
 import { casebankCards, casebankUpdated } from "@/lib/casebank";
 import { createMetadata } from "@/lib/metadata";
 import { absoluteUrl } from "@/lib/site";
 
 export const metadata = createMetadata({ title: "Casebank | Endoscopic Spine Surgery Cases | Hanjin Jang, MD",
-  description: `Explore ${casebankCards.length} spine education entries with clinical reasoning, operative video, published-case evidence, surgical levels, and treated level counts.`, path: "/casebank" });
+  description: `Hanjin Jang's Casebank: ${formatArchiveCount(casebankArchive.clinicalRecords)} archived clinical records, ${casebankArchive.historicalVideoCases} historical video cases, a ${casebankArchive.videoCatalogueCases}-case video catalogue, and ${casebankCards.length} open teaching entries with level counts.`, path: "/casebank" });
 export default function CasebankPage() {
   return <>
-    <JsonLd data={{ "@context": "https://schema.org", "@type": "CollectionPage", name: "Endoscopic Spine Surgery Casebank", url: absoluteUrl("/casebank"), dateModified: casebankUpdated, isPartOf: { "@id": absoluteUrl("/") + "#website" }, mainEntity: { "@type": "ItemList", numberOfItems: casebankCards.length, itemListElement: casebankCards.map((item, i) => ({ "@type": "ListItem", position: i + 1, name: item.title, url: absoluteUrl("/casebank/" + item.slug) })) } }} />
+    <JsonLd data={{ "@context": "https://schema.org", "@type": "CollectionPage", name: "Endoscopic Spine Surgery Casebank", url: absoluteUrl("/casebank"), dateModified: casebankArchive.updated, description: `${formatArchiveCount(casebankArchive.clinicalRecords)} archived clinical records, ${casebankArchive.historicalVideoCases} historical video case records and a separate ${casebankArchive.videoCatalogueCases}-case video catalogue. Collections may overlap. The open ItemList contains ${casebankCards.length} published teaching entries.`, isPartOf: { "@id": absoluteUrl("/") + "#website" }, mainEntity: { "@type": "ItemList", numberOfItems: casebankCards.length, itemListElement: casebankCards.map((item, i) => ({ "@type": "ListItem", position: i + 1, name: item.title, url: absoluteUrl("/casebank/" + item.slug) })) } }} />
     <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Casebank", href: "/casebank" }]} />
-    <PageHeader compact eyebrow="Clinical experience · Casebank" title="From clinical findings to operative reasoning"
-      description="Explore the published educational case collection of Hanjin Jang, MD. Each record connects presentation, imaging, the treatment rationale, operative considerations, and the limits of the available follow-up.">
-      <p className="mt-4 text-sm text-slate-600">Collection reorganized {casebankUpdated} · {casebankCards.length} educational entries · Physician-facing education</p>
+    <PageHeader compact eyebrow="Clinical experience · Casebank" title="Clinical case archive & teaching library"
+      description="Explore the clinical and operative-video archive of Hanjin Jang, MD, alongside open teaching cases that connect imaging, treatment rationale, operative considerations, and available follow-up.">
+      <p className="mt-4 text-sm text-slate-600">Archive counts updated {casebankArchive.updated} · Teaching collection updated {casebankUpdated}</p>
     </PageHeader>
-    <section className="mx-auto max-w-6xl px-5 py-12">
+    <CasebankArchiveSummary />
+    <section id="published-cases" className="mx-auto max-w-6xl scroll-mt-24 px-5 pb-12 pt-4">
+      <h2 className="mb-6 font-serif text-3xl text-academic-navy">Published teaching cases · {casebankCards.length} entries</h2>
       <div className="mb-8 grid gap-6 border-l-2 border-academic-gold pl-5 md:grid-cols-2">
-        <div><h2 className="font-serif text-2xl text-academic-navy">What this collection documents</h2><p className="mt-3 text-sm leading-7 text-slate-600">Nine source-labelled entries: seven clinical summaries, one operative-video example, and one case from a paper coauthored by Han-Jin Jang. Counts describe educational material. They do not measure unique patients, surgical volume, or outcome rates.</p></div>
+        <div><h3 className="font-serif text-2xl text-academic-navy">What the open collection documents</h3><p className="mt-3 text-sm leading-7 text-slate-600">Nine source-labelled entries: seven clinical summaries, one operative-video example, and one case from a paper coauthored by Han-Jin Jang. These are the entries available to read online from the wider archive.</p></div>
         <div><h2 className="font-serif text-2xl text-academic-navy">Read the limits with the case</h2><p className="mt-3 text-sm leading-7 text-slate-600">Unreported fields stay unreported. A postoperative image is not a functional outcome, and a website update is not a new clinical review. <Link href="/editorial-policy" className="underline">Read the publication policy</Link>.</p></div>
       </div>
       <div className="mb-8 border border-academic-line bg-academic-panel p-5">

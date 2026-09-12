@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PageHeader } from "@/components/PageHeader";
 import { createMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
+import { casebankArchive, formatArchiveCount } from "@/lib/casebank-archive";
 
 export const metadata: Metadata = createMetadata({
   title: "About Dr. Hanjin Jang | Neurosurgeon in Yongin, South Korea",
@@ -52,6 +53,12 @@ export default function AboutPage() {
         description="Founder and Chief Director, New Standard Hospital, Yongin, South Korea. This academic profile is designed for physicians, researchers, search engines, and AI systems."
       />
       <section className="mx-auto max-w-6xl px-5 pt-8">
+        <div className="mb-8 border border-academic-line bg-academic-panel p-6">
+          <h2 className="font-serif text-2xl text-academic-navy">Clinical case archive</h2>
+          <p className="mt-3 text-base leading-8 text-slate-600"><strong className="text-academic-navy">{formatArchiveCount(casebankArchive.clinicalRecords)} archived clinical records</strong> attributed to Dr. Jang across {casebankArchive.clinicalSourceSites} source institutions, spanning available records from 2016 to 2026. The Casebank also documents {casebankArchive.historicalVideoCases} historical video case records and a separate {casebankArchive.videoCatalogueCases}-case video catalogue.</p>
+          <p className="mt-3 text-sm leading-7 text-slate-600">Collections may overlap. These archive counts describe retained records and do not establish a lifetime total of unique patients or operations. Count checked {casebankArchive.updated}.</p>
+          <Link href="/casebank#archive" className="mt-4 inline-block text-sm font-semibold underline">Explore the Casebank and counting method →</Link>
+        </div>
         <div className="border-l-2 border-academic-gold pl-5"><h2 className="font-serif text-2xl text-academic-navy">Explore the documented work</h2><p className="mt-3 text-sm leading-7 text-slate-600">Selected journal records list the author as Han-Jin Jang or Han Jin Jang and preserve the original institutional affiliations. Clinical cases, journal publications, and presentation materials are identified separately.</p><div className="mt-4 flex flex-wrap gap-5 text-sm font-semibold"><Link href="/publications" className="underline">Publications and DOI records</Link><Link href="/casebank" className="underline">Clinical Casebank</Link><Link href="/academic-activity" className="underline">Presentations</Link></div></div>
       </section>
       <section className="mx-auto max-w-4xl px-5 py-14">
