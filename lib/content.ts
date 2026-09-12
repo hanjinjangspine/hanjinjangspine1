@@ -8,6 +8,7 @@ export type SectionVideo = {
   poster: string;
   caption: string;
   label: string;
+  tracks?: { src: string; language: string; label: string }[];
 };
 
 export type ContentSection = {
@@ -1193,6 +1194,10 @@ export const operativeConcepts: OperativeConcept[] = [
           "The following is a longer, de-identified educational sequence assembled with English captions for teaching. It is an educational operative sequence rather than a patient case or outcome video, and it follows the steps described above through to confirmation of the decompressed exiting root.",
         video: {
           src: "/media/operative-concepts/ube-far-lateral-l5s1/UBE_FarLateral_L5S1_Edu_90s_EN_web_720p.mp4",
+          tracks: [
+            { src: "/media/operative-concepts/ube-far-lateral-l5s1/far-lateral-caption-text.en.vtt", language: "en", label: "English caption text" },
+            { src: "/media/operative-concepts/ube-far-lateral-l5s1/far-lateral-caption-text.ko.vtt", language: "ko", label: "한국어 자막" }
+          ],
           poster: "/media/operative-concepts/ube-far-lateral-l5s1/UBE_FarLateral_L5S1_Edu_90s_EN_poster.jpg",
           caption:
             "De-identified 90-second educational sequence demonstrating the far-lateral biportal approach, foraminal decompression, discectomy, and final confirmation of exiting L5 root decompression at L5-S1.",

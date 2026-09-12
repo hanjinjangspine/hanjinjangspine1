@@ -8,9 +8,8 @@ export function AcademicTrust() {
         <p className="mt-2 text-sm leading-7 text-slate-600">Neurosurgeon · Founder and Chief Director, New Standard Hospital, Yongin, South Korea. <a href={siteConfig.officialKoreanProfile.patientProfileUrl} className="underline underline-offset-4">Official institutional profile</a></p>
       </div>
       <div className="text-sm leading-7 text-slate-600"><p>Read the case record alongside its evidence and limitations. Publication dates, website updates, and clinical review dates have different meanings.</p>
-        <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 font-semibold text-academic-navy"><Link href="/casebank">Casebank</Link><Link href="/publications">Publications</Link><Link href="/evidence-library">Evidence library</Link><Link href="/editorial-policy">Editorial policy</Link><Link href="/contact#corrections">Suggest a correction</Link></div>
+        <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 font-semibold text-academic-navy"><Link href="/casebank">Casebank</Link><Link href="/videos">Operative videos</Link><Link href="/publications">Publications</Link><Link href="/evidence-library">Evidence library</Link><Link href="/editorial-policy">Editorial policy</Link><Link href="/contact#corrections">Suggest a correction</Link></div>
       </div>
     </div>
   </aside>;
 }
-

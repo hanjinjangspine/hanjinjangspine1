@@ -44,7 +44,7 @@ export const casebankCases: CasebankCase[] = catalog.map((entry) => {
   )) as CaseExample;
   const levels = caseLevels[entry.sourceCaseNumber];
   if (!levels) throw new Error("Missing level review for " + entry.sourceCaseNumber);
-  return { ...clean, ...entry, updated: casebankUpdated, levels, source: additionalSources[entry.sourceCaseNumber] ?? { kind: "Clinical summary", label: "Hanjin Jang, MD academic case collection", href: "/casebank", note: `${record.caseNumber} in the previously published Case-Based Education collection by Hanjin Jang, MD. A separate case-level clinical review date and public consent record are not reported in the available source.` } };
+  return { ...clean, ...entry, updated: entry.sourceCaseNumber === "Case 08" ? "2026-09-12" : casebankUpdated, levels, source: additionalSources[entry.sourceCaseNumber] ?? { kind: "Clinical summary", label: "Hanjin Jang, MD academic case collection", href: "/casebank", note: `${record.caseNumber} in the previously published Case-Based Education collection by Hanjin Jang, MD. A separate case-level clinical review date and public consent record are not reported in the available source.` } };
 });
 export const casebankCards = casebankCases.map((item) => ({
   slug: item.slug, caseNumber: item.caseNumber, title: item.shortTitle,

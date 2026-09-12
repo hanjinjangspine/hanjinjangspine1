@@ -1,4 +1,5 @@
 import { RelatedCasebank } from "@/components/RelatedCasebank";
+import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArticleSections } from "@/components/ArticleSections";
@@ -61,7 +62,8 @@ export default async function OperativeConceptPage({ params }: PageProps) {
           title: concept.title,
           description: concept.excerpt,
           path: `/operative-concepts/${concept.slug}`,
-          keywords: concept.keywords
+          keywords: concept.keywords,
+          dateModified: concept.slug === "ube-far-lateral-l5s1" ? "2026-09-12" : undefined
         })}
       />
       <Breadcrumbs
@@ -72,6 +74,7 @@ export default async function OperativeConceptPage({ params }: PageProps) {
         ]}
       />
       <PageHeader eyebrow="Operative Concept" title={concept.title} description={concept.excerpt} />
+      {concept.slug === "ube-far-lateral-l5s1" ? <p className="mx-auto max-w-3xl px-5 pt-7 text-sm leading-7"><Link href="/videos/right-l5s1-far-lateral-discectomy" className="font-semibold text-academic-navy underline">Watch the extended sequence with chapters and English / Korean caption text →</Link></p> : null}
       <ArticleSections sections={concept.sections} />
     <RelatedCasebank group="all" />
     </>
