@@ -5,22 +5,24 @@ import { JsonLd } from "@/components/JsonLd";
 import { CasebankExplorer } from "@/components/CasebankExplorer";
 import { CasebankArchiveSummary } from "@/components/CasebankArchiveSummary";
 import { DriveVideoInventory } from "@/components/DriveVideoInventory";
+import { archiveVideos, videoArchiveUpdated } from "@/lib/video-archive";
 import { casebankArchive, formatArchiveCount } from "@/lib/casebank-archive";
 import { casebankCards, casebankUpdated } from "@/lib/casebank";
 import { createMetadata } from "@/lib/metadata";
 import { absoluteUrl } from "@/lib/site";
 
 export const metadata = createMetadata({ title: "Casebank | Endoscopic Spine Surgery Cases | Hanjin Jang, MD",
-  description: `${casebankCards.length} open teaching entries with sources, treated levels and clinical limitations. Separate archive totals describe retained records, not unique operations or outcomes.`, path: "/casebank" });
+  description: `${archiveVideos.length} open operative archive excerpts and ${casebankCards.length} detailed teaching entries, with source labels, recorded levels and clinical limitations. Collections may overlap.`, path: "/casebank" });
 export default function CasebankPage() {
   return <>
-    <JsonLd data={{ "@context": "https://schema.org", "@type": "CollectionPage", name: "Endoscopic Spine Surgery Casebank", url: absoluteUrl("/casebank"), dateModified: casebankArchive.updated, description: `${formatArchiveCount(casebankArchive.clinicalRecords)} archived clinical records, ${casebankArchive.historicalVideoCases} historical video case records and a separate ${casebankArchive.videoCatalogueCases}-case video catalogue. Collections may overlap. The open ItemList contains ${casebankCards.length} published teaching entries.`, isPartOf: { "@id": absoluteUrl("/") + "#website" }, mainEntity: { "@type": "ItemList", numberOfItems: casebankCards.length, itemListElement: casebankCards.map((item, i) => ({ "@type": "ListItem", position: i + 1, name: item.title, url: absoluteUrl("/casebank/" + item.slug) })) } }} />
+    <JsonLd data={{ "@context": "https://schema.org", "@type": "CollectionPage", name: "Endoscopic Spine Surgery Casebank", url: absoluteUrl("/casebank"), dateModified: videoArchiveUpdated, description: `${formatArchiveCount(casebankArchive.clinicalRecords)} archived clinical records, ${casebankArchive.historicalVideoCases} historical video case records and a separate ${casebankArchive.videoCatalogueCases}-case video catalogue. Collections may overlap. The open ItemList contains ${casebankCards.length} published teaching entries.`, isPartOf: { "@id": absoluteUrl("/") + "#website" }, mainEntity: { "@type": "ItemList", numberOfItems: casebankCards.length, itemListElement: casebankCards.map((item, i) => ({ "@type": "ListItem", position: i + 1, name: item.title, url: absoluteUrl("/casebank/" + item.slug) })) } }} />
     <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Casebank", href: "/casebank" }]} />
-    <PageHeader compact eyebrow="Clinical experience · Casebank" title={`${casebankCards.length} open teaching entries · Clinical case archive`}
+    <PageHeader compact eyebrow="Clinical experience · Casebank" title={`${archiveVideos.length} operative archive entries · ${casebankCards.length} detailed teaching cases`}
       description="Read source-labelled clinical summaries, an operative-video example and a published case. Each entry connects the recorded reasoning, treated levels, source evidence and information that remains unreported.">
       <p className="mt-4 text-sm text-slate-600">Archive counts updated {casebankArchive.updated} · Teaching collection updated {casebankUpdated}</p>
       <div className="mt-5 flex flex-wrap gap-5 text-sm font-semibold"><a href="#published-cases" className="underline">Read the {casebankCards.length} teaching entries</a><a href="#count-method" className="underline">Archive counts and method</a><Link href="/patient-education" className="underline">Patient guides</Link></div>
     </PageHeader>
+    <section id="open-video-archive" className="mx-auto max-w-6xl px-5 pb-8"><div className="border border-academic-line bg-academic-panel p-6"><p className="text-sm font-semibold uppercase tracking-widest text-slate-500">Now open · {videoArchiveUpdated}</p><h2 className="mt-3 font-serif text-3xl text-academic-navy">Watch {archiveVideos.length} excerpts from the 100-record video catalogue</h2><p className="mt-3 max-w-3xl text-sm leading-7 text-slate-600">Open the actual operative views, recorded procedure labels and level information. Each excerpt represents a catalogue record. These records may overlap with the detailed teaching cases and are not added together as a unique-patient or operation total.</p><Link href="/casebank/video-archive" className="mt-5 inline-block bg-academic-navy px-5 py-3 font-semibold text-white">Browse the open video archive →</Link></div></section>
     <CasebankArchiveSummary />
     <DriveVideoInventory />
     <section id="published-cases" className="mx-auto max-w-6xl scroll-mt-24 px-5 pb-12 pt-4">
