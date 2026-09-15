@@ -11,7 +11,7 @@ export function CasebankFeature() {
         </dl>
       </div>
       <div className="mt-8 grid gap-4 md:grid-cols-3">{[casebankCards[0],casebankCards[2],casebankCards[4]].map((item) => <Link key={item.slug} href={"/casebank/" + item.slug} className="border border-academic-line bg-white p-5 hover:border-academic-gold"><p className="text-xs font-semibold text-academic-gold">{item.caseNumber} · {item.region}</p><h3 className="mt-3 font-serif text-xl text-academic-navy">{item.title}</h3><p className="mt-3 text-sm leading-7 text-slate-600">{item.question}</p></Link>)}</div>
-      <p className="mt-5 text-xs leading-6 text-slate-500">Archive counts checked {casebankArchive.updated}. Clinical, video and teaching collections may overlap and are not added together. Counts describe retained records and educational material, not unique patients or outcomes. <Link href="/casebank#count-method" className="underline">View sources and annual records</Link>.</p>
+      <p className="mt-5 text-xs leading-6 text-slate-500">The open video archive contains {casebankArchive.videoPublishedExcerpts} excerpts selected from a {casebankArchive.videoCatalogueCases}-record catalogue; {casebankArchive.videoExcludedRecords} records are excluded under the publication criteria. Archive counts checked {casebankArchive.updated}. Clinical, video and teaching collections may overlap and are not added together. Counts describe retained records and educational material, not unique patients or outcomes. <Link href="/casebank#count-method" className="underline">View sources and annual records</Link>.</p>
     </div>
   </section>;
 }
