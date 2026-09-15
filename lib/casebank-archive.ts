@@ -1,7 +1,7 @@
 // Aggregate-only recount of the local clinical archive and video catalogues.
 // No patient rows, identifiers, source paths, or private media belong here.
 export const casebankArchive = {
-  updated: "2026-09-12",
+  updated: "2026-09-15",
   clinicalSnapshot: "May 2026",
   videoCatalogueSnapshot: "14 August 2026",
   clinicalRecords: 5159,
@@ -11,6 +11,8 @@ export const casebankArchive = {
   historicalVideoCases: 334,
   historicalMediaRecords: 3126,
   videoCatalogueCases: 100,
+  videoPublishedExcerpts: 91,
+  videoExcludedRecords: 9,
   videoCatalogueFileLocations: 341,
   sourceKeyConflictGroups: 3,
   annual: [
@@ -34,7 +36,7 @@ export function archiveMetrics(publishedEntries: number) {
   return [
     { count: casebankArchive.clinicalRecords, label: "Archived clinical records", detail: "2016–2026 · 4 source institutions" },
     { count: casebankArchive.historicalVideoCases, label: "Historical video cases", detail: "2018–2019 video archive" },
-    { count: casebankArchive.videoCatalogueCases, label: "Video catalogue cases", detail: "August 2026 catalogue · 2019–2026 recordings" },
+    { count: casebankArchive.videoPublishedExcerpts, label: "Published video excerpts", detail: "91 of 100 catalogue records · 9 excluded" },
     { count: publishedEntries, label: "Published teaching entries", detail: "Open case summaries, video and literature" },
   ];
 }
