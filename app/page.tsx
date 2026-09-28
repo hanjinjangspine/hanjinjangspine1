@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CasebankFeature } from "@/components/CasebankFeature";
+import { AcademicEvidencePanel } from "@/components/AcademicEvidencePanel";
 import { AcademicCard } from "@/components/AcademicCard";
 import { PageHeader } from "@/components/PageHeader";
 import { PatientEducationCard } from "@/components/PatientEducationCard";
+import { JsonLd } from "@/components/JsonLd";
 import { createMetadata } from "@/lib/metadata";
 import { patientEducationGuides } from "@/lib/patient-education";
-import { siteConfig } from "@/lib/site";
+import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = createMetadata({
   title: "Hanjin Jang, MD | Endoscopic Spine Surgery Academic Profile",
@@ -108,6 +110,22 @@ const officialKoreanResources = [
 export default function Home() {
   return (
     <>
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "@id": absoluteUrl("/") + "#profile-page",
+        name: "Hanjin Jang, MD | Endoscopic Spine Surgery Academic Profile",
+        url: absoluteUrl("/"),
+        inLanguage: "en",
+        about: { "@id": absoluteUrl("/") + "#hanjin-jang-md" },
+        mainEntity: { "@id": absoluteUrl("/") + "#hanjin-jang-md" },
+        isPartOf: { "@id": absoluteUrl("/") + "#website" },
+        hasPart: [
+          { "@type": "CollectionPage", name: "Clinical Casebank", url: absoluteUrl("/casebank") },
+          { "@type": "CollectionPage", name: "Selected Publications", url: absoluteUrl("/publications") },
+          { "@type": "CollectionPage", name: "Evidence Library", url: absoluteUrl("/evidence-library") }
+        ]
+      }} />
       <PageHeader
         eyebrow={siteConfig.name}
         title="Endoscopic Spine Surgery: Clinical Reasoning, Cases, and Evidence"
@@ -134,6 +152,7 @@ export default function Home() {
         </p>
       </PageHeader>
       <CasebankFeature />
+      <AcademicEvidencePanel />
       <section className="mx-auto max-w-6xl px-5 py-14">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <article className="border border-academic-line bg-academic-panel p-6">
